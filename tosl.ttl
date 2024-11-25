@@ -1,4 +1,4 @@
-@prefix : <http://www.w3.org/tosl#> .
+@prefix : <http://www.w3.org/tosl/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -6,9 +6,8 @@
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix tosl: <http://www.w3.org/tosl> .
 @prefix terms: <http://purl.org/dc/terms/> .
-@base <http://www.w3.org/tosl#> .
+@base <http://www.w3.org/tosl/> .
 
 <http://www.w3.org/tosl> rdf:type owl:Ontology ;
                           owl:versionIRI <http://www.w3.org/tosl/1.0.0> ;
@@ -37,7 +36,14 @@ odrl:includedIn rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.w3.org/tosl#governedBy
+###  http://www.w3.org/tosl/arbitration
+:arbitration rdf:type owl:ObjectProperty ;
+             rdfs:isDefinedBy <http://w3id.org/tosl/> ;
+             rdfs:label "Arbitration" ;
+             skos:definition "Specifies that the resolution of a dispute will be carried out without resorting to ordinary jurisdiction" .
+
+
+###  http://www.w3.org/tosl/governedBy
 :governedBy rdf:type owl:ObjectProperty ;
             rdfs:domain :DisputeResolution ;
             rdfs:range :Law ;
@@ -46,7 +52,7 @@ odrl:includedIn rdf:type owl:AnnotationProperty .
             skos:definition "Establishes the connection to the specific legal framework that governs the agreement" .
 
 
-###  http://www.w3.org/tosl#hasCondition
+###  http://www.w3.org/tosl/hasCondition
 :hasCondition rdf:type owl:ObjectProperty ;
               rdfs:domain :DisputeResolution ;
               rdfs:range [ rdf:type owl:Class ;
@@ -59,7 +65,14 @@ odrl:includedIn rdf:type owl:AnnotationProperty .
               skos:definition "This relationship enables the specification of particular restrictions that apply to the dispute" .
 
 
-###  http://www.w3.org/tosl#hasLimitationOfLiability
+###  http://www.w3.org/tosl/hasDetails
+:hasDetails rdf:type owl:ObjectProperty ;
+            rdfs:isDefinedBy <http://w3id.org/tosl/> ;
+            rdfs:label "Has Details" ;
+            skos:definition "Defines a relationship that allows specifying particular restrictions or conditions related to the limitation of liabilities of a party" .
+
+
+###  http://www.w3.org/tosl/hasLimitationOfLiability
 :hasLimitationOfLiability rdf:type owl:ObjectProperty ;
                           rdfs:domain odrl:Party ;
                           rdfs:range :LimitationOfLiability ;
@@ -68,7 +81,14 @@ odrl:includedIn rdf:type owl:AnnotationProperty .
                           skos:definition "This term establishes the connection between liability limitations and the parties to whom they apply" .
 
 
-###  http://www.w3.org/tosl#requires
+###  http://www.w3.org/tosl/litigation
+:litigation rdf:type owl:ObjectProperty ;
+            rdfs:isDefinedBy <http://w3id.org/tosl/> ;
+            rdfs:label "Litigation" ;
+            skos:definition "Specifies that the resolution of a dispute will be carried out through ordinary jurisdiction, involving formal legal proceedings in a court of law" .
+
+
+###  http://www.w3.org/tosl/requires
 :requires rdf:type owl:ObjectProperty ;
           rdfs:domain :Litigation ;
           rdfs:range :Arbitration ;
@@ -77,27 +97,13 @@ odrl:includedIn rdf:type owl:AnnotationProperty .
           skos:definition "This relationship specifies that all disputes must be resolved through arbitration" .
 
 
-###  http://www.w3.org/tosl#takesPlaceIn
+###  http://www.w3.org/tosl/takesPlaceIn
 :takesPlaceIn rdf:type owl:ObjectProperty ;
               rdfs:domain :DisputeResolution ;
               rdfs:range :Jurisdiction ;
               rdfs:isDefinedBy <http://w3id.org/tosl/> ;
               rdfs:label "Takes Place In" ;
               skos:definition "This term describes the relationship between Dispute Resolution and Jurisdiction, specifying the location where disputes are to be resolved" .
-
-
-###  http://www.w3.org/tosl/arbitration
-<http://www.w3.org/tosl/arbitration> rdf:type owl:ObjectProperty ;
-                                     rdfs:isDefinedBy <http://w3id.org/tosl/> ;
-                                     rdfs:label "Arbitration" ;
-                                     skos:definition "Specifies that the resolution of a dispute will be carried out without resorting to ordinary jurisdiction" .
-
-
-###  http://www.w3.org/tosl/litigation
-<http://www.w3.org/tosl/litigation> rdf:type owl:ObjectProperty ;
-                                    rdfs:isDefinedBy <http://w3id.org/tosl/> ;
-                                    rdfs:label "Litigation" ;
-                                    skos:definition "Specifies that the resolution of a dispute will be carried out through ordinary jurisdiction, involving formal legal proceedings in a court of law" .
 
 
 #################################################################
@@ -132,7 +138,7 @@ odrl:Party rdf:type owl:Class .
 odrl:RightOperand rdf:type owl:Class .
 
 
-###  http://www.w3.org/tosl#Arbitration
+###  http://www.w3.org/tosl/Arbitration
 :Arbitration rdf:type owl:Class ;
              rdfs:subClassOf :DisputeResolution ;
              rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -140,35 +146,35 @@ odrl:RightOperand rdf:type owl:Class .
              skos:definition "Arbitration is a process for resolving disputes without recourse to conventional judicial systems, typically managed by an arbitrator" .
 
 
-###  http://www.w3.org/tosl#DisputeResolution
+###  http://www.w3.org/tosl/DisputeResolution
 :DisputeResolution rdf:type owl:Class ;
                    rdfs:isDefinedBy <http://w3id.org/tosl/> ;
                    rdfs:label "Dispute Resolution" ;
                    skos:definition "Employed to specify the mechanisms for resolving disputes among the parties involved in the agreement" .
 
 
-###  http://www.w3.org/tosl#Jurisdiction
+###  http://www.w3.org/tosl/Jurisdiction
 :Jurisdiction rdf:type owl:Class ;
               rdfs:isDefinedBy <http://w3id.org/tosl/> ;
               rdfs:label "Jurisdiction" ;
               skos:definition "Jurisdiction refers to the specific location or legal authority where a dispute must be resolved" .
 
 
-###  http://www.w3.org/tosl#Law
+###  http://www.w3.org/tosl/Law
 :Law rdf:type owl:Class ;
      rdfs:isDefinedBy <http://w3id.org/tosl/> ;
      rdfs:label "Law" ;
      skos:definition "Law refers to the specific statutes and regulations that govern an agreement and are applicable in resolving any disputes arising from it" .
 
 
-###  http://www.w3.org/tosl#LimitationOfLiability
+###  http://www.w3.org/tosl/LimitationOfLiability
 :LimitationOfLiability rdf:type owl:Class ;
                        rdfs:isDefinedBy <http://w3id.org/tosl/> ;
                        rdfs:label "Limitation of Liability" ;
                        skos:definition "Limitation of Liability refers to the specific provisions that define and restrict the extent to which each party in the agreement can be held accountable for damages or losses" .
 
 
-###  http://www.w3.org/tosl#Litigation
+###  http://www.w3.org/tosl/Litigation
 :Litigation rdf:type owl:Class ;
             rdfs:subClassOf :DisputeResolution ;
             rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -176,7 +182,7 @@ odrl:RightOperand rdf:type owl:Class .
             skos:definition "Litigation is a legal process in which the provider or customer, acting as the plaintiff, initiates proceedings against the other party, called the defendant, before a civil court in a settlement dispute" .
 
 
-###  http://www.w3.org/tosl#PolicyTerms
+###  http://www.w3.org/tosl/PolicyTerms
 :PolicyTerms rdf:type owl:Class ;
              rdfs:subClassOf odrl:Asset ;
              rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -184,7 +190,7 @@ odrl:RightOperand rdf:type owl:Class .
              skos:definition "An asset that incorporates terms as a resource"@en .
 
 
-###  http://www.w3.org/tosl#Service
+###  http://www.w3.org/tosl/Service
 :Service rdf:type owl:Class ;
          rdfs:subClassOf odrl:Asset ;
          rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -192,7 +198,7 @@ odrl:RightOperand rdf:type owl:Class .
          skos:definition "An asset that includes the service affected by the action as a resource"@en .
 
 
-###  http://www.w3.org/tosl#UserContent
+###  http://www.w3.org/tosl/UserContent
 :UserContent rdf:type owl:Class ;
              rdfs:subClassOf odrl:Asset ;
              rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -231,7 +237,7 @@ odrl:RightOperand rdf:type owl:Class .
                             odrl:includedIn odrl:use .
 
 
-###  http://www.w3.org/tosl#allowDownload
+###  http://www.w3.org/tosl/allowDownload
 :allowDownload rdf:type owl:NamedIndividual ,
                         odrl:Action ;
                rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -239,7 +245,7 @@ odrl:RightOperand rdf:type owl:Class .
                skos:definition "Allow download refers to the action that permits one of the parties, typically the client, to download personal information or information about contracted services" .
 
 
-###  http://www.w3.org/tosl#anyDamage
+###  http://www.w3.org/tosl/anyDamage
 :anyDamage rdf:type owl:NamedIndividual ,
                     :LimitationOfLiability ;
            rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -247,7 +253,7 @@ odrl:RightOperand rdf:type owl:Class .
            skos:definition "This limitation of liability provision specifies that the designated party shall not be held liable for any damages incurred" .
 
 
-###  http://www.w3.org/tosl#californiaLaw
+###  http://www.w3.org/tosl/californiaLaw
 :californiaLaw rdf:type owl:NamedIndividual ,
                         :Law ;
                rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -255,7 +261,7 @@ odrl:RightOperand rdf:type owl:Class .
                skos:definition "This instance denotes that the governing law applicable to the agreement is that of California" .
 
 
-###  http://www.w3.org/tosl#consent
+###  http://www.w3.org/tosl/consent
 :consent rdf:type owl:NamedIndividual ,
                   odrl:Action ;
          rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -263,7 +269,7 @@ odrl:RightOperand rdf:type owl:Class .
          skos:definition "This action signifies your acceptance of the associated asset" .
 
 
-###  http://www.w3.org/tosl#consentByUsing
+###  http://www.w3.org/tosl/consentByUsing
 :consentByUsing rdf:type owl:NamedIndividual ,
                          odrl:RightOperand ;
                 rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -271,7 +277,7 @@ odrl:RightOperand rdf:type owl:Class .
                 skos:definition "This type of consent implies that by merely utilizing the service, the customer agrees to the terms of the agreement by default" .
 
 
-###  http://www.w3.org/tosl#consentExplicity
+###  http://www.w3.org/tosl/consentExplicity
 :consentExplicity rdf:type owl:NamedIndividual ,
                            odrl:RightOperand ;
                   rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -279,7 +285,7 @@ odrl:RightOperand rdf:type owl:Class .
                   skos:definition "This form of consent requires that the customer explicitly affirm or accept the agreement through a formal action, such as signing a document" .
 
 
-###  http://www.w3.org/tosl#consentType
+###  http://www.w3.org/tosl/consentType
 :consentType rdf:type owl:NamedIndividual ,
                       odrl:LeftOperand ;
              rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -287,7 +293,7 @@ odrl:RightOperand rdf:type owl:Class .
              skos:definition "This term refers to the specific manner in which consent is given by a party within an agreement, outlining whether it is implicit, explicit, or expressed through other defined actions" .
 
 
-###  http://www.w3.org/tosl#consumerPlaceLaw
+###  http://www.w3.org/tosl/consumerPlaceLaw
 :consumerPlaceLaw rdf:type owl:NamedIndividual ,
                            :Law ;
                   rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -295,7 +301,7 @@ odrl:RightOperand rdf:type owl:Class .
                   skos:definition "This provision states that the law governing the agreement is that of the consumer's country or the law that affects the consumer" .
 
 
-###  http://www.w3.org/tosl#contentUsageCompliance
+###  http://www.w3.org/tosl/contentUsageCompliance
 :contentUsageCompliance rdf:type owl:NamedIndividual ,
                                  odrl:LeftOperand ;
                         terms:description "The use of the services requires adherence to specific conditions and obligations outlined by the service provider" ;
@@ -303,7 +309,7 @@ odrl:RightOperand rdf:type owl:Class .
                         rdfs:label "Content Usage Compliance" .
 
 
-###  http://www.w3.org/tosl#europeanLaw
+###  http://www.w3.org/tosl/europeanLaw
 :europeanLaw rdf:type owl:NamedIndividual ,
                       :Law ;
              rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -311,7 +317,7 @@ odrl:RightOperand rdf:type owl:Class .
              skos:definition "this stipulates that the law regulating the agreement is European law" .
 
 
-###  http://www.w3.org/tosl#harmCausedByMalware
+###  http://www.w3.org/tosl/harmCausedByMalware
 :harmCausedByMalware rdf:type owl:NamedIndividual ,
                               :LimitationOfLiability ;
                      rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -319,7 +325,7 @@ odrl:RightOperand rdf:type owl:Class .
                      skos:definition "The party is not responsible for any damages resulting from malware" .
 
 
-###  http://www.w3.org/tosl#physicalInjuries
+###  http://www.w3.org/tosl/physicalInjuries
 :physicalInjuries rdf:type owl:NamedIndividual ,
                            :LimitationOfLiability ;
                   rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -327,14 +333,14 @@ odrl:RightOperand rdf:type owl:Class .
                   skos:definition "This provision limits liability and excludes charges for physical damages" .
 
 
-###  http://www.w3.org/tosl#publish
+###  http://www.w3.org/tosl/publish
 :publish rdf:type owl:NamedIndividual ;
          rdfs:isDefinedBy <http://w3id.org/tosl/> ;
          rdfs:label "Publish" ;
          skos:definition "This action mandates the public release of an asset" .
 
 
-###  http://www.w3.org/tosl#remove
+###  http://www.w3.org/tosl/remove
 :remove rdf:type owl:NamedIndividual ,
                  odrl:Action ;
         rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -342,7 +348,7 @@ odrl:RightOperand rdf:type owl:Class .
         skos:definition "This action may authorize, obligate, or prohibit the deletion of content from the provided services" .
 
 
-###  http://www.w3.org/tosl#requiresJustification
+###  http://www.w3.org/tosl/requiresJustification
 :requiresJustification rdf:type owl:NamedIndividual ,
                                 odrl:LeftOperand ;
                        rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -350,7 +356,7 @@ odrl:RightOperand rdf:type owl:Class .
                        skos:definition "This condition mandates that specific actions can only be undertaken with appropriate justification" .
 
 
-###  http://www.w3.org/tosl#requiresPriorNotice
+###  http://www.w3.org/tosl/requiresPriorNotice
 :requiresPriorNotice rdf:type owl:NamedIndividual ,
                               odrl:LeftOperand ;
                      rdfs:isDefinedBy <http://w3id.org/tosl/> ;
@@ -358,7 +364,7 @@ odrl:RightOperand rdf:type owl:Class .
                      skos:definition "This stipulates that the parties must give advance notice before certain actions are taken" .
 
 
-###  http://www.w3.org/tosl#terminate
+###  http://www.w3.org/tosl/terminate
 :terminate rdf:type owl:NamedIndividual ,
                     odrl:Action ;
            rdfs:isDefinedBy <http://w3id.org/tosl/> ;
