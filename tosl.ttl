@@ -38,9 +38,24 @@ odrl:includedIn rdf:type owl:AnnotationProperty .
 
 ###  http://www.w3.org/tosl/arbitration
 :arbitration rdf:type owl:ObjectProperty ;
+             rdfs:domain odrl:Policy ;
+             rdfs:range :Arbitration ;
              rdfs:isDefinedBy <http://w3id.org/tosl/> ;
              rdfs:label "Arbitration" ;
              skos:definition "Specifies that the resolution of a dispute will be carried out without resorting to ordinary jurisdiction" .
+
+
+###  http://www.w3.org/tosl/condition
+:condition rdf:type owl:ObjectProperty ;
+           rdfs:domain :DisputeResolution ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( odrl:Constraint
+                                      odrl:LogicalConstraint
+                                    )
+                      ] ;
+           rdfs:isDefinedBy <http://w3id.org/tosl/> ;
+           rdfs:label "Has Condition" ;
+           skos:definition "This relationship enables the specification of particular restrictions that apply to the dispute" .
 
 
 ###  http://www.w3.org/tosl/governedBy
@@ -52,37 +67,52 @@ odrl:includedIn rdf:type owl:AnnotationProperty .
             skos:definition "Establishes the connection to the specific legal framework that governs the agreement" .
 
 
-###  http://www.w3.org/tosl/hasCondition
-:hasCondition rdf:type owl:ObjectProperty ;
-              rdfs:domain :DisputeResolution ;
-              rdfs:range [ rdf:type owl:Class ;
-                           owl:unionOf ( odrl:Constraint
-                                         odrl:LogicalConstraint
-                                       )
-                         ] ;
-              rdfs:isDefinedBy <http://w3id.org/tosl/> ;
-              rdfs:label "Has Condition" ;
-              skos:definition "This relationship enables the specification of particular restrictions that apply to the dispute" .
+###  http://www.w3.org/tosl/liability
+:liability rdf:type owl:ObjectProperty ;
+           rdfs:domain odrl:Policy ,
+                       odrl:Rule ;
+           rdfs:range :Liability ;
+           rdfs:isDefinedBy <http://w3id.org/tosl/> ;
+           rdfs:label "With Liability" ;
+           skos:definition "Establishes the relationship between a rule or policy and the applicable liabilities, describing the duties or obligations to be assumed in a specific context" .
 
 
-###  http://www.w3.org/tosl/hasDetails
-:hasDetails rdf:type owl:ObjectProperty ;
+###  http://www.w3.org/tosl/liableParty
+:liableParty rdf:type owl:ObjectProperty ;
+             rdfs:domain :Liability ;
+             rdfs:range odrl:Party ;
+             rdfs:isDefinedBy <http://w3id.org/tosl/> ;
+             rdfs:label "Liable Party" ;
+             skos:definition "This term establishes the connection between liability and a party to whom they apply" .
+
+
+###  http://www.w3.org/tosl/limitation
+:limitation rdf:type owl:ObjectProperty ;
+            rdfs:domain :Liability ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( odrl:Constraint
+                                       odrl:LogicalConstraint
+                                     )
+                       ] ;
             rdfs:isDefinedBy <http://w3id.org/tosl/> ;
-            rdfs:label "Has Details" ;
+            rdfs:label "Has Limitation" ;
             skos:definition "Defines a relationship that allows specifying particular restrictions or conditions related to the limitation of liabilities of a party" .
 
 
-###  http://www.w3.org/tosl/hasLimitationOfLiability
-:hasLimitationOfLiability rdf:type owl:ObjectProperty ;
-                          rdfs:domain odrl:Party ;
-                          rdfs:range :LimitationOfLiability ;
-                          rdfs:isDefinedBy <http://w3id.org/tosl/> ;
-                          rdfs:label "Has Limitatation of Liability" ;
-                          skos:definition "This term establishes the connection between liability limitations and the parties to whom they apply" .
+###  http://www.w3.org/tosl/limitationOfLiability
+:limitationOfLiability rdf:type owl:ObjectProperty ;
+                       rdfs:domain odrl:Policy ,
+                                   odrl:Rule ;
+                       rdfs:range :Liability ;
+                       rdfs:isDefinedBy <http://w3id.org/tosl/> ;
+                       rdfs:label "With Limitation Of Liability" ;
+                       skos:definition "Defines the relationship that links a rule or policy to the limitations of liability applicable to one or more parties, specifying the scope and restrictions in cases of damages or breaches" .
 
 
 ###  http://www.w3.org/tosl/litigation
 :litigation rdf:type owl:ObjectProperty ;
+            rdfs:domain odrl:Policy ;
+            rdfs:range :Litigation ;
             rdfs:isDefinedBy <http://w3id.org/tosl/> ;
             rdfs:label "Litigation" ;
             skos:definition "Specifies that the resolution of a dispute will be carried out through ordinary jurisdiction, involving formal legal proceedings in a court of law" .
@@ -104,6 +134,15 @@ odrl:includedIn rdf:type owl:AnnotationProperty .
               rdfs:isDefinedBy <http://w3id.org/tosl/> ;
               rdfs:label "Takes Place In" ;
               skos:definition "This term describes the relationship between Dispute Resolution and Jurisdiction, specifying the location where disputes are to be resolved" .
+
+
+###  http://www.w3.org/tosl/triggers
+:triggers rdf:type owl:ObjectProperty ;
+          rdfs:domain odrl:Permission ;
+          rdfs:range odrl:Duty ;
+          rdfs:isDefinedBy <http://w3id.org/tosl/> ;
+          rdfs:label "Triggers" ;
+          skos:definition "Represents the relationship where a permission can trigger a specific duty for a party" .
 
 
 #################################################################
@@ -167,11 +206,28 @@ odrl:RightOperand rdf:type owl:Class .
      skos:definition "Law refers to the specific statutes and regulations that govern an agreement and are applicable in resolving any disputes arising from it" .
 
 
-###  http://www.w3.org/tosl/LimitationOfLiability
-:LimitationOfLiability rdf:type owl:Class ;
-                       rdfs:isDefinedBy <http://w3id.org/tosl/> ;
-                       rdfs:label "Limitation of Liability" ;
-                       skos:definition "Limitation of Liability refers to the specific provisions that define and restrict the extent to which each party in the agreement can be held accountable for damages or losses" .
+###  http://www.w3.org/tosl/Liability
+:Liability rdf:type owl:Class ;
+           rdfs:isDefinedBy <http://w3id.org/tosl/> ;
+           rdfs:label "Liability" ;
+           skos:definition "Liability refers to the specific provisions that define and restrict the extent to which each party in the agreement can be held accountable for damages or losses" ;
+           skos:note """tosl:liability [
+        a tosl:Liability ;
+        rdf:value tosl:physicalInjuries ;
+        tosl:party :elsevier ;
+    ] ;
+    tosl:limitationOfLiability [
+        a tosl:Liability ;
+        rdf:value tosl:anyDamage ;
+        tosl:party :customer ;
+        tosl:limitation [
+            a odrl:Constraint ;
+            odrl:leftOperand tosl:maximunCompensation ;
+            odrl:operator odrl:lt ;
+            odrl:rightOperand 1000 ;
+            dcterm:unit \\\"USD\\\" ;
+        ]
+    ] ;""" .
 
 
 ###  http://www.w3.org/tosl/Litigation
@@ -213,28 +269,28 @@ odrl:RightOperand rdf:type owl:Class .
 ###  http://w3id.org/tosl/develop
 <http://w3id.org/tosl/develop> rdf:type owl:NamedIndividual ,
                                         odrl:Action ;
+                               odrl:includedIn odrl:use ;
                                terms:description "This action permits, mandates or prohibits the use of the services to develop a software application." ;
                                rdfs:isDefinedBy <http://w3id.org/tosl/> ;
-                               rdfs:label "Develop" ;
-                               odrl:includedIn odrl:use .
+                               rdfs:label "Develop" .
 
 
 ###  http://w3id.org/tosl/integrate
 <http://w3id.org/tosl/integrate> rdf:type owl:NamedIndividual ,
                                           odrl:Action ;
+                                 odrl:includedIn odrl:use ;
                                  rdfs:isDefinedBy <http://w3id.org/tosl/> ;
                                  rdfs:label "Integrate" ;
-                                 skos:definition "This action allows, obligates, or prohibits the integration of the provided service with your application." ;
-                                 odrl:includedIn odrl:use .
+                                 skos:definition "This action allows, obligates, or prohibits the integration of the provided service with your application." .
 
 
 ###  http://w3id.org/tosl/test
 <http://w3id.org/tosl/test> rdf:type owl:NamedIndividual ,
                                      odrl:Action ;
+                            odrl:includedIn odrl:use ;
                             terms:description "This action permits, mandates or prohibits the use of the services to test a software application." ;
                             rdfs:isDefinedBy <http://w3id.org/tosl/> ;
-                            rdfs:label "Test" ;
-                            odrl:includedIn odrl:use .
+                            rdfs:label "Test" .
 
 
 ###  http://www.w3.org/tosl/allowDownload
@@ -247,10 +303,10 @@ odrl:RightOperand rdf:type owl:Class .
 
 ###  http://www.w3.org/tosl/anyDamage
 :anyDamage rdf:type owl:NamedIndividual ,
-                    :LimitationOfLiability ;
+                    :Liability ;
            rdfs:isDefinedBy <http://w3id.org/tosl/> ;
            rdfs:label "Any Damage" ;
-           skos:definition "This limitation of liability provision specifies that the designated party shall not be held liable for any damages incurred" .
+           skos:definition "This liability provision specifies that the designated party shall not be held liable for any damages incurred" .
 
 
 ###  http://www.w3.org/tosl/californiaLaw
@@ -259,6 +315,14 @@ odrl:RightOperand rdf:type owl:Class .
                rdfs:isDefinedBy <http://w3id.org/tosl/> ;
                rdfs:label "California Law" ;
                skos:definition "This instance denotes that the governing law applicable to the agreement is that of California" .
+
+
+###  http://www.w3.org/tosl/compliesWith
+:compliesWith rdf:type owl:NamedIndividual ,
+                       odrl:LeftOperand ;
+              terms:description "The use of the services requires adherence to specific conditions and obligations outlined by the service provider" ;
+              rdfs:isDefinedBy <http://w3id.org/tosl/> ;
+              rdfs:label "Complies With" .
 
 
 ###  http://www.w3.org/tosl/consent
@@ -301,14 +365,6 @@ odrl:RightOperand rdf:type owl:Class .
                   skos:definition "This provision states that the law governing the agreement is that of the consumer's country or the law that affects the consumer" .
 
 
-###  http://www.w3.org/tosl/contentUsageCompliance
-:contentUsageCompliance rdf:type owl:NamedIndividual ,
-                                 odrl:LeftOperand ;
-                        terms:description "The use of the services requires adherence to specific conditions and obligations outlined by the service provider" ;
-                        rdfs:isDefinedBy <http://w3id.org/tosl/> ;
-                        rdfs:label "Content Usage Compliance" .
-
-
 ###  http://www.w3.org/tosl/europeanLaw
 :europeanLaw rdf:type owl:NamedIndividual ,
                       :Law ;
@@ -319,18 +375,25 @@ odrl:RightOperand rdf:type owl:Class .
 
 ###  http://www.w3.org/tosl/harmCausedByMalware
 :harmCausedByMalware rdf:type owl:NamedIndividual ,
-                              :LimitationOfLiability ;
+                              :Liability ;
                      rdfs:isDefinedBy <http://w3id.org/tosl/> ;
                      rdfs:label "Harm Caused By Malware" ;
-                     skos:definition "The party is not responsible for any damages resulting from malware" .
+                     skos:definition "The party is or not is responsible for any damages resulting from malware" .
+
+
+###  http://www.w3.org/tosl/isJustified
+:isJustified rdf:type owl:NamedIndividual ;
+             rdfs:isDefinedBy <http://w3id.org/tosl/> ;
+             rdfs:label "Is Justified" ;
+             skos:definition "This condition mandates that specific actions can only be undertaken with appropriate justification" .
 
 
 ###  http://www.w3.org/tosl/physicalInjuries
 :physicalInjuries rdf:type owl:NamedIndividual ,
-                           :LimitationOfLiability ;
+                           :Liability ;
                   rdfs:isDefinedBy <http://w3id.org/tosl/> ;
                   rdfs:label "Physical Injuries" ;
-                  skos:definition "This provision limits liability and excludes charges for physical damages" .
+                  skos:definition "This provision outlines the liability of the party in cases of physical damages caused to the other party" .
 
 
 ###  http://www.w3.org/tosl/publish
@@ -346,14 +409,6 @@ odrl:RightOperand rdf:type owl:Class .
         rdfs:isDefinedBy <http://w3id.org/tosl/> ;
         rdfs:label "Remove" ;
         skos:definition "This action may authorize, obligate, or prohibit the deletion of content from the provided services" .
-
-
-###  http://www.w3.org/tosl/requiresJustification
-:requiresJustification rdf:type owl:NamedIndividual ,
-                                odrl:LeftOperand ;
-                       rdfs:isDefinedBy <http://w3id.org/tosl/> ;
-                       rdfs:label "Requires Justification" ;
-                       skos:definition "This condition mandates that specific actions can only be undertaken with appropriate justification" .
 
 
 ###  http://www.w3.org/tosl/requiresPriorNotice
