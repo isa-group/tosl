@@ -195,10 +195,10 @@
     odrl:assignee :elsevier .
 
 ################################ TERM 2.2 ######################################
-# "2.2 In a situation of breach of the terms and conditions of this Agreement, #
+# 2.2 In a situation of breach of the terms and conditions of this Agreement,  #
 # Elsevier reserves the right to block, change, suspend, remove or disable     #
 # access to the APIs and any of its services at any time upon reasonable       #
-# notice to Developer."                                                        #
+# notice to Developer.                                                         #
 ################################################################################
 
 :permission05 a odrl:Permission;
@@ -227,8 +227,8 @@
     ].
 
 ################################ TERM 2.3 ######################################
-# "2.3 Elsevier reserves the right to deactivate API Keys that have not been   #
-# used to access the APIs for 90 days."                                        #
+# 2.3 Elsevier reserves the right to deactivate API Keys that have not been    #
+# used to access the APIs for 90 days.                                         #
 ################################################################################
 
 :permission06 a odrl:Permission ;
@@ -249,8 +249,8 @@
     ] .
 
 ################################ TERM 3.1.1 ####################################
-# "3.1.1 the Application will not use Elsevier content other than allowed by   #
-# the API's Content Usage Policies on http://dev.elsevier.com/policy.html;"    #
+# 3.1.1 the Application will not use Elsevier content other than allowed by    #
+# the API's Content Usage Policies on http://dev.elsevier.com/policy.html;     #
 ################################################################################
 
 :prohibition01 a odrl:Prohibition ;
@@ -265,9 +265,9 @@
     odrl:assignee :customer .
 
 ################################ TERM 3.1.2 ####################################
-# "3.1.2 the Application will use the API Key issued by Elsevier upon          #
+# 3.1.2 the Application will use the API Key issued by Elsevier upon           #
 # execution of this Agreement, and no other API Key issued for use by other    #
-# applications and/or to other developers;"                                    #
+# applications and/or to other developers;                                     #
 ################################################################################
 
 :permission07 a odrl:Permission;
@@ -282,30 +282,27 @@
     odrl:assignee :customer .
 
 ################################ TERM 3.1.3 ####################################
-# "3.1.3 the Application will avoid excessive and unnecessary use of the API   #
-# Service that may cause a performance degradation of the API Service"         #
+# 3.1.3 the Application will avoid excessive and unnecessary use of the API    #
+# Service that may cause a performance degradation of the API Service          #
 ################################################################################
 
 :prohibition02 a odrl:Prohibition;
     dcterms:description "3.1.3 the Application will avoid excessive and unnecessary use of the API Service that may cause a performance degradation of the API Service";
-    odrl:action [
-        rdf:value odrl:use ;
-        odrl:refinement [
-            a odrl:Constraint ;
-            odrl:leftOperand tosl:causes ;
-            odrl:operator odrl:not ;
-            odrl:rightOperand "performanceDegradation"^^xsd:string
-        ]
-    ] ;
+    odrl:action odrl:use ;
+    odrl:constraint [
+        odrl:leftOperand tosl:causes ;
+        odrl:operator odrl:eq ;
+        odrl:rightOperand tosl:degradation
+    ];
     odrl:target :elsevierApiService ;
     odrl:assignee :customer .
 
 ################################ TERM 3.1.4 ####################################
-# "3.1.4 the Developer acknowledges that all right, title and interest in and  #
+# 3.1.4 the Developer acknowledges that all right, title and interest in and   #
 # to the Elsevier content, and any derivative works based upon the Elsevier    #
 # content, remain with Elsevier and its suppliers, except as expressly set     #
 # forth in this Agreement, and that the unauthorized redistribution of the     #
-# Elsevier content is not permitted."                                          #
+# Elsevier content is not permitted.                                           #
 ################################################################################
 
 :prohibition03 a odrl:Prohibition ;
@@ -315,9 +312,9 @@
     odrl:assignee :customer .
 
 ################################ TERM 3.2 ######################################
-# "3.2 The Developer will be solely responsible and hold Elsevier harmless     #
+# 3.2 The Developer will be solely responsible and hold Elsevier harmless      #
 # for all costs, expenses, losses and liabilities incurred, and activities     #
-# undertaken by the Developer in connection with the API Service."             #
+# undertaken by the Developer in connection with the API Service.              #
 ################################################################################
 
 :liability01 a tosl:Liability ;
@@ -326,10 +323,10 @@
 		tosl:party :elsevier .
 
 ################################ TERM 3.3 ######################################
-# "3.3 Developer shall obtain written permission in advance from Elsevier to   #
+# 3.3 Developer shall obtain written permission in advance from Elsevier to    #
 # use Elsevier's trademarks, logos or other brand features for promoting the   #
 # Developer's Application. Any press releases regarding this Agreement or the  #
-# relationship of the parties shall require the prior approval of the parties."#
+# relationship of the parties shall require the prior approval of the parties. #
 ################################################################################
 
 :assetCollection01 a odrl:AssetCollection ;
@@ -366,9 +363,9 @@
     ] .
 
 ################################ TERM 3.4 ######################################
-# "3.4 The Developer shall not display any advertising inside the Application  #
+# 3.4 The Developer shall not display any advertising inside the Application   #
 # or use any content as obtained via the API outside the Application, unless   #
-# permitted by Elsevier in writing."                                           #
+# permitted by Elsevier in writing.                                            #
 ################################################################################
 
 :permission09 a odrl:Permission;
@@ -436,7 +433,7 @@
     odrl:assignee :elsevier .
 
 ################################ TERM 6 ########################################
-# "This Agreement will be governed by and construed in accordance with the     #
+# This Agreement will be governed by and construed in accordance with the      #
 # laws # of The Netherlands, and the parties irrevocably consent to the        #
 # exclusive # jurisdiction of the courts of The Netherlands with respect to    #
 # any action or suit arising out of or pertaining to this Agreement (except    #
