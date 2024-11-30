@@ -1,9 +1,0 @@
-PREFIX tosl: <http://www.w3.org/tosl/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-
-SELECT ?jurisdiction ?description ?location
-WHERE {
-  ?jurisdiction a tosl:Litigation ;
-                dcterms:description ?description ;
-                tosl:takesPlaceIn ?location .
-}

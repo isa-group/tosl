@@ -323,7 +323,7 @@
 :liability01 a tosl:Liability ;
 		dcterms:description "3.2 The Developer will be solely responsible and hold Elsevier harmless for all costs, expenses, losses and liabilities incurred, and activities undertaken by the Developer in connection with the API Service." ;
 		rdf:value tosl:anyLiability ;
-		tosl:party :elsevier .
+		tosl:liableParty :elsevier .
 
 ################################ TERM 3.3 ######################################
 # 3.3 Developer shall obtain written permission in advance from Elsevier to    #
@@ -441,7 +441,7 @@
 ################################################################################
 
 :liability02 a tosl:Liability ;
-		tosl:limitationOfLiability tosl:anyLiability ;
+		rdf:value tosl:anyLiability ;
 		tosl:liableParty :elsevier, :customer01 .
 
 ################################ TERM 5 ########################################
@@ -454,13 +454,13 @@
 :permission10 a odrl:Permission ;
     dcterms:description "The term of this Agreement shall commence on the date on which the Developer has accepted this Agreement and shall continue until either party terminates the Agreement in writing or the API Key is deactivated by Elsevier." ;
     odrl:action tosl:terminate ;
-    odrl:target :service01 ; 
+    odrl:target :agreement01 ; 
     odrl:assignee :customer01 .
 
 :permission11 a odrl:Permission ;
     dcterms:description "The term of this Agreement shall commence on the date on which the Developer has accepted this Agreement and shall continue until either party terminates the Agreement in writing or the API Key is deactivated by Elsevier." ;
     odrl:action tosl:terminate ;
-    odrl:target :service01 ; 
+    odrl:target :agreement01 ; 
     odrl:assignee :elsevier .
 
 ################################ TERM 6 ########################################
