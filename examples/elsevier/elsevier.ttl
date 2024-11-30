@@ -475,3 +475,9 @@
     dcterms:description "This Agreement will be governed by and construed in accordance with the laws of The Netherlands, and the parties irrevocably consent to the exclusive jurisdiction of the courts of The Netherlands with respect to any action or suit arising out of or pertaining to this Agreement (except where local law requires)." ;
     tosl:takesPlaceIn :netherlandsCourts ;
     tosl:governedBy :netherlandsLaw .
+
+:netherlandsCourts a tosl:Jurisdiction;
+    dcterms:description "The courts of The Netherlands with exclusive jurisdiction over disputes arising from this Agreement." .
+
+:netherlandsLaw a tosl:Law ;
+    dcterms:description "The laws of The Netherlands governing this Agreement." .
