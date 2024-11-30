@@ -62,6 +62,35 @@ The figure below illustrates the concepts defined by the ODRL Profile for Terms 
 
 ![ontology_model](img/ontology_model.png)
 
+
+## Sample with TOSL
+
+```turtle
+:prohibition04 a odrl:Prohibition ;
+  dcterms:description "3.4 The Developer shall not display any advertising inside the Application or use any content as obtained via the API outside the Application, unless permitted by Elsevier in writing.";
+  odrl:action [
+      a odrl:Action ;
+      rdf:value odrl:display ;
+      odrl:refinement [
+          a odrl:Constraint ;
+          odrl:leftOperand odrl:media ;
+          odrl:operator odrl:eq ;
+          odrl:rightOperand "advertising"^^xsd:string ;
+      ] ;
+  ] ;
+  odrl:constraint [
+      a odrl:Constraint ;
+      odrl:leftOperand tosl:licensingType ;
+      odrl:operator odrl:not ;
+      odrl:rightOperand tosl:writtenPermission ;
+  ] ;
+  odrl:target [
+      a odrl:Asset ;
+      dcterms:description "The asset refers to advertising materials, which cannot be displayed or used without a valid license agreement." ;
+  ] ;    
+  odrl:assignee :customer01 .
+```
+
 ## References
 
 - [odrl](https://w3c.github.io/odrl/)
