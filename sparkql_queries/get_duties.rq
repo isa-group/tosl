@@ -1,0 +1,11 @@
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX tosl: <http://www.w3.org/tosl/>
+
+SELECT DISTINCT ?duty ?action ?target ?assignee
+WHERE {
+  ?duty a odrl:Duty .
+  ?duty odrl:action ?action .
+  ?duty odrl:target ?target .
+  ?duty odrl:assignee ?assignee .
+}

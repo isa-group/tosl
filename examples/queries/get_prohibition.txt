@@ -1,9 +1,0 @@
-PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-
-SELECT ?prohibition ?description ?assignee
-WHERE {
-  ?prohibition a odrl:Prohibition ;
-               dcterms:description ?description ;
-               odrl:assignee ?assignee .
-}

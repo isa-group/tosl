@@ -1,0 +1,11 @@
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX tosl: <http://www.w3.org/tosl/>
+
+SELECT DISTINCT ?limitationOn ?liability ?type ?liableParty
+WHERE {
+  ?liability a tosl:Liability .
+  ?thing tosl:limitationOfLiability ?liability .
+  ?liability tosl:liableParty ?liableParty .
+  ?liability rdf:value ?type .
+}
