@@ -1,0 +1,2607 @@
+ <!-- respecter
+ Copyright 2022 - Swiss Data Science Center (SDSC)
+ A partnership between École Polytechnique Fédérale de Lausanne (EPFL) and
+ Eidgenössische Technische Hochschule Zürich (ETHZ). 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Terms of Service Language Ontology</title>
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
+  <script class="remove">
+    // All config options at https://respec.org/docs/
+    var respecConfig = {
+      publishDate: "",
+      specStatus: "ED",
+      shortName: "ReSpecter",
+      github: "",
+      authors: [
+        
+    { name: "Elena Molino Peña" },
+    
+    { name: "José María Cruz" },
+    
+    { name: "José María García" },
+    
+    { name: "Antonio Ruiz Cortés" },
+    
+      ],
+    editors: [
+    { name: "ISA-Group" },
+    
+    ],
+    };
+  </script>
+</head>
+
+<body>
+  <section id="abstract">
+    <p>Abstract.</p>
+  </section>
+
+  <section class="informative">
+    <h2>Introduction</h2>
+    <p>The ODLR Profile for Terms of Service Language (TOSL) enhances the understanding and enforcement of legal terms within service agreements. Utilizing the Open Digital Rights Language (ODLR), this profile specifies the obligations, rights, and prohibitions contained in agreements to effectively identify and flag potentially unfair terms. By integrating ODLR's flexible framework, the TSL profile aims to ensure clearer, more enforceable, and fairer terms of service agreements across diverse digital platforms.</p>
+    <aside class="note" title="ReSpecter status">
+      <p>"This ontology and the tool ReSpecter is still in active development. See <a
+          href='https://github.com/sdsc-ordes/respecter/'>ReSpecter</a> for more details on the tool."</p>
+    </aside>
+    <section>
+      <h3>Download File</h3>
+      <button onclick="downloadFile()">Download File</button>
+      <script>
+      function downloadFile() {
+          const link = document.createElement('a');
+          link.href = '';
+          link.download = 'ontology.ttl';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+      }
+      </script>
+    </section> 
+  </section>
+
+  <section>
+    <h2>Classes</h2>
+
+    
+    <h3 id="">Arbitration</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Arbitration</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Arbitration is a process for resolving disputes without recourse to conventional judicial systems, typically managed by an arbitrator</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/Arbitration">tosl:Arbitration</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Has Condition</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Has Condition</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This relationship enables the specification of particular restrictions that apply to the dispute</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/condition">tosl:condition</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Governed By</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Governed By</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Establishes the connection to the specific legal framework that governs the agreement</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">With Liability</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>With Liability</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Establishes the relationship between a rule, policy or asset and the applicable liabilities, describing the duties or obligations to be assumed in a specific context</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/liability">tosl:liability</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Liable Party</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Liable Party</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This term establishes the connection between liability and a party to whom they apply</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Has Limitation</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Has Limitation</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Defines a relationship that allows specifying particular restrictions or conditions related to the limitation of liabilities of a party</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">With Limitation Of Liability</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>With Limitation Of Liability</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Defines the relationship that links a rule, policy or asset to the limitations of liability applicable to one or more parties, specifying the scope and restrictions in cases of damages or breaches</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Requires</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Requires</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This relationship specifies that all disputes must be resolved through arbitration</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/requires">tosl:requires</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Takes Place In</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Takes Place In</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This term describes the relationship between Dispute Resolution and Jurisdiction, specifying the location where disputes are to be resolved</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Triggers</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Triggers</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Represents the relationship where a permission can trigger a specific duty for a party</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/triggers">tosl:triggers</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Dispute Resolution</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Dispute Resolution</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Employed to specify the mechanisms for resolving disputes among the parties involved in the agreement</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/DisputeResolution">tosl:DisputeResolution</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Jurisdiction</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Jurisdiction</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Jurisdiction refers to the specific location or legal authority where a dispute must be resolved</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/Jurisdiction">tosl:Jurisdiction</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Law</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Law</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Law refers to the specific statutes and regulations that govern an agreement and are applicable in resolving any disputes arising from it</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/Law">tosl:Law</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Liability</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Liability</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Liability refers to the specific provisions that define and restrict the extent to which each party in the agreement can be held accountable for damages or losses</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/Liability">tosl:Liability</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Litigation</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Litigation</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Litigation is a legal process in which the provider or customer, acting as the plaintiff, initiates proceedings against the other party, called the defendant, before a civil court in a settlement dispute</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/Litigation">tosl:Litigation</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Service</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Service</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>An asset that includes the service affected by the action as a resource</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/Service">tosl:Service</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">User Content</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>User Content</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>An asset that encompasses either all or part of a user's content</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/UserContent">tosl:UserContent</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Remove</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Remove</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This action may authorize, obligate, or prohibit the deletion of content from the provided services</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/remove">tosl:remove</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Consent</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Consent</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This action signifies your acceptance of the associated asset</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/consent">tosl:consent</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Allow Download</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Allow Download</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Allow download refers to the action that permits one of the parties, typically the client, to download personal information or information about contracted services</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/allowDownload">tosl:allowDownload</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Terminate</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Terminate</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This action permits the termination of an asset, whether it be the agreement, services, or any other associated entity</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/terminate">tosl:terminate</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Publish</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Publish</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This action mandates the public release of an asset</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/publish">tosl:publish</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Integrate</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Integrate</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This action allows, obligates, or prohibits the integration of the provided service with your application.</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/integrate">tosl:integrate</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Any Damage</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Any Damage</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This liability provision specifies that the designated party may or may not be held liable for damages caused by the other party.</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/anyLiability">tosl:anyLiability</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Physical Injuries</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Physical Injuries</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This provision outlines the liability of the party in cases of physical damages caused to the other party</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/physicalInjuries">tosl:physicalInjuries</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Harm Caused By Malware</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Harm Caused By Malware</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>The party is or not is responsible for any damages resulting from malware</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/harmCausedByMalware">tosl:harmCausedByMalware</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Justification</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Justification</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This condition mandates that specific actions can only be undertaken with appropriate justification</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/justification">tosl:justification</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Prior Notice</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Prior Notice</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This stipulates that the parties must give advance notice before certain actions are taken</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/priorNotice">tosl:priorNotice</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Consent Type</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Consent Type</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This term refers to the specific manner in which consent is given by a party within an agreement, outlining whether it is implicit, explicit, or expressed through other defined actions</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/consentType">tosl:consentType</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Complies With</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Complies With</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>The use of the services requires adherence to specific conditions and obligations outlined by the service provider</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/compliesWith">tosl:compliesWith</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Causes</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Causes</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Indicates that the specified action produces a direct effect or consequence on the target of the Rule. This operand is used to establish a cause-effect relationship where the action leads to a measurable impact on an asset</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/causes">tosl:causes</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Implicit Consent</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Implicit Consent</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This type of consent implies that by merely utilizing the service, the customer agrees to the terms of the agreement by default</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/implicitConsent">tosl:implicitConsent</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Explicit Consent</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Explicit Consent</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This form of consent requires that the customer explicitly affirm or accept the agreement through a formal action, such as signing a document</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/explicitConsent">tosl:explicitConsent</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Degradation</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Degradation</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Indicates a significant and unreasonable degradation of some metric, such as response time or availability, caused by the action of the Rule to the target of the Rule</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/degradation">tosl:degradation</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Consumer Place Law</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Consumer Place Law</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This provision states that the law governing the agreement is that of the consumer's country or the law that affects the consumer</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/consumerPlaceLaw">tosl:consumerPlaceLaw</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">California Law</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>California Law</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This instance denotes that the governing law applicable to the agreement is that of California</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/californiaLaw">tosl:californiaLaw</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">European Law</h3>
+    <table class="def">
+      
+         
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>European Law</p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>this stipulates that the law regulating the agreement is European law</p>
+            </td>
+          </tr>
+        
+      
+        
+      
+         
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/europeanLaw">tosl:europeanLaw</a></p>
+            </td>
+          </tr>
+        
+      
+         
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+  </section>
+
+  <section>
+    <h2>Properties</h2>
+
+    
+    <h3 id="">Arbitration</h3>
+    <table class="def">
+      
+        
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Arbitration</p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Represents the relationship between a Policy and its associated Dispute Resolution mechanism, specifying how, where, and under which law disputes arising under the Policy will be resolved</p>
+            </td>
+          </tr>
+        
+      
+       
+      
+        
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Domain</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/europeanLaw">tosl:europeanLaw</a>, <a href="http://www.w3.org/tosl/publish">tosl:publish</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/Litigation">tosl:Litigation</a>, <a href="http://www.w3.org/tosl/UserContent">tosl:UserContent</a>, <a href="http://www.w3.org/tosl/compliesWith">tosl:compliesWith</a>, <a href="http://www.w3.org/tosl/Jurisdiction">tosl:Jurisdiction</a>, <a href="http://www.w3.org/tosl/integrate">tosl:integrate</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/allowDownload">tosl:allowDownload</a>, <a href="http://www.w3.org/tosl/californiaLaw">tosl:californiaLaw</a>, <a href="http://www.w3.org/tosl/anyLiability">tosl:anyLiability</a>, <a href="http://www.w3.org/tosl/implicitConsent">tosl:implicitConsent</a>, <a href="http://www.w3.org/tosl/terminate">tosl:terminate</a>, <a href="http://www.w3.org/tosl/explicitConsent">tosl:explicitConsent</a>, <a href="http://www.w3.org/tosl/harmCausedByMalware">tosl:harmCausedByMalware</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a>, <a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/Service">tosl:Service</a>, <a href="http://www.w3.org/tosl/consent">tosl:consent</a>, <a href="http://www.w3.org/tosl/consumerPlaceLaw">tosl:consumerPlaceLaw</a>, <a href="http://www.w3.org/tosl/physicalInjuries">tosl:physicalInjuries</a>, <a href="http://www.w3.org/tosl/DisputeResolution">tosl:DisputeResolution</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/Law">tosl:Law</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/degradation">tosl:degradation</a>, <a href="http://www.w3.org/tosl/justification">tosl:justification</a>, <a href="http://www.w3.org/tosl/consentType">tosl:consentType</a>, <a href="http://www.w3.org/tosl/remove">tosl:remove</a>, <a href="http://www.w3.org/tosl/priorNotice">tosl:priorNotice</a>, <a href="http://www.w3.org/tosl/Arbitration">tosl:Arbitration</a>, <a href="http://www.w3.org/tosl/causes">tosl:causes</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/Liability">tosl:Liability</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Range</p>
+            </td>
+            <td>
+              <p></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Has Condition</h3>
+    <table class="def">
+      
+        
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Has Condition</p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This relationship enables the specification of particular restrictions that apply to the dispute</p>
+            </td>
+          </tr>
+        
+      
+       
+      
+        
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/condition">tosl:condition</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Domain</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/europeanLaw">tosl:europeanLaw</a>, <a href="http://www.w3.org/tosl/publish">tosl:publish</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/Litigation">tosl:Litigation</a>, <a href="http://www.w3.org/tosl/UserContent">tosl:UserContent</a>, <a href="http://www.w3.org/tosl/compliesWith">tosl:compliesWith</a>, <a href="http://www.w3.org/tosl/Jurisdiction">tosl:Jurisdiction</a>, <a href="http://www.w3.org/tosl/integrate">tosl:integrate</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/allowDownload">tosl:allowDownload</a>, <a href="http://www.w3.org/tosl/californiaLaw">tosl:californiaLaw</a>, <a href="http://www.w3.org/tosl/anyLiability">tosl:anyLiability</a>, <a href="http://www.w3.org/tosl/implicitConsent">tosl:implicitConsent</a>, <a href="http://www.w3.org/tosl/terminate">tosl:terminate</a>, <a href="http://www.w3.org/tosl/explicitConsent">tosl:explicitConsent</a>, <a href="http://www.w3.org/tosl/harmCausedByMalware">tosl:harmCausedByMalware</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a>, <a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/Service">tosl:Service</a>, <a href="http://www.w3.org/tosl/consent">tosl:consent</a>, <a href="http://www.w3.org/tosl/consumerPlaceLaw">tosl:consumerPlaceLaw</a>, <a href="http://www.w3.org/tosl/physicalInjuries">tosl:physicalInjuries</a>, <a href="http://www.w3.org/tosl/DisputeResolution">tosl:DisputeResolution</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/Law">tosl:Law</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/degradation">tosl:degradation</a>, <a href="http://www.w3.org/tosl/justification">tosl:justification</a>, <a href="http://www.w3.org/tosl/consentType">tosl:consentType</a>, <a href="http://www.w3.org/tosl/remove">tosl:remove</a>, <a href="http://www.w3.org/tosl/priorNotice">tosl:priorNotice</a>, <a href="http://www.w3.org/tosl/Arbitration">tosl:Arbitration</a>, <a href="http://www.w3.org/tosl/causes">tosl:causes</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/Liability">tosl:Liability</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Range</p>
+            </td>
+            <td>
+              <p></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Governed By</h3>
+    <table class="def">
+      
+        
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Governed By</p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Establishes the connection to the specific legal framework that governs the agreement</p>
+            </td>
+          </tr>
+        
+      
+       
+      
+        
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Domain</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/europeanLaw">tosl:europeanLaw</a>, <a href="http://www.w3.org/tosl/publish">tosl:publish</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/Litigation">tosl:Litigation</a>, <a href="http://www.w3.org/tosl/UserContent">tosl:UserContent</a>, <a href="http://www.w3.org/tosl/compliesWith">tosl:compliesWith</a>, <a href="http://www.w3.org/tosl/Jurisdiction">tosl:Jurisdiction</a>, <a href="http://www.w3.org/tosl/integrate">tosl:integrate</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/allowDownload">tosl:allowDownload</a>, <a href="http://www.w3.org/tosl/californiaLaw">tosl:californiaLaw</a>, <a href="http://www.w3.org/tosl/anyLiability">tosl:anyLiability</a>, <a href="http://www.w3.org/tosl/implicitConsent">tosl:implicitConsent</a>, <a href="http://www.w3.org/tosl/terminate">tosl:terminate</a>, <a href="http://www.w3.org/tosl/explicitConsent">tosl:explicitConsent</a>, <a href="http://www.w3.org/tosl/harmCausedByMalware">tosl:harmCausedByMalware</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a>, <a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/Service">tosl:Service</a>, <a href="http://www.w3.org/tosl/consent">tosl:consent</a>, <a href="http://www.w3.org/tosl/consumerPlaceLaw">tosl:consumerPlaceLaw</a>, <a href="http://www.w3.org/tosl/physicalInjuries">tosl:physicalInjuries</a>, <a href="http://www.w3.org/tosl/DisputeResolution">tosl:DisputeResolution</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/Law">tosl:Law</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/degradation">tosl:degradation</a>, <a href="http://www.w3.org/tosl/justification">tosl:justification</a>, <a href="http://www.w3.org/tosl/consentType">tosl:consentType</a>, <a href="http://www.w3.org/tosl/remove">tosl:remove</a>, <a href="http://www.w3.org/tosl/priorNotice">tosl:priorNotice</a>, <a href="http://www.w3.org/tosl/Arbitration">tosl:Arbitration</a>, <a href="http://www.w3.org/tosl/causes">tosl:causes</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/Liability">tosl:Liability</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Range</p>
+            </td>
+            <td>
+              <p></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">With Liability</h3>
+    <table class="def">
+      
+        
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>With Liability</p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Establishes the relationship between a rule, policy or asset and the applicable liabilities, describing the duties or obligations to be assumed in a specific context</p>
+            </td>
+          </tr>
+        
+      
+       
+      
+        
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/liability">tosl:liability</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Domain</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/europeanLaw">tosl:europeanLaw</a>, <a href="http://www.w3.org/tosl/publish">tosl:publish</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/Litigation">tosl:Litigation</a>, <a href="http://www.w3.org/tosl/UserContent">tosl:UserContent</a>, <a href="http://www.w3.org/tosl/compliesWith">tosl:compliesWith</a>, <a href="http://www.w3.org/tosl/Jurisdiction">tosl:Jurisdiction</a>, <a href="http://www.w3.org/tosl/integrate">tosl:integrate</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/allowDownload">tosl:allowDownload</a>, <a href="http://www.w3.org/tosl/californiaLaw">tosl:californiaLaw</a>, <a href="http://www.w3.org/tosl/anyLiability">tosl:anyLiability</a>, <a href="http://www.w3.org/tosl/implicitConsent">tosl:implicitConsent</a>, <a href="http://www.w3.org/tosl/terminate">tosl:terminate</a>, <a href="http://www.w3.org/tosl/explicitConsent">tosl:explicitConsent</a>, <a href="http://www.w3.org/tosl/harmCausedByMalware">tosl:harmCausedByMalware</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a>, <a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/Service">tosl:Service</a>, <a href="http://www.w3.org/tosl/consent">tosl:consent</a>, <a href="http://www.w3.org/tosl/consumerPlaceLaw">tosl:consumerPlaceLaw</a>, <a href="http://www.w3.org/tosl/physicalInjuries">tosl:physicalInjuries</a>, <a href="http://www.w3.org/tosl/DisputeResolution">tosl:DisputeResolution</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/Law">tosl:Law</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/degradation">tosl:degradation</a>, <a href="http://www.w3.org/tosl/justification">tosl:justification</a>, <a href="http://www.w3.org/tosl/consentType">tosl:consentType</a>, <a href="http://www.w3.org/tosl/remove">tosl:remove</a>, <a href="http://www.w3.org/tosl/priorNotice">tosl:priorNotice</a>, <a href="http://www.w3.org/tosl/Arbitration">tosl:Arbitration</a>, <a href="http://www.w3.org/tosl/causes">tosl:causes</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/Liability">tosl:Liability</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Range</p>
+            </td>
+            <td>
+              <p></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Liable Party</h3>
+    <table class="def">
+      
+        
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Liable Party</p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This term establishes the connection between liability and a party to whom they apply</p>
+            </td>
+          </tr>
+        
+      
+       
+      
+        
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Domain</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/europeanLaw">tosl:europeanLaw</a>, <a href="http://www.w3.org/tosl/publish">tosl:publish</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/Litigation">tosl:Litigation</a>, <a href="http://www.w3.org/tosl/UserContent">tosl:UserContent</a>, <a href="http://www.w3.org/tosl/compliesWith">tosl:compliesWith</a>, <a href="http://www.w3.org/tosl/Jurisdiction">tosl:Jurisdiction</a>, <a href="http://www.w3.org/tosl/integrate">tosl:integrate</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/allowDownload">tosl:allowDownload</a>, <a href="http://www.w3.org/tosl/californiaLaw">tosl:californiaLaw</a>, <a href="http://www.w3.org/tosl/anyLiability">tosl:anyLiability</a>, <a href="http://www.w3.org/tosl/implicitConsent">tosl:implicitConsent</a>, <a href="http://www.w3.org/tosl/terminate">tosl:terminate</a>, <a href="http://www.w3.org/tosl/explicitConsent">tosl:explicitConsent</a>, <a href="http://www.w3.org/tosl/harmCausedByMalware">tosl:harmCausedByMalware</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a>, <a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/Service">tosl:Service</a>, <a href="http://www.w3.org/tosl/consent">tosl:consent</a>, <a href="http://www.w3.org/tosl/consumerPlaceLaw">tosl:consumerPlaceLaw</a>, <a href="http://www.w3.org/tosl/physicalInjuries">tosl:physicalInjuries</a>, <a href="http://www.w3.org/tosl/DisputeResolution">tosl:DisputeResolution</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/Law">tosl:Law</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/degradation">tosl:degradation</a>, <a href="http://www.w3.org/tosl/justification">tosl:justification</a>, <a href="http://www.w3.org/tosl/consentType">tosl:consentType</a>, <a href="http://www.w3.org/tosl/remove">tosl:remove</a>, <a href="http://www.w3.org/tosl/priorNotice">tosl:priorNotice</a>, <a href="http://www.w3.org/tosl/Arbitration">tosl:Arbitration</a>, <a href="http://www.w3.org/tosl/causes">tosl:causes</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/Liability">tosl:Liability</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Range</p>
+            </td>
+            <td>
+              <p></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Has Limitation</h3>
+    <table class="def">
+      
+        
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Has Limitation</p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Defines a relationship that allows specifying particular restrictions or conditions related to the limitation of liabilities of a party</p>
+            </td>
+          </tr>
+        
+      
+       
+      
+        
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/limitation">tosl:limitation</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Domain</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/europeanLaw">tosl:europeanLaw</a>, <a href="http://www.w3.org/tosl/publish">tosl:publish</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/Litigation">tosl:Litigation</a>, <a href="http://www.w3.org/tosl/UserContent">tosl:UserContent</a>, <a href="http://www.w3.org/tosl/compliesWith">tosl:compliesWith</a>, <a href="http://www.w3.org/tosl/Jurisdiction">tosl:Jurisdiction</a>, <a href="http://www.w3.org/tosl/integrate">tosl:integrate</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/allowDownload">tosl:allowDownload</a>, <a href="http://www.w3.org/tosl/californiaLaw">tosl:californiaLaw</a>, <a href="http://www.w3.org/tosl/anyLiability">tosl:anyLiability</a>, <a href="http://www.w3.org/tosl/implicitConsent">tosl:implicitConsent</a>, <a href="http://www.w3.org/tosl/terminate">tosl:terminate</a>, <a href="http://www.w3.org/tosl/explicitConsent">tosl:explicitConsent</a>, <a href="http://www.w3.org/tosl/harmCausedByMalware">tosl:harmCausedByMalware</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a>, <a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/Service">tosl:Service</a>, <a href="http://www.w3.org/tosl/consent">tosl:consent</a>, <a href="http://www.w3.org/tosl/consumerPlaceLaw">tosl:consumerPlaceLaw</a>, <a href="http://www.w3.org/tosl/physicalInjuries">tosl:physicalInjuries</a>, <a href="http://www.w3.org/tosl/DisputeResolution">tosl:DisputeResolution</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/Law">tosl:Law</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/degradation">tosl:degradation</a>, <a href="http://www.w3.org/tosl/justification">tosl:justification</a>, <a href="http://www.w3.org/tosl/consentType">tosl:consentType</a>, <a href="http://www.w3.org/tosl/remove">tosl:remove</a>, <a href="http://www.w3.org/tosl/priorNotice">tosl:priorNotice</a>, <a href="http://www.w3.org/tosl/Arbitration">tosl:Arbitration</a>, <a href="http://www.w3.org/tosl/causes">tosl:causes</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/Liability">tosl:Liability</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Range</p>
+            </td>
+            <td>
+              <p></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">With Limitation Of Liability</h3>
+    <table class="def">
+      
+        
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>With Limitation Of Liability</p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Defines the relationship that links a rule, policy or asset to the limitations of liability applicable to one or more parties, specifying the scope and restrictions in cases of damages or breaches</p>
+            </td>
+          </tr>
+        
+      
+       
+      
+        
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Domain</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/europeanLaw">tosl:europeanLaw</a>, <a href="http://www.w3.org/tosl/publish">tosl:publish</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/Litigation">tosl:Litigation</a>, <a href="http://www.w3.org/tosl/UserContent">tosl:UserContent</a>, <a href="http://www.w3.org/tosl/compliesWith">tosl:compliesWith</a>, <a href="http://www.w3.org/tosl/Jurisdiction">tosl:Jurisdiction</a>, <a href="http://www.w3.org/tosl/integrate">tosl:integrate</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/allowDownload">tosl:allowDownload</a>, <a href="http://www.w3.org/tosl/californiaLaw">tosl:californiaLaw</a>, <a href="http://www.w3.org/tosl/anyLiability">tosl:anyLiability</a>, <a href="http://www.w3.org/tosl/implicitConsent">tosl:implicitConsent</a>, <a href="http://www.w3.org/tosl/terminate">tosl:terminate</a>, <a href="http://www.w3.org/tosl/explicitConsent">tosl:explicitConsent</a>, <a href="http://www.w3.org/tosl/harmCausedByMalware">tosl:harmCausedByMalware</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a>, <a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/Service">tosl:Service</a>, <a href="http://www.w3.org/tosl/consent">tosl:consent</a>, <a href="http://www.w3.org/tosl/consumerPlaceLaw">tosl:consumerPlaceLaw</a>, <a href="http://www.w3.org/tosl/physicalInjuries">tosl:physicalInjuries</a>, <a href="http://www.w3.org/tosl/DisputeResolution">tosl:DisputeResolution</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/Law">tosl:Law</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/degradation">tosl:degradation</a>, <a href="http://www.w3.org/tosl/justification">tosl:justification</a>, <a href="http://www.w3.org/tosl/consentType">tosl:consentType</a>, <a href="http://www.w3.org/tosl/remove">tosl:remove</a>, <a href="http://www.w3.org/tosl/priorNotice">tosl:priorNotice</a>, <a href="http://www.w3.org/tosl/Arbitration">tosl:Arbitration</a>, <a href="http://www.w3.org/tosl/causes">tosl:causes</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/Liability">tosl:Liability</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Range</p>
+            </td>
+            <td>
+              <p></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Requires</h3>
+    <table class="def">
+      
+        
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Requires</p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This relationship specifies that all disputes must be resolved through arbitration</p>
+            </td>
+          </tr>
+        
+      
+       
+      
+        
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/requires">tosl:requires</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Domain</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/europeanLaw">tosl:europeanLaw</a>, <a href="http://www.w3.org/tosl/publish">tosl:publish</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/Litigation">tosl:Litigation</a>, <a href="http://www.w3.org/tosl/UserContent">tosl:UserContent</a>, <a href="http://www.w3.org/tosl/compliesWith">tosl:compliesWith</a>, <a href="http://www.w3.org/tosl/Jurisdiction">tosl:Jurisdiction</a>, <a href="http://www.w3.org/tosl/integrate">tosl:integrate</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/allowDownload">tosl:allowDownload</a>, <a href="http://www.w3.org/tosl/californiaLaw">tosl:californiaLaw</a>, <a href="http://www.w3.org/tosl/anyLiability">tosl:anyLiability</a>, <a href="http://www.w3.org/tosl/implicitConsent">tosl:implicitConsent</a>, <a href="http://www.w3.org/tosl/terminate">tosl:terminate</a>, <a href="http://www.w3.org/tosl/explicitConsent">tosl:explicitConsent</a>, <a href="http://www.w3.org/tosl/harmCausedByMalware">tosl:harmCausedByMalware</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a>, <a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/Service">tosl:Service</a>, <a href="http://www.w3.org/tosl/consent">tosl:consent</a>, <a href="http://www.w3.org/tosl/consumerPlaceLaw">tosl:consumerPlaceLaw</a>, <a href="http://www.w3.org/tosl/physicalInjuries">tosl:physicalInjuries</a>, <a href="http://www.w3.org/tosl/DisputeResolution">tosl:DisputeResolution</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/Law">tosl:Law</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/degradation">tosl:degradation</a>, <a href="http://www.w3.org/tosl/justification">tosl:justification</a>, <a href="http://www.w3.org/tosl/consentType">tosl:consentType</a>, <a href="http://www.w3.org/tosl/remove">tosl:remove</a>, <a href="http://www.w3.org/tosl/priorNotice">tosl:priorNotice</a>, <a href="http://www.w3.org/tosl/Arbitration">tosl:Arbitration</a>, <a href="http://www.w3.org/tosl/causes">tosl:causes</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/Liability">tosl:Liability</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Range</p>
+            </td>
+            <td>
+              <p></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Takes Place In</h3>
+    <table class="def">
+      
+        
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Takes Place In</p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>This term describes the relationship between Dispute Resolution and Jurisdiction, specifying the location where disputes are to be resolved</p>
+            </td>
+          </tr>
+        
+      
+       
+      
+        
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Domain</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/europeanLaw">tosl:europeanLaw</a>, <a href="http://www.w3.org/tosl/publish">tosl:publish</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/Litigation">tosl:Litigation</a>, <a href="http://www.w3.org/tosl/UserContent">tosl:UserContent</a>, <a href="http://www.w3.org/tosl/compliesWith">tosl:compliesWith</a>, <a href="http://www.w3.org/tosl/Jurisdiction">tosl:Jurisdiction</a>, <a href="http://www.w3.org/tosl/integrate">tosl:integrate</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/allowDownload">tosl:allowDownload</a>, <a href="http://www.w3.org/tosl/californiaLaw">tosl:californiaLaw</a>, <a href="http://www.w3.org/tosl/anyLiability">tosl:anyLiability</a>, <a href="http://www.w3.org/tosl/implicitConsent">tosl:implicitConsent</a>, <a href="http://www.w3.org/tosl/terminate">tosl:terminate</a>, <a href="http://www.w3.org/tosl/explicitConsent">tosl:explicitConsent</a>, <a href="http://www.w3.org/tosl/harmCausedByMalware">tosl:harmCausedByMalware</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a>, <a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/Service">tosl:Service</a>, <a href="http://www.w3.org/tosl/consent">tosl:consent</a>, <a href="http://www.w3.org/tosl/consumerPlaceLaw">tosl:consumerPlaceLaw</a>, <a href="http://www.w3.org/tosl/physicalInjuries">tosl:physicalInjuries</a>, <a href="http://www.w3.org/tosl/DisputeResolution">tosl:DisputeResolution</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/Law">tosl:Law</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/degradation">tosl:degradation</a>, <a href="http://www.w3.org/tosl/justification">tosl:justification</a>, <a href="http://www.w3.org/tosl/consentType">tosl:consentType</a>, <a href="http://www.w3.org/tosl/remove">tosl:remove</a>, <a href="http://www.w3.org/tosl/priorNotice">tosl:priorNotice</a>, <a href="http://www.w3.org/tosl/Arbitration">tosl:Arbitration</a>, <a href="http://www.w3.org/tosl/causes">tosl:causes</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/Liability">tosl:Liability</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Range</p>
+            </td>
+            <td>
+              <p></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+    <h3 id="">Triggers</h3>
+    <table class="def">
+      
+        
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Triggers</p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Represents the relationship where a permission can trigger a specific duty for a party</p>
+            </td>
+          </tr>
+        
+      
+       
+      
+        
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/triggers">tosl:triggers</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Domain</p>
+            </td>
+            <td>
+              <p><a href="http://www.w3.org/tosl/europeanLaw">tosl:europeanLaw</a>, <a href="http://www.w3.org/tosl/publish">tosl:publish</a>, <a href="http://www.w3.org/tosl/governedBy">tosl:governedBy</a>, <a href="http://www.w3.org/tosl/Litigation">tosl:Litigation</a>, <a href="http://www.w3.org/tosl/UserContent">tosl:UserContent</a>, <a href="http://www.w3.org/tosl/compliesWith">tosl:compliesWith</a>, <a href="http://www.w3.org/tosl/Jurisdiction">tosl:Jurisdiction</a>, <a href="http://www.w3.org/tosl/integrate">tosl:integrate</a>, <a href="http://www.w3.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>, <a href="http://www.w3.org/tosl/allowDownload">tosl:allowDownload</a>, <a href="http://www.w3.org/tosl/californiaLaw">tosl:californiaLaw</a>, <a href="http://www.w3.org/tosl/anyLiability">tosl:anyLiability</a>, <a href="http://www.w3.org/tosl/implicitConsent">tosl:implicitConsent</a>, <a href="http://www.w3.org/tosl/terminate">tosl:terminate</a>, <a href="http://www.w3.org/tosl/explicitConsent">tosl:explicitConsent</a>, <a href="http://www.w3.org/tosl/harmCausedByMalware">tosl:harmCausedByMalware</a>, <a href="http://www.w3.org/tosl/limitation">tosl:limitation</a>, <a href="http://www.w3.org/tosl/onDispute">tosl:onDispute</a>, <a href="http://www.w3.org/tosl/Service">tosl:Service</a>, <a href="http://www.w3.org/tosl/consent">tosl:consent</a>, <a href="http://www.w3.org/tosl/consumerPlaceLaw">tosl:consumerPlaceLaw</a>, <a href="http://www.w3.org/tosl/physicalInjuries">tosl:physicalInjuries</a>, <a href="http://www.w3.org/tosl/DisputeResolution">tosl:DisputeResolution</a>, <a href="http://www.w3.org/tosl/condition">tosl:condition</a>, <a href="http://www.w3.org/tosl/Law">tosl:Law</a>, <a href="http://www.w3.org/tosl/liability">tosl:liability</a>, <a href="http://www.w3.org/tosl/liableParty">tosl:liableParty</a>, <a href="http://www.w3.org/tosl/triggers">tosl:triggers</a>, <a href="http://www.w3.org/tosl/degradation">tosl:degradation</a>, <a href="http://www.w3.org/tosl/justification">tosl:justification</a>, <a href="http://www.w3.org/tosl/consentType">tosl:consentType</a>, <a href="http://www.w3.org/tosl/remove">tosl:remove</a>, <a href="http://www.w3.org/tosl/priorNotice">tosl:priorNotice</a>, <a href="http://www.w3.org/tosl/Arbitration">tosl:Arbitration</a>, <a href="http://www.w3.org/tosl/causes">tosl:causes</a>, <a href="http://www.w3.org/tosl/requires">tosl:requires</a>, <a href="http://www.w3.org/tosl/Liability">tosl:Liability</a>, <a href="http://www.w3.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a></p>
+            </td>
+          </tr>
+        
+      
+        
+          <tr>
+            <td>
+              <p>Range</p>
+            </td>
+            <td>
+              <p></p>
+            </td>
+          </tr>
+        
+      
+    </table>
+    
+  </section>
+
+
+  <section>
+    <h2>Enumeration Values</h2>
+
+    
+    
+  </section>
+</body>
+
+
+</html>

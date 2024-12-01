@@ -6,6 +6,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix profile: <http://www.w3.org/ns/dx/prof/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
 @prefix tosl: <http://isagroup/tosl/> .
@@ -15,11 +16,17 @@
             profile:isProfileOf <http://www.w3.org/ns/odrl/2/core> ;
             rdfs:comment "This is the RDF ontology for the ODLR profile Terms of Service language" ;
             rdfs:label "ODLR Terms of Service Language Profile Version 1" ;
-            dcterms:description "The ODLR Profile for Terms of Service Language (TOSL) enhances the understanding and enforcement of legal terms within service agreements. Utilizing the Open Digital Rights Language (ODLR), this profile specifies the obligations, rights, and prohibitions contained in agreements to effectively identify and flag potentially unfair terms. By integrating ODLR's flexible framework, the TSL profile aims to ensure clearer, more enforceable, and fairer terms of service agreements across diverse digital platforms." ;
-            dcterms:source <http://www.w3.org/ns/odrl/2/> ;
+            dcterms:abstract "Abstract." ;
+            dcterms:contributor "ISA-Group" ;
             dcterms:created "2024-11-27"^^xsd:date ;
             dcterms:creator "Elena Molino Peña", "José María Cruz", "José María García", "Antonio Ruiz Cortés" ;
-            dcterms:license <https://dalicc.net/licenselibrary/CC-BY-4.0> .
+            dcterms:description "The ODLR Profile for Terms of Service Language (TOSL) enhances the understanding and enforcement of legal terms within service agreements. Utilizing the Open Digital Rights Language (ODLR), this profile specifies the obligations, rights, and prohibitions contained in agreements to effectively identify and flag potentially unfair terms. By integrating ODLR's flexible framework, the TSL profile aims to ensure clearer, more enforceable, and fairer terms of service agreements across diverse digital platforms." ;
+            dcterms:license <https://dalicc.net/licenselibrary/CC-BY-4.0> ;
+            dcterms:title "Terms of Service Language Ontology" ;
+            dcterms:modified "2024-01-17"^^xsd:date ;
+            vann:preferredNamespacePrefix "tosl" ;
+            vann:preferredNamespaceUri "http://www.w3.org/tosl/"^^xsd:string ;
+            owl:versionInfo "1"^^xsd:string .
 
 #################################################################
 #    Object Properties
