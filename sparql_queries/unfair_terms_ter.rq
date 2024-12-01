@@ -16,6 +16,5 @@ WHERE {
     }
     FILTER (?action = tosl:terminate ||
             ?action = tosl:suspend ||
-            ?action = tosl:remove ||
             ?action = tosl:disable)
 }
