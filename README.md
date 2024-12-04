@@ -60,7 +60,7 @@ An ontology designed to represent contractual terms in Software-as-a-Service (Sa
 ## Profile diagram
 The figure below illustrates the concepts defined by the ODRL Profile for Terms of Service. These concepts facilitate the modeling of statements outlined in cloud provider agreements and enable the evaluation of the previously formulated questions to identify potentially abusive contractual terms.
 
-![ontology_model](img/ontology_model.png)
+![ontology_model](img/tosl_model.png)
 
 
 ## Sample with TOSL
