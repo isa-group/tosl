@@ -10,7 +10,7 @@ WHERE {
     FILTER NOT EXISTS {
         ?permission odrl:constraint ?constraint .
     }
-    FILTER NOT EXITS {
+    FILTER NOT EXISTS {
         ?permission odrl:duty ?duty .
     }
     FILTER (?action = odrl:modify)
