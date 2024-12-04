@@ -1,0 +1,38 @@
+API Service Agreement
+PLEASE READ THE FOLLOWING TERMS AND CONDITIONS CAREFULLY. THESE TERMS AND CONDITIONS CONSTITUTE A LEGAL AGREEMENT BETWEEN YOU AND ELSEVIER.
+1 ACKNOWLEDGEMENT AND ACCEPTANCE
+
+1.1 The application programmable interfaces service (the "API Service") owned and operated by Elsevier B.V. ("Elsevier") is provided to ("You", "Your" or "the Developer") under the terms and conditions of this API Service Agreement. You confirm that You have the right and authority to enter into this Agreement. You accept and agree to the terms and conditions of this Agreement on Your own behalf and/or on behalf of Your company, institute or organization as its authorized legal representative.
+
+1.3 Elsevier grants You a limited license to use the, application programmable interfaces ("APIs"), data, files and other materials provided by Elsevier,     to develop and test Your software application ("Application") and to integrate the Application with the API, subject to the usage restrictions as set forth     in the API's Content Usage Policies on http://dev.elsevier.com/policy.html. All notices given pursuant to     this Agreement shall be in writing and delivered to email address as indicated in the developer portal at dev.elsevier.com.
+
+2. ELSEVIER RIGHTS AND OBLIGATIONS.
+2.1 After You have accepted this Agreement, Elsevier will issue an API Key to You for use with the API Service. Elsevier retains the right to immediately     suspend the Application's access to the API Service if, in Elsevier's sole judgment:
+the Application's usage of the API Service negatively affects the availability or performance of the API Service, or the Application is in breach of the API's Content Usage Policies on http://dev.elsevier.com/policy.html
+
+2.3 Elsevier reserves the right to deactivate API Keys that have not been used to access the APIs for 90 days.
+
+3. DEVELOPER RIGHTS AND RESPONSIBILITIES.
+3.1 The Developer represents and warrants that:
+
+3.1.1 the Application will not use Elsevier content other than allowed by the API's Content Usage Policies on    http://dev.elsevier.com/policy.html;
+
+3.1.2 the Application will use the API Key issued by Elsevier upon execution of this Agreement, and no other API Key issued for use by other applications     and/or to other developers;
+
+3.1.3 the Application will avoid excessive and unnecessary use of the API Service that may cause a performance degradation of the API Service;
+
+3.1.4 the Developer acknowledges that all right, title and interest in and to the Elsevier content, and any derivative works based upon the Elsevier     content, remain with Elsevier and its suppliers, except as expressly set forth in this Agreement, and that the unauthorized redistribution of the Elsevier     content is not permitted.
+
+3.2 The Developer will be solely responsible and hold Elsevier harmless for all costs, expenses, losses and liabilities incurred, and activities undertaken     by the Developer in connection with the API Service.
+
+3.3 Developer shall obtain written permission in advance from Elsevier to use Elsevier's trademarks, logos or other brand features for promoting the     Developer's Application. Any press releases regarding this Agreement or the relationship of the parties shall require the prior approval of the parties.
+
+3.4 The Developer shall not display any advertising inside the Application or use any content as obtained via the API outside the Application, unless     permitted by Elsevier in writing.
+
+4. DISCLAIMER.
+The API service is provided on an "as is" and "as available" basis without warranties of any kind, either express or implied, including but not limited to     warranties of merchantability or fitness for a particular purpose. Except as expressly stated in this Agreement, each party disclaims all liability to the     other party in connection with the parties' performance of this Agreement and in no event will the infringing party be liable to the other party for     special, indirect or consequential damages including but not limited to loss of profits, loss of business or unfitness for user purposes.
+
+5. TERM AND TERMINATION.
+The term of this Agreement shall commence on the date on which the Developer has accepted this Agreement and shall continue until either party terminates the Agreement in writing or the API Key is deactivated by Elsevier.
+
+6. GOVERNING LAW AND VENUE.
