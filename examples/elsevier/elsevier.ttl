@@ -46,12 +46,6 @@
 # organization as its authorized legal representative.                         #
 ################################################################################
 
-#:obligation01 a odrl:duty;
-#    dcterms:description "1.1 The application programmable interfaces service (the \"API Service\") owned and operated by Elsevier B.V. (\"Elsevier\") is provided to (\"You\", \"Your\" or \"the Developer\") under the terms and conditions of this API Service Agreement. You confirm that You have the right and authority to enter into this Agreement. You accept and agree to the terms and conditions of this Agreement on Your own behalf and/or on behalf of Your company, institute or organization as its authorized legal representative." ;
-#    odrl:action tosl:comply ;
-#    odrl:target :agreement01 ;
-#    odrl:assignee :customer01 .
-
 :permission01 a odrl:Permission ;
     dcterms:description "1.1 The application programmable interfaces service (the \"API Service\") owned and operated by Elsevier B.V. (\"Elsevier\") is provided to (\"You\", \"Your\" or \"the Developer\") under the terms and conditions of this API Service Agreement. You confirm that You have the right and authority to enter into this Agreement. You accept and agree to the terms and conditions of this Agreement on Your own behalf and/or on behalf of Your company, institute or organization as its authorized legal representative." ;
     odrl:action odrl:use ;
@@ -126,8 +120,8 @@
 
 ################################ TERM 1.3 ######################################
 # 1.3 Elsevier grants You a limited license to use the, application            #
-# programmable interfaces ("APIs"), data, # files and other materials provided #
-# by Elsevier, to develop and test Your software application #("Application")  #
+# programmable interfaces ("APIs"), data,  files and other materials provided  #
+# by Elsevier, to develop and test Your software application ("Application")   #
 # and to integrate the Application with the API, subject to the usage          #
 # restrictions as set forth in the API's Content Usage Policies on             #
 # http://dev.elsevier.com/policy.html. All notices given pursuant to           #
@@ -139,10 +133,10 @@
     dcterms:description "1.3 Elsevier grants You a limited license to use the, application programmable interfaces (\"APIs\"), data, files and other materials provided by Elsevier, to develop and test Your software application (\"Application\") and to integrate the Application with the API, subject to the usage restrictions as set forth in the API's Content Usage Policies on http://dev.elsevier.com/policy.html. All notices given pursuant to this Agreement shall be in writing and delivered to email address as indicated in the developer portal at dev.elsevier.com." ;
     odrl:action [
         a odrl:Action ;
-        rdf:value odrl:use, tosl:integrate, tosl:develop, tosl:test ;
+        rdf:value odrl:use;
         odrl:refinement [
             a odrl:Constraint ;
-            odrl:leftOperand tosl:compliesWith ;
+            odrl:leftOperand tosl:compliance ;
             odrl:operator odrl:eq ;
             odrl:rightOperand "http://dev.elsevier.com/policy.html"^^xsd:string
         ] 
@@ -182,13 +176,13 @@
                 a odrl:Constraint ;
                 odrl:leftOperand tosl:justification ;
                 odrl:operator odrl:eq ;
-                odrl:rightOperand "The usage of the API Service negatively affects the availability or performance of the API Service"^^xsd:string
+                odrl:rightOperand tosl:degradation ;
             ]
             [
                 a odrl:Constraint ;
-                odrl:leftOperand tosl:compliesWith ;
-                odrl:operator odrl:not ;
-                odrl:rightOperand "http://dev.elsevier.com/policy.html"^^xsd:string
+                odrl:leftOperand tosl:justification ;
+                odrl:operator odrl:eq ;
+                odrl:rightOperand tosl:breachOfContract ;
             ]
         )
     ] ;
@@ -207,11 +201,11 @@
     odrl:action tosl:block, odrl:modify, tosl:suspend, tosl:remove, tosl:disable ;
     odrl:constraint [
             a odrl:Constraint ;
-            odrl:leftOperand tosl:compliesWith ;
-            odrl:operator odrl:not ;
-            odrl:rightOperand "http://dev.elsevier.com/policy.html"^^xsd:string;
+            odrl:leftOperand tosl:justification ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand tosl:breachOfContract;
     ] ;
-    odrl:target :service01, :application01 ;
+    odrl:target :service01 ;
     odrl:assignee :elsevier ;
     odrl:duty [
         a odrl:Duty ;
@@ -234,19 +228,14 @@
 :permission06 a odrl:Permission ;
     dcterms:description "2.3 Elsevier reserves the right to deactivate API Keys that have not been used to access the APIs for 90 days." ;
     odrl:action tosl:disable ;
-    odrl:target :apiKey ;
-    odrl:assignee :elsevier ;
-    odrl:duty [
-        a odrl:Duty ;
-        odrl:action odrl:use ;
-        odrl:constraint [
-            a odrl:Constraint ;
-            odrl:leftOperand odrl:delayPeriod ;
-            odrl:operator odrl:gt ;
-            odrl:rightOperand "P90D"^^xsd:duration 
-        ] ;
-        odrl:assignee :customer01 ;
-    ] .
+    odrl:constraint [
+        a odrl:Constraint ;
+        odrl:leftOperand tosl:inactivityPeriod ;
+        odrl:operator odrl:gt ;
+        odrl:rightOperand "P90D"^^xsd:duration ;
+    ] ;
+    odrl:target :service01 ;
+    odrl:assignee :elsevier .
 
 ################################ TERM 3.1.1 ####################################
 # 3.1.1 the Application will not use Elsevier content other than allowed by    #
@@ -278,9 +267,9 @@
         a odrl:Constraint ;
         odrl:leftOperand odrl:Recipient ;
         odrl:operator odrl:eq ;
-        odrl:rightOperand "allowedApiKey"^^xsd:string 
+        odrl:rightOperand :customer01 ;
     ] ; 
-    odrl:target :elsevierApiKey ;
+    odrl:target :service01 ;
     odrl:assignee :customer01 .
 
 ################################ TERM 3.1.3 ####################################
@@ -455,13 +444,37 @@
     dcterms:description "The term of this Agreement shall commence on the date on which the Developer has accepted this Agreement and shall continue until either party terminates the Agreement in writing or the API Key is deactivated by Elsevier." ;
     odrl:action tosl:terminate ;
     odrl:target :agreement01 ; 
-    odrl:assignee :customer01 .
+    odrl:assignee :customer01 ;
+    odrl:duty [
+        a odrl:Duty ;
+        odrl:action odrl:inform ;
+        odrl:constraint [
+            a odrl:Constraint ;
+            odrl:leftOperand tosl:noticeFormat ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand "written"^^xsd:string
+        ] ;
+        odrl:target :agreement01 ;
+        odrl:assignee :customer01
+    ] .
 
 :permission11 a odrl:Permission ;
     dcterms:description "The term of this Agreement shall commence on the date on which the Developer has accepted this Agreement and shall continue until either party terminates the Agreement in writing or the API Key is deactivated by Elsevier." ;
     odrl:action tosl:terminate ;
     odrl:target :agreement01 ; 
-    odrl:assignee :elsevier .
+    odrl:assignee :elsevier ;
+    odrl:duty [
+        a odrl:Duty ;
+        odrl:action odrl:inform ;
+        odrl:constraint [
+            a odrl:Constraint ;
+            odrl:leftOperand tosl:noticeFormat ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand "written"^^xsd:string
+        ] ;
+        odrl:target :agreement01 ;
+        odrl:assignee :customer01
+    ] .
 
 ################################ TERM 6 ########################################
 # This Agreement will be governed by and construed in accordance with the      #

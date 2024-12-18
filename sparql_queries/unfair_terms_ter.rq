@@ -1,20 +1,22 @@
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX tosl: <http://www.w3.org/tosl/>
 
 SELECT ?permission ?action ?assignee ?target
 WHERE {
     ?permission a odrl:Permission ;
-        odrl:action ?action ;
-        odrl:assignee ?assignee ;
-        odrl:target ?target .
-    FILTER NOT EXISTS {
+               odrl:action ?action ;
+               odrl:assignee :elsevier ;
+               odrl:target ?target .
+
+    FILTER (?action = tosl:terminate || ?action = tosl:suspend || ?action = tosl:disable)
+
+    OPTIONAL {
         ?permission odrl:constraint ?constraint .
     }
-    FILTER NOT EXISTS {
+    OPTIONAL {
         ?permission odrl:duty ?duty .
+        ?duty odrl:action odrl:inform .
     }
-    FILTER (?action = tosl:terminate ||
-            ?action = tosl:suspend ||
-            ?action = tosl:disable)
+
+    FILTER (!BOUND(?constraint) || !BOUND(?duty))
 }
