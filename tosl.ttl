@@ -307,7 +307,7 @@ tosl:totalAmount a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Calculate Amount" ;
         skos:definition "This stipulates the amount derived from a previous metric or calculation, which is used to compare against a specified threshold, such as a maximum or minimum allowable amount, in the context of a constraint." ;
-        skos:note """Example statements: The totalAmount of data storage must not exceed 500 GB or The totalAmount of compensation must not exceed €10000"""
+        skos:note "Example statements: The totalAmount of data storage must not exceed 500 GB or The totalAmount of compensation must not exceed €10000" .
 
 
 ### https://w3id.org/tosl/inactivityPeriod
@@ -315,14 +315,14 @@ tosl:inactivityPeriod a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOp
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Inactivity Period" ;
         skos:definition "This stipulates the duration of time a service may remain inactive or unused, serving as a parameter for triggering specific actions or evaluating compliance with constraints." ;
-        skos:note """Example statements: Send an alert after 30 days of inactivity or Suspend or cancel a service if it exceeds an inactivity limit."""
+        skos:note "Example statements: Send an alert after 30 days of inactivity or Suspend or cancel a service if it exceeds an inactivity limit." .
 
 
 ### https://w3id.org/tosl/consumerResidentCountry
 tosl:consumerResidentCountry a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Consumer Resident Country" ;
-        skos:definition "This stipulates the country of residence of the consumer, used to compare against a list of countries in the context of constraints or conditions." ;
+        skos:definition "This stipulates the country of residence of the consumer, used to compare against a list of countries in the context of constraints or conditions." .
 
 
 ### https://w3id.org/tosl/consentType
@@ -335,20 +335,20 @@ tosl:consentType a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand
 tosl:compliance a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Compliance" ;
-        skos:definition "This left operand refers to the adherence to an specific rule or policy. I can be used to refine the semantics of an action that has to be performed in accordance to another policy. Permited values are and IRI, a odrl:Policy or an xsd:string" .;
+        skos:definition "This left operand refers to the adherence to an specific rule or policy. I can be used to refine the semantics of an action that has to be performed in accordance to another policy. Permited values are and IRI, a odrl:Policy or an xsd:string" .
 
 ### https://w3id.org/tosl/licensingType
 tosl:licensingType a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Licensing Type" ;
-    skos:definition "This stipulates the type of license or permission required by a party to perform a specific action or activity, such as a written permission." ;
+    skos:definition "This stipulates the type of license or permission required by a party to perform a specific action or activity, such as a written permission." .
 
 
 ### https://w3id.org/tosl/effect
 tosl:effect a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Effect" ;
-        skos:definition "This stipulates the effect or impact that an action may or must not cause, serving as a parameter to evaluate the outcomes of an action." ;
+        skos:definition "This stipulates the effect or impact that an action may or must not cause, serving as a parameter to evaluate the outcomes of an action." .
 
 
 ### https://w3id.org/tosl/implicitConsent
