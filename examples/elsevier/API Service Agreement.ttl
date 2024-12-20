@@ -10,7 +10,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
-@prefix tosl: <http://www.w3.org/tosl/> .
+@prefix tosl: <https://w3id.org/tosl/> .
 @base <http://example.com> .
 
 
@@ -20,8 +20,8 @@
     dcterms:description "The Elsevier API Service Agreement"^^xsd:string ;
     dcterms:creator "Elsevier B.V."^^xsd:string ;
     dcterms:issued "2016-07-05"^^xsd:date ;
-    odrl:permission :permission01, :permission02, :permission03, :permission04, :permission05,  :permission06,  :permission07,  :permission08,  :permission09,  :permission10, :permission11;
-    odrl:prohibition :prohibition01, :prohibition02, :prohibition03  ;
+    odrl:permission :permission01, :permission02, :permission03, :permission04, :permission05,  :permission06,  :permission07,  :permission08,  :permission09,  :permission10, :permission11,  :permission12,  :permission13;
+    odrl:prohibition :prohibition01 ;
     tosl:onDispute :litigation01 .
 
 :elsevier a odrl:Party ;
@@ -92,7 +92,11 @@
     tosl:triggers [
         a odrl:Duty ;
         odrl:action tosl:publish ;
-        odrl:target :service01 ;
+        odrl:target [
+            a odrl:Asset ;
+            dcterms:description "New API Service Agreement" ;
+            dcterms:source "https://www.elsevier.com/api/agreement"
+        ] ;
         odrl:assignee :elsevier ;
         odrl:constraint [
             a odrl:Constraint ;
@@ -242,15 +246,19 @@
 # the API's Content Usage Policies on http://dev.elsevier.com/policy.html;     #
 ################################################################################
 
-:prohibition01 a odrl:Prohibition ;
+:permission07 a odrl:Permission ;
     dcterms:description "3.1.1 the Application will not use Elsevier content other than allowed by the API's Content Usage Policies on http://dev.elsevier.com/policy.html;" ;
     odrl:action odrl:use ;
-    odrl:constraint [
-        a odrl:Constraint ;
-        odrl:leftOperand tosl:compliesWith ;
-        odrl:operator odrl:not ;
-        odrl:rightOperand "http://dev.elsevier.com/policy.html"^^xsd:string
-    ];
+    odrl:action [
+        a odrl:Action ;
+        rdf:value odrl:use;
+        odrl:refinement [
+            a odrl:Constraint ;
+            odrl:leftOperand tosl:compliance ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand "http://dev.elsevier.com/policy.html"^^xsd:string
+        ] 
+    ] ;
     odrl:target :service01 ;
     odrl:assignee :customer01 .
 
@@ -260,7 +268,7 @@
 # applications and/or to other developers;                                     #
 ################################################################################
 
-:permission07 a odrl:Permission ;
+:permission08 a odrl:Permission ;
     dcterms:description "3.1.2 the Application will use the API Key issued by Elsevier upon execution of this Agreement, and no other API Key issued for use by other applications and/or to other developers;";
     odrl:action odrl:use ;
     odrl:constraint [
@@ -276,15 +284,18 @@
 # 3.1.3 the Application will avoid excessive and unnecessary use of the API    #
 # Service that may cause a performance degradation of the API Service          #
 ################################################################################
-
-:prohibition02 a odrl:Prohibition ;
+:permission09 a odrl:Permission ;
     dcterms:description "3.1.3 the Application will avoid excessive and unnecessary use of the API Service that may cause a performance degradation of the API Service";
     odrl:action odrl:use ;
-    odrl:constraint [
-        a odrl:Constraint ;
-        odrl:leftOperand tosl:causes ;
-        odrl:operator odrl:eq ;
-        odrl:rightOperand tosl:degradation
+    odrl:action [
+        a odrl:Action ;
+        rdf:value odrl:use;
+        odrl:refinement [
+            a odrl:Constraint ;
+            odrl:leftOperand tosl:efect ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand tosl:degradation ;
+        ] 
     ] ;
     odrl:target :service01 ;
     odrl:assignee :customer01 .
@@ -297,7 +308,7 @@
 # Elsevier content is not permitted.                                           #
 ################################################################################
 
-:prohibition03 a odrl:Prohibition ;
+:prohibition01 a odrl:Prohibition ;
     dcterms:description "3.1.4 the Developer acknowledges that all right, title and interest in and to the Elsevier content, and any derivative works based upon the Elsevier content, remain with Elsevier and its suppliers, except as expressly set forth in this Agreement, and that the unauthorized redistribution of the Elsevier content is not permitted." ;
     odrl:action odrl:distribute ;
     odrl:target :service01 ;
@@ -336,7 +347,7 @@
     odrl:partOf :collection01 ;
     dcterms:description "Distinctive brand features and elements." .
 
-:permission08 a odrl:Permission ;
+:permission10 a odrl:Permission ;
     dcterms:description "3.3 Developer shall obtain written permission in advance from Elsevier to use Elsevier's trademarks, logos or other brand features for promoting the Developer's Application. Any press releases regarding this Agreement or the relationship of the parties shall require the prior approval of the parties." ;
     odrl:action odrl:use ;
     odrl:target :assetCollection01 ;
@@ -362,31 +373,7 @@
 # permitted by Elsevier in writing.                                            #
 ################################################################################
 
-#:prohibition04 a odrl:Prohibition ;
-#    dcterms:description "3.4 The Developer shall not display any advertising inside the Application or use any content as obtained via the API outside the Application, unless permitted by Elsevier in writing.";
-#    odrl:action [
-#        a odrl:Action ;
-#        rdf:value odrl:display ;
-#        odrl:refinement [
-#            a odrl:Constraint ;
-#            odrl:leftOperand odrl:media ;
-#            odrl:operator odrl:eq ;
-#            odrl:rightOperand "advertising"^^xsd:string ;
-#        ] ;
-#    ] ;
-#    odrl:constraint [
-#                a odrl:Constraint ;
-#                odrl:leftOperand tosl:licensingType ;
-#                odrl:operator odrl:not ;
-#                odrl:rightOperand tosl:writtenPermission ;
-#    ] ;
-#    odrl:target [
-#            a odrl:Asset ;
-#            dcterms:description "The asset refers to advertising materials, which cannot be displayed or used without a valid license agreement." ;
-#        ] ;    
-#    odrl:assignee :customer01 .
-
-:permission09 a odrl:Permission ;
+:permission11 a odrl:Permission ;
     dcterms:description "3.4 The Developer shall not display any advertising inside the Application or use any content as obtained via the API outside the Application, unless permitted by Elsevier in writing.";
     odrl:action [
         a odrl:Action ;
@@ -415,7 +402,7 @@
                 odrl:rightOperand tosl:writtenPermission ;
             ] ;
         odrl:assignee :elsevier ;
-    ] ;
+        ] ;
     ] .
 
 ################################ TERM 4 ########################################
@@ -440,7 +427,7 @@
 # Elsevier.                                                                    #
 ################################################################################
 
-:permission10 a odrl:Permission ;
+:permission12 a odrl:Permission ;
     dcterms:description "The term of this Agreement shall commence on the date on which the Developer has accepted this Agreement and shall continue until either party terminates the Agreement in writing or the API Key is deactivated by Elsevier." ;
     odrl:action tosl:terminate ;
     odrl:target :agreement01 ; 
@@ -450,7 +437,7 @@
         odrl:action odrl:inform ;
         odrl:constraint [
             a odrl:Constraint ;
-            odrl:leftOperand tosl:noticeFormat ;
+            odrl:leftOperand odrl:deliveryChannel ;
             odrl:operator odrl:eq ;
             odrl:rightOperand "written"^^xsd:string
         ] ;
@@ -458,7 +445,7 @@
         odrl:assignee :customer01
     ] .
 
-:permission11 a odrl:Permission ;
+:permission13 a odrl:Permission ;
     dcterms:description "The term of this Agreement shall commence on the date on which the Developer has accepted this Agreement and shall continue until either party terminates the Agreement in writing or the API Key is deactivated by Elsevier." ;
     odrl:action tosl:terminate ;
     odrl:target :agreement01 ; 
@@ -468,7 +455,7 @@
         odrl:action odrl:inform ;
         odrl:constraint [
             a odrl:Constraint ;
-            odrl:leftOperand tosl:noticeFormat ;
+            odrl:leftOperand odrl:deliveryChannel ;
             odrl:operator odrl:eq ;
             odrl:rightOperand "written"^^xsd:string
         ] ;

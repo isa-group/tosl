@@ -1,5 +1,5 @@
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
-PREFIX tosl: <http://www.w3.org/tosl/>
+PREFIX tosl: <https://w3id.org/tosl/>
 
 SELECT ?duty ?action ?assignee ?target
 WHERE {

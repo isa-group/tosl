@@ -25,9 +25,9 @@
     tosl:liableParty :github ;
     tosl:limitation [
             a odrl:Constraint ;
-            odrl:leftOperand odrl:payAmount ;
+            odrl:leftOperand tosl:calculateAmount ;
             odrl:operator odrl:lte ;
-            odrl:rightOperand "customer01. * 12.0"^^xsd:decimal 
+            odrl:rightOperand :consumerquote12months ;
         ] .
 
 # Dispute resolution definition
@@ -39,7 +39,7 @@
             a odrl:Constraint ;
             odrl:leftOperand tosl:consumerResidentCountry ;
             odrl:operator odrl:isAnyOf ;
-            odrl:rightOperand ["ES", "DE", "PT", "IT"] ;
+            odrl:rightOperand ("AT" "BE" "BG" "HR" "CY" "CZ" "DK" "EE" "FI" "FR" "DE" "GR" "HU" "IS" "IE" "IT" "LV" "LI" "LT" "LU" "MT" "NL" "NO" "PL" "PT" "RO" "SK" "SI" "ES" "SE" "CH") ;
         ] .
 
 :DublinCourts a tosl:Jurisdiction;

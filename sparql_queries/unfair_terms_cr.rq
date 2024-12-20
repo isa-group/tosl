@@ -1,15 +1,15 @@
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX tosl: <http://www.w3.org/tosl/>
+PREFIX tosl: <https://w3id.org/tosl/>
 
 SELECT ?permission ?action ?assignee ?target
 WHERE {
     ?permission a odrl:Permission ;
         odrl:action ?action ;
-        odrl:assignee :elsevier ;
+        odrl:assignee ?assignee ;
         odrl:target ?target .
 
-    FILTER (?action = tosl:remove)
+    FILTER (?action = tosl:remove && ?assignee = :elsevier)
 
     OPTIONAL {
         ?permission odrl:constraint ?constraint .
