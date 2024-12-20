@@ -344,10 +344,10 @@ tosl:licensingType a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOpera
     skos:definition "This stipulates the type of license or permission required by a party to perform a specific action or activity, such as a written permission." ;
 
 
-### https://w3id.org/tosl/efect
-tosl:efect a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
+### https://w3id.org/tosl/effect
+tosl:effect a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
         rdfs:isDefinedBy tosl: ;
-        rdfs:label "Efect" ;
+        rdfs:label "Effect" ;
         skos:definition "This stipulates the effect or impact that an action may or must not cause, serving as a parameter to evaluate the outcomes of an action." ;
 
 

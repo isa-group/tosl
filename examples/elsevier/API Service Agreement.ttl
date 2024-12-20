@@ -292,7 +292,7 @@
         rdf:value odrl:use;
         odrl:refinement [
             a odrl:Constraint ;
-            odrl:leftOperand tosl:efect ;
+            odrl:leftOperand tosl:effect ;
             odrl:operator odrl:not ;
             odrl:rightOperand tosl:degradation ;
         ] 
