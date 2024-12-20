@@ -331,6 +331,11 @@ tosl:consentType a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand
         rdfs:label "Consent Type" ;
         skos:definition "This term refers to the specific manner in which consent is given by a party within an agreement, outlining whether it is implicit, explicit, or expressed through other defined actions" .
 
+### https://w3id.org/tosl/compliance
+tosl:compliance a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
+        rdfs:isDefinedBy tosl: ;
+        rdfs:label "Compliance" ;
+        skos:definition "This left operand refers to the adherence to an specific rule or policy. I can be used to refine the semantics of an action that has to be performed in accordance to another policy. Permited values are and IRI, a odrl:Policy or an xsd:string" .;
 
 ### https://w3id.org/tosl/implicitConsent
 tosl:implicitConsent a rdf:type, owl:NamedIndividual, skos:Concept, odrl:RightOperand ;
@@ -352,6 +357,13 @@ tosl:degradation a rdf:type, owl:NamedIndividual, skos:Concept, odrl:RightOperan
         rdfs:label "Degradation" ;
         skos:definition "Indicates a significant and unreasonable degradation of some metric, such as response time or availability, caused by the action of the Rule to the target of the Rule" ;
         skos:note """This RightOperand is intended to be used in conjunction with LeftOperands that specify actions or events impacting performance metrics. An example is "causes eq degradation", which expresses that the exertion of the action MUST not cause a service significant degradation""" .
+
+
+### https://w3id.org/tosl/breachOfContract
+tosl:breachOfContract a rdf:type, owl:NamedIndividual, skos:Concept, odrl:RightOperand ;
+        rdfs:isDefinedBy tosl: ;
+        rdfs:label "Breach of Contract" ;
+        skos:definition "This term refers to a violation or non-fulfillment of the terms as stipulated within the Policy. With the left operand odrl:event, it can be used in the constraint of a Rule that only can be exercised in case of such a breach" .
 
 
 ### https://w3id.org/tosl/consumerPlaceLaw
