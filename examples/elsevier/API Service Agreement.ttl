@@ -293,7 +293,7 @@
         odrl:refinement [
             a odrl:Constraint ;
             odrl:leftOperand tosl:efect ;
-            odrl:operator odrl:eq ;
+            odrl:operator odrl:not ;
             odrl:rightOperand tosl:degradation ;
         ] 
     ] ;

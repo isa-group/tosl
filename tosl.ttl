@@ -332,11 +332,32 @@ tosl:consentType a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand
         skos:definition "This term refers to the specific manner in which consent is given by a party within an agreement, outlining whether it is implicit, explicit, or expressed through other defined actions" .
 
 
+### https://w3id.org/tosl/licensingType
+tosl:licensingType a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
+        rdfs:isDefinedBy tosl: ;
+        rdfs:label "Licensing Type" ;
+    skos:definition "This stipulates the type of license or permission required by a party to perform a specific action or activity, such as a written permission." ;
+
+
+### https://w3id.org/tosl/efect
+tosl:efect a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
+        rdfs:isDefinedBy tosl: ;
+        rdfs:label "Efect" ;
+        skos:definition "This stipulates the effect or impact that an action may or must not cause, serving as a parameter to evaluate the outcomes of an action." ;
+
+
 ### https://w3id.org/tosl/implicitConsent
 tosl:implicitConsent a rdf:type, owl:NamedIndividual, skos:Concept, odrl:RightOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Implicit Consent" ;
         skos:definition "This type of consent implies that by merely utilizing the service, the customer agrees to the terms of the agreement by default" .
+
+
+### https://w3id.org/tosl/writtenPermission
+tosl:writtenPermission a odrl:RightOperand ;
+        rdfs:isDefinedBy tosl: ;
+        rdfs:label "Written Permission" ;
+        skos:definition "A formal, documented authorisation required for a party to perform a specified action." .
 
 
 ### https://w3id.org/tosl/explicitConsent
