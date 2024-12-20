@@ -1,5 +1,0 @@
-1.2 Elsevier reserves the right, at its sole discretion, to change the terms of this Agreement at any time with reasonable advance notice given to the Developer. When these changes are made, Elsevier will make a new copy of the Agreement available on the API Service's web site. Elsevier will also post a notification on the API Service's web site describing the modifications made.
-
-2.2 In a situation of breach of the terms and conditions of this Agreement, Elsevier reserves the right to block, change, suspend, remove or disable access to the APIs and any of its services at any time upon reasonable notice to Developer.
-
-This Agreement will be governed by and construed in accordance with the laws of The Netherlands, and the parties irrevocably consent to the exclusive jurisdiction of the courts of The Netherlands with respect to any action or suit arising out of or pertaining to this Agreement (except where local law requires).

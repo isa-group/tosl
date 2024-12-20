@@ -4,8 +4,13 @@ PREFIX tosl: <http://www.w3.org/tosl/>
 
 SELECT DISTINCT ?limitationOn ?liability ?type ?liableParty
 WHERE {
-  ?liability a tosl:Liability .
-  ?thing tosl:limitationOfLiability ?liability .
-  ?liability tosl:liableParty ?liableParty .
-  ?liability rdf:value ?type .
+  ?liability a tosl:Liability ;
+    tosl:liableParty ?liableParty ;
+    rdf:value ?type .
+  
+  ?limitationOn tosl:limitationOfLiability ?liability .
+  
+  FILTER (?liableParty = :elsevier)
+
+  FILTER (?type = tosl:anyLiability || ?type = tosl:physicalInjuries || ?type = tosl:harmCausedByMalware )
 }
