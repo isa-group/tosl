@@ -37,7 +37,7 @@ tosl:onDispute a rdf:type, owl:ObjectProperty, skos:Concept ;
         rdfs:domain odrl:Policy ;
         rdfs:range tosl:DisputeResolution ; 
         rdfs:isDefinedBy tosl: ;
-        rdfs:label "Arbitration" ;
+        rdfs:label "On Dispute" ;
         skos:definition "Represents the relationship between a Policy and its associated Dispute Resolution mechanism, specifying how, where, and under which law disputes arising under the Policy will be resolved" .
             
 
@@ -277,7 +277,7 @@ tosl:test a rdf:type, owl:NamedIndividual, skos:Concept, odrl:Action ;
 ### https://w3id.org/tosl/anyLiability
 tosl:anyLiability a rdf:type, owl:NamedIndividual, skos:Concept, tosl:Liability ;
         rdfs:isDefinedBy tosl: ;
-        rdfs:label "Any Damage" ;
+        rdfs:label "Any Liability" ;
         skos:definition "This liability provision specifies that the designated party may or may not be held liable for damages caused by the other party." .
 
 
