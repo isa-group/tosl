@@ -171,6 +171,67 @@
     <img src="https://raw.githubusercontent.com/isa-group/tosl/refs/heads/main/img/tosl_model.svg" width="100%"
       alt="tosl concepts" />
 
+      <h3>Namespaces</h3>
+      <table class="def">
+        <tbody>
+          <tr>
+            <th>Prefix</th>
+            <th>Namespace</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>owl</td>
+            <td>http://www.w3.org/2002/07/owl#</td>
+            <td>[[owl2-overview]]</td>
+          </tr>
+          <tr>
+            <td>rdf</td>
+            <td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td>
+            <td>[[rdf-concepts]]</td>
+          </tr>
+          <tr>
+            <td>xsd</td>
+            <td>http://www.w3.org/2001/XMLSchema#</td>
+            <td>xmlschema</td>
+          </tr>
+          <tr>
+            <td>rdfs</td>
+            <td>http://www.w3.org/2000/01/rdf-schema#</td>
+            <td>[[rdf-schema]]</td>
+          </tr>
+          <tr>
+            <td>odrl</td>
+            <td>http://www.w3.org/ns/odrl/2/</td>
+            <td>[[ODRL Vocabulary]]</td>
+          </tr>
+          <tr>
+            <td>skos</td>
+            <td>http://www.w3.org/2004/02/skos/core#</td>
+            <td>[[skos-reference]]</td>
+          </tr>
+          <tr>
+            <td>dcterms</td>
+            <td>http://purl.org/dc/terms/</td>
+            <td><a href=http://purl.org/dc/terms/">[[dcterms]]</a></td>
+          </tr>
+          <tr>
+            <td>vann</td>
+            <td>http://purl.org/vocab/vann/</td>
+            <td><a href="http://purl.org/vocab/vann/">[[vann]]</a></td>
+          </tr>
+          <tr>
+            <td>profile</td>
+            <td>http://www.w3.org/ns/dx/prof/</td>
+            <td><a href="http://www.w3.org/ns/dx/prof/">profile</a></td>
+          </tr>
+          <tr>
+            <td>tosl</td>
+            <td>https://w3id.org/tosl/</td>
+            <td><a href="https://w3id.org/tosl/">ToS Language Profile</a></td>
+          </tr>
+        </tbody>
+      </table>
+
   </section>
 
   <section>
@@ -179,12 +240,6 @@
       prohibitions, limits of responsibilities for the parties, and conflict resolution aspects, enabling operations
       such as identifying potentially unfair terms. New objects that have been added, as well as extensions to the core
       ODRL vocabulary, are defined below.</p>
-
-    <!-- <h3 id="">Policy</h3>
-    <h3 id="">Duty</h3>
-    <h3 id="">Assets</h3>
-    <h3 id="">Actions</h3>
-    <h3 id="">Constraints</h3> -->
 
     <h3 id="">Dispute Resolution</h3>
     <table class="def">
@@ -1854,11 +1909,48 @@
         </td>
       </tr>
     </table>
+  </section>
 
-  </section>
   <section>
-    <h2>References</h2>
+    <h2>Examples</h2>
+    <h3>Method of Dispute Resolution</h3>
+
+    <aside class="example">
+      <p>This term establishes the applicable governing law and the specific jurisdiction for resolving legal disputes under the Agreement.</p>
+      <pre><code class="turtle">
+        # Agreement definition
+        :agreement01 a odrl:Agreement ;
+            odrl:assignee :customer01 ;
+            odrl:assigner :github ;
+            tosl:onDispute :litigation01 .
+        
+        :github a odrl:Party ;
+            dcterms:description "GitHub" .
+            
+        :customer01 a odrl:Party ;
+            dcterms:description "Represents the customer in GitHub Services" .
+        
+        # Dispute resolution definition
+        :litigation01 a tosl:Litigation;
+            dcterms:description "If Customer’s principal office is within the European Union, European Economic Area, or Switzerland, however, this Agreement will be governed by the laws of Ireland. Any legal action or proceeding will be brought exclusively in the courts located in Dublin" ;
+            tosl:takesPlaceIn :DublinCourts ;
+            tosl:governedBy :IrelandLaw ;
+            tosl:condition [
+                    a odrl:Constraint ;
+                    odrl:leftOperand tosl:consumerResidentCountry ;
+                    odrl:operator odrl:isAnyOf ;
+                    odrl:rightOperand ("AT" "BE" "BG" "HR" "CY" "CZ" "DK" "EE" "FI" "FR" "DE" "GR" "HU" "IS" "IE" "IT" "LV" "LI" "LT" "LU" "MT" "NL" "NO" "PL" "PT" "RO" "SK" "SI" "ES" "SE" "CH") ;
+                ] .
+        
+        :DublinCourts a tosl:Jurisdiction;
+            dcterms:description "Disputes jurisdiction of the Dublin courts" .
+        
+        :IrelandLaw a tosl:Law ;
+            dcterms:description "Governed by the laws of Ireland" .
+      </pre>
+    </aside>
   </section>
+
 </body>
 
 </html>
