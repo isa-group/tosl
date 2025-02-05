@@ -19,7 +19,10 @@ An ontology designed to represent contractual terms in Software-as-a-Service (Sa
 
 2. **Identifying Potentially Abusive Terms**
 
-    The ontology needs to be able to identify potentially abusive terms in consumer contracts, ensuring transparency and fairness. Answering competing questions related to arbitration, governing law, content removal, contract by using, jurisdiction, liability, and unilateral modifications or terminations. The competency questions are as follows:
+    The ontology needs to be able to identify potentially abusive terms in consumer contracts, ensuring transparency and fairness. Answering competing questions related to arbitration, governing law, content removal, contract by using, jurisdiction, liability, and unilateral modifications or terminations. 
+    
+    <details>
+    <summary><strong>Competency Questions</strong></summary>
 
     **Arbitration**
 
@@ -77,6 +80,7 @@ An ontology designed to represent contractual terms in Software-as-a-Service (Sa
     - Does it specify specific causes, or termination is allowed without justified cause?
     - Is the provider required to give notice before terminating the contract?
 
+    </details>
 
 ## Profile diagram
 The figure below illustrates the concepts defined by the ODRL Profile for Terms of Service. These concepts facilitate the modeling of statements outlined in cloud provider agreements and enable the evaluation of the previously formulated questions to identify potentially abusive contractual terms.
