@@ -9,8 +9,9 @@ WHERE {
     rdf:value ?type .
   
   ?limitationOn tosl:limitationOfLiability ?liability .
+  ?limitationOn tosl:liability ?liability .
   
-  FILTER (?liableParty = :elsevier)
+  FILTER (?liableParty = :provider)
 
   FILTER (?type = tosl:anyLiability || ?type = tosl:physicalInjuries || ?type = tosl:harmCausedByMalware )
 }

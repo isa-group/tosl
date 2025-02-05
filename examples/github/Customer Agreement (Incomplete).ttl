@@ -3,7 +3,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
-@prefix tosl: <http://isagroup/tosl/> .
+@prefix tosl: <https://w3id.org/tosl/> .
 
 # Agreement definition
 :agreement01 a odrl:Agreement ;

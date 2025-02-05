@@ -14,12 +14,12 @@ An ontology designed to represent contractual terms in Software-as-a-Service (Sa
     Additionally, the ontology must provide mechanisms to unambiguously identify:
 
     - The responsible party obligated to fulfill the term.
-    -  The asset or resource to which the action, permission, or prohibition applies.
+    - The asset or resource to which the action, permission, or prohibition applies.
 
 
 2. **Identifying Potentially Abusive Terms**
 
-    The ontology needs to be able to identify terms that may be considered abusive to consumers. Answering competing questions that partially ensure transparency and fairness in contractual agreements. The competency questions are as follows:
+    The ontology needs to be able to identify potentially abusive terms in consumer contracts, ensuring transparency and fairness. Answering competing questions related to arbitration, governing law, content removal, contract by using, jurisdiction, liability, and unilateral modifications or terminations. The competency questions are as follows:
 
     **Arbitration**
 
@@ -119,6 +119,39 @@ The figure below illustrates the concepts defined by the ODRL Profile for Terms 
         ] ;
     ] .
 ```
+
+
+## Repository Structure
+
+### `bin/`
+Scripts for running SPARQL queries.
+
+### `examples/`
+TOSL representations of real agreements.
+
+### `sparql_queries/`
+SPARQL queries for analysing deontic modalities and identifying potentially abusive terms.
+
+### `tosl.ttl`
+Ontology file (TBox), defining structured concepts and relationships.
+
+## Running a Query
+
+To run a SPARQL query on a dataset, use the following command. Change the necessary argument and be sure to review the queries, changing the **assignee** properly to the specific agreement:
+
+```bash
+python bin/run_query.py "examples/elsevier/API Service Agreement.ttl" "$(cat sparql_queries/unfair_terms_ter.rq)" --format ttl
+```
+
+This command executes the SPARQL query unfair_terms_ter.rq on the ontology file API Service Agreement.ttl and returns the result.
+
+```plaintext
+    permission                       action                           target
+--  -------------------------------  -------------------------------  ------------------------------
+ 0  http://example.com/permission04  https://w3id.org/tosl/terminate  http://example.com/service01
+ 1  http://example.com/permission06  https://w3id.org/tosl/disable    http://example.com/service01
+ 2  http://example.com/permission13  https://w3id.org/tosl/terminate  http://example.com/agreement01
+````
 
 ## References
 

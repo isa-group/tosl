@@ -33,7 +33,7 @@
 #################################################################
 
 ### https://w3id.org/tosl/onDispute
-tosl:onDispute a rdf:type, owl:ObjectProperty, skos:Concept ;
+tosl:onDispute a owl:ObjectProperty, skos:Concept ;
         rdfs:domain odrl:Policy ;
         rdfs:range tosl:DisputeResolution ; 
         rdfs:isDefinedBy tosl: ;
@@ -42,7 +42,7 @@ tosl:onDispute a rdf:type, owl:ObjectProperty, skos:Concept ;
             
 
 ### https://w3id.org/tosl/condition
-tosl:condition a rdf:type, owl:ObjectProperty, skos:Concept ;
+tosl:condition a owl:ObjectProperty, skos:Concept ;
         rdfs:domain tosl:DisputeResolution ;
         rdfs:range [ rdf:type owl:Class ;
                         owl:unionOf ( odrl:Constraint
@@ -55,7 +55,7 @@ tosl:condition a rdf:type, owl:ObjectProperty, skos:Concept ;
 
 
 ### https://w3id.org/tosl/governedBy
-tosl:governedBy a rdf:type, owl:ObjectProperty, skos:Concept ;
+tosl:governedBy a owl:ObjectProperty, skos:Concept ;
         rdfs:domain tosl:DisputeResolution ;
         rdfs:range tosl:Law ;
         rdfs:isDefinedBy tosl: ;
@@ -64,7 +64,7 @@ tosl:governedBy a rdf:type, owl:ObjectProperty, skos:Concept ;
 
 
 ### https://w3id.org/tosl/liability
-tosl:liability a rdf:type, owl:ObjectProperty, skos:Concept ;
+tosl:liability a owl:ObjectProperty, skos:Concept ;
         rdfs:domain odrl:Policy , odrl:Asset, odrl:Rule ;
         rdfs:range tosl:Liability ;
         rdfs:isDefinedBy tosl: ;
@@ -73,7 +73,7 @@ tosl:liability a rdf:type, owl:ObjectProperty, skos:Concept ;
 
 
 ### https://w3id.org/tosl/liableParty
-tosl:liableParty a rdf:type, owl:ObjectProperty, skos:Concept ;
+tosl:liableParty a owl:ObjectProperty, skos:Concept ;
         rdfs:domain tosl:Liability ;
         rdfs:range odrl:Party ;
         rdfs:isDefinedBy tosl: ;
@@ -82,7 +82,7 @@ tosl:liableParty a rdf:type, owl:ObjectProperty, skos:Concept ;
 
 
 ### https://w3id.org/tosl/limitation
-tosl:limitation a rdf:type, owl:ObjectProperty, skos:Concept ;
+tosl:limitation a owl:ObjectProperty, skos:Concept ;
         rdfs:domain tosl:Liability ;
         rdfs:range [ rdf:type owl:Class ;
                     owl:unionOf ( odrl:Constraint
@@ -95,7 +95,7 @@ tosl:limitation a rdf:type, owl:ObjectProperty, skos:Concept ;
 
 
 ### https://w3id.org/tosl/limitationOfLiability
-tosl:limitationOfLiability a rdf:type, owl:ObjectProperty, skos:Concept ;
+tosl:limitationOfLiability a owl:ObjectProperty, skos:Concept ;
         rdfs:domain odrl:Policy , odrl:Asset, odrl:Rule ;
         rdfs:range tosl:Liability ;
         rdfs:isDefinedBy tosl: ;
@@ -104,7 +104,7 @@ tosl:limitationOfLiability a rdf:type, owl:ObjectProperty, skos:Concept ;
 
 
 ### https://w3id.org/tosl/requires
-tosl:requires a rdf:type, owl:ObjectProperty, skos:Concept ;
+tosl:requires a owl:ObjectProperty, skos:Concept ;
         rdfs:domain tosl:Litigation ;
         rdfs:range tosl:Arbitration ;
         rdfs:isDefinedBy tosl: ;
@@ -113,7 +113,7 @@ tosl:requires a rdf:type, owl:ObjectProperty, skos:Concept ;
 
 
 ### https://w3id.org/tosl/takesPlaceIn
-tosl:takesPlaceIn a rdf:type, owl:ObjectProperty, skos:Concept ;
+tosl:takesPlaceIn a owl:ObjectProperty, skos:Concept ;
         rdfs:domain tosl:DisputeResolution ;
         rdfs:range tosl:Jurisdiction ;
         rdfs:isDefinedBy tosl: ;
@@ -122,7 +122,7 @@ tosl:takesPlaceIn a rdf:type, owl:ObjectProperty, skos:Concept ;
 
 
 ### https://w3id.org/tosl/triggers
-tosl:triggers a rdf:type, owl:ObjectProperty, skos:Concept ;
+tosl:triggers a owl:ObjectProperty, skos:Concept ;
         rdfs:domain odrl:Permission ;
         rdfs:range odrl:Duty ;
         rdfs:isDefinedBy tosl: ;
@@ -135,7 +135,7 @@ tosl:triggers a rdf:type, owl:ObjectProperty, skos:Concept ;
 #################################################################
 
 ### https://w3id.org/tosl/Arbitration
-tosl:Arbitration a rdf:type, owl:Class, skos:Concept ;
+tosl:Arbitration a rdfs:Class, owl:Class, skos:Concept ;
         rdfs:subClassOf tosl:DisputeResolution ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Arbitration" ;
@@ -143,41 +143,41 @@ tosl:Arbitration a rdf:type, owl:Class, skos:Concept ;
 
 
 ### https://w3id.org/tosl/DisputeResolution
-tosl:DisputeResolution a rdf:type, owl:Class, skos:Concept ;
+tosl:DisputeResolution a rdfs:Class, owl:Class, skos:Concept ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Dispute Resolution" ;
         skos:definition "Employed to specify the mechanisms for resolving disputes among the parties involved in the agreement" .
 
 
 ### https://w3id.org/tosl/Jurisdiction
-tosl:Jurisdiction a rdf:type, owl:Class, skos:Concept ;
+tosl:Jurisdiction a rdfs:Class, owl:Class, skos:Concept ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Jurisdiction" ;
         skos:definition "Jurisdiction refers to the specific location or legal authority where a dispute must be resolved" .
 
 
 ### https://w3id.org/tosl/Law
-tosl:Law a rdf:type, owl:Class, skos:Concept ;
+tosl:Law a rdfs:Class, owl:Class, skos:Concept ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Law" ;
         skos:definition "Law refers to the specific statutes and regulations that govern an agreement and are applicable in resolving any disputes arising from it" .
 
 
 ### https://w3id.org/tosl/Liability
-tosl:Liability a rdf:type, owl:Class, skos:Concept ;
+tosl:Liability a rdfs:Class, owl:Class, skos:Concept ;
     rdfs:isDefinedBy tosl: ;
     rdfs:label "Liability" ;
     skos:definition "Liability refers to the specific provisions that define and restrict the extent to which each party in the agreement can be held accountable for damages or losses" ;
     skos:note """ Example of use: 
-    tosl:liability [
+        tosl:liability [
             a tosl:Liability ;
             rdf:value tosl:physicalInjuries ;
-            tosl:party :elsevier ;
+            tosl:liableParty :elsevier ;
         ] ;
         tosl:limitationOfLiability [
             a tosl:Liability ;
             rdf:value tosl:anyDamage ;
-            tosl:party :customer ;
+            tosl:liableParty :customer ;
             tosl:limitation [
                 a odrl:Constraint ;
                 odrl:leftOperand tosl:maximunCompensation ;
@@ -189,14 +189,14 @@ tosl:Liability a rdf:type, owl:Class, skos:Concept ;
 
 
 ### https://w3id.org/tosl/Litigation
-tosl:Litigation a rdf:type, owl:Class, skos:Concept ;
+tosl:Litigation a rdfs:Class, owl:Class, skos:Concept ;
         rdfs:subClassOf tosl:DisputeResolution ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Litigation" ;
         skos:definition "Litigation is a legal process in which the provider or customer, acting as the plaintiff, initiates proceedings against the other party, called the defendant, before a civil court in a settlement dispute" .
 
 ### https://w3id.org/tosl/Service
-tosl:Service a rdf:type, owl:Class, skos:Concept ;
+tosl:Service a rdfs:Class, owl:Class, skos:Concept ;
         rdfs:subClassOf odrl:Asset ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Service"@en ;
@@ -204,7 +204,7 @@ tosl:Service a rdf:type, owl:Class, skos:Concept ;
 
 
 ### https://w3id.org/tosl/UserContent
-tosl:UserContent a rdf:type, owl:Class, skos:Concept ;
+tosl:UserContent a rdfs:Class, owl:Class, skos:Concept ;
         rdfs:subClassOf odrl:Asset ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "User Content"@en ;
@@ -216,42 +216,42 @@ tosl:UserContent a rdf:type, owl:Class, skos:Concept ;
 #################################################################
 
 ### https://w3id.org/tosl/remove
-tosl:remove a rdf:type, owl:NamedIndividual, skos:Concept, odrl:Action ;
+tosl:remove a owl:NamedIndividual, skos:Concept, odrl:Action ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Remove" ;
         skos:definition "This action may authorize, obligate, or prohibit the deletion of content from the provided services" .
 
 
 ### https://w3id.org/tosl/consent
-tosl:consent a rdf:type, owl:NamedIndividual, skos:Concept, odrl:Action ;
+tosl:consent a owl:NamedIndividual, skos:Concept, odrl:Action ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Consent" ;
         skos:definition "This action signifies your acceptance of the associated asset" .
 
 
 ### https://w3id.org/tosl/allowDownload
-tosl:allowDownload a rdf:type, owl:NamedIndividual, skos:Concept, odrl:Action ;
+tosl:allowDownload a owl:NamedIndividual, skos:Concept, odrl:Action ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Allow Download" ;
         skos:definition "Allow download refers to the action that permits one of the parties, typically the client, to download personal information or information about contracted services" .
 
 
 ### https://w3id.org/tosl/terminate
-tosl:terminate a rdf:type, owl:NamedIndividual, skos:Concept, odrl:Action ;
+tosl:terminate a owl:NamedIndividual, skos:Concept, odrl:Action ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Terminate" ;
         skos:definition "This action permits the termination of an asset, whether it be the agreement, services, or any other associated entity" .
            
 
 ### https://w3id.org/tosl/publish
-tosl:publish a rdf:type, owl:NamedIndividual, skos:Concept, odrl:Action ;
+tosl:publish a owl:NamedIndividual, skos:Concept, odrl:Action ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Publish" ;
         skos:definition "This action mandates the public release of an asset" .
 
 
 ### https://w3id.org/tosl/integrate
-tosl:integrate a rdf:type, owl:NamedIndividual, skos:Concept, odrl:Action ;
+tosl:integrate a owl:NamedIndividual, skos:Concept, odrl:Action ;
         odrl:includedIn odrl:use ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Integrate" ;
@@ -259,7 +259,7 @@ tosl:integrate a rdf:type, owl:NamedIndividual, skos:Concept, odrl:Action ;
 
 
 ### https://w3id.org/tosl/develop
-tosl:develop a rdf:type, owl:NamedIndividual, skos:Concept, odrl:Action ;
+tosl:develop a owl:NamedIndividual, skos:Concept, odrl:Action ;
         odrl:includedIn odrl:use ;
         dcterms:description "This action permits, mandates or prohibits the use of the services to develop a software application." ;
         rdfs:isDefinedBy tosl: ;
@@ -267,7 +267,7 @@ tosl:develop a rdf:type, owl:NamedIndividual, skos:Concept, odrl:Action ;
 
 
 ### https://w3id.org/tosl/test
-tosl:test a rdf:type, owl:NamedIndividual, skos:Concept, odrl:Action ;
+tosl:test a owl:NamedIndividual, skos:Concept, odrl:Action ;
         odrl:includedIn odrl:use ;
         dcterms:description "This action permits, mandates or prohibits the use of the services to test a software application." ;
         rdfs:isDefinedBy tosl: ;
@@ -275,35 +275,35 @@ tosl:test a rdf:type, owl:NamedIndividual, skos:Concept, odrl:Action ;
 
 
 ### https://w3id.org/tosl/anyLiability
-tosl:anyLiability a rdf:type, owl:NamedIndividual, skos:Concept, tosl:Liability ;
+tosl:anyLiability a owl:NamedIndividual, skos:Concept, tosl:Liability ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Any Liability" ;
         skos:definition "This liability provision specifies that the designated party may or may not be held liable for damages caused by the other party." .
 
 
 ### https://w3id.org/tosl/physicalInjuries
-tosl:physicalInjuries a rdf:type, owl:NamedIndividual, skos:Concept, tosl:Liability ;
+tosl:physicalInjuries a owl:NamedIndividual, skos:Concept, tosl:Liability ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Physical Injuries" ;
         skos:definition "This provision outlines the liability of the party in cases of physical damages caused to the other party" .
 
 
 ### https://w3id.org/tosl/harmCausedByMalware
-tosl:harmCausedByMalware a rdf:type, owl:NamedIndividual, skos:Concept, tosl:Liability ;
+tosl:harmCausedByMalware a owl:NamedIndividual, skos:Concept, tosl:Liability ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Harm Caused By Malware" ;
         skos:definition "The party is or not is responsible for any damages resulting from malware" .
 
     
 ### https://w3id.org/tosl/justification
-tosl:justification a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
+tosl:justification a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Justification" ;
         skos:definition "This condition mandates that specific actions can only be undertaken with appropriate justification" .
 
 
 ### https://w3id.org/tosl/totalAmount
-tosl:totalAmount a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
+tosl:totalAmount a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Calculate Amount" ;
         skos:definition "This stipulates the amount derived from a previous metric or calculation, which is used to compare against a specified threshold, such as a maximum or minimum allowable amount, in the context of a constraint." ;
@@ -311,7 +311,7 @@ tosl:totalAmount a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand
 
 
 ### https://w3id.org/tosl/inactivityPeriod
-tosl:inactivityPeriod a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
+tosl:inactivityPeriod a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Inactivity Period" ;
         skos:definition "This stipulates the duration of time a service may remain inactive or unused, serving as a parameter for triggering specific actions or evaluating compliance with constraints." ;
@@ -319,61 +319,61 @@ tosl:inactivityPeriod a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOp
 
 
 ### https://w3id.org/tosl/consumerResidentCountry
-tosl:consumerResidentCountry a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
+tosl:consumerResidentCountry a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Consumer Resident Country" ;
         skos:definition "This stipulates the country of residence of the consumer, used to compare against a list of countries in the context of constraints or conditions." .
 
 
 ### https://w3id.org/tosl/consentType
-tosl:consentType a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
+tosl:consentType a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Consent Type" ;
         skos:definition "This term refers to the specific manner in which consent is given by a party within an agreement, outlining whether it is implicit, explicit, or expressed through other defined actions" .
 
 ### https://w3id.org/tosl/compliance
-tosl:compliance a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
+tosl:compliance a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Compliance" ;
         skos:definition "This left operand refers to the adherence to an specific rule or policy. I can be used to refine the semantics of an action that has to be performed in accordance to another policy. Permited values are and IRI, a odrl:Policy or an xsd:string" .
 
 ### https://w3id.org/tosl/licensingType
-tosl:licensingType a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
+tosl:licensingType a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Licensing Type" ;
     skos:definition "This stipulates the type of license or permission required by a party to perform a specific action or activity, such as a written permission." .
 
 
 ### https://w3id.org/tosl/effect
-tosl:effect a rdf:type, owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
+tosl:effect a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Effect" ;
         skos:definition "This stipulates the effect or impact that an action may or must not cause, serving as a parameter to evaluate the outcomes of an action." .
 
 
 ### https://w3id.org/tosl/implicitConsent
-tosl:implicitConsent a rdf:type, owl:NamedIndividual, skos:Concept, odrl:RightOperand ;
+tosl:implicitConsent a owl:NamedIndividual, skos:Concept, odrl:RightOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Implicit Consent" ;
         skos:definition "This type of consent implies that by merely utilizing the service, the customer agrees to the terms of the agreement by default" .
 
 
 ### https://w3id.org/tosl/writtenPermission
-tosl:writtenPermission a odrl:RightOperand ;
+tosl:writtenPermission a owl:NamedIndividual, skos:Concept, odrl:RightOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Written Permission" ;
         skos:definition "A formal, documented authorisation required for a party to perform a specified action." .
 
 
 ### https://w3id.org/tosl/explicitConsent
-tosl:explicitConsent a rdf:type, owl:NamedIndividual, skos:Concept, odrl:RightOperand ;
+tosl:explicitConsent a owl:NamedIndividual, skos:Concept, odrl:RightOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Explicit Consent" ;
         skos:definition "This form of consent requires that the customer explicitly affirm or accept the agreement through a formal action, such as signing a document" .
 
 
 ### https://w3id.org/tosl/degradation
-tosl:degradation a rdf:type, owl:NamedIndividual, skos:Concept, odrl:RightOperand ;
+tosl:degradation a owl:NamedIndividual, skos:Concept, odrl:RightOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Degradation" ;
         skos:definition "Indicates a significant and unreasonable degradation of some metric, such as response time or availability, caused by the action of the Rule to the target of the Rule" ;
@@ -381,28 +381,28 @@ tosl:degradation a rdf:type, owl:NamedIndividual, skos:Concept, odrl:RightOperan
 
 
 ### https://w3id.org/tosl/breachOfContract
-tosl:breachOfContract a rdf:type, owl:NamedIndividual, skos:Concept, odrl:RightOperand ;
+tosl:breachOfContract a owl:NamedIndividual, skos:Concept, odrl:RightOperand ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Breach of Contract" ;
         skos:definition "This term refers to a violation or non-fulfillment of the terms as stipulated within the Policy. With the left operand odrl:event, it can be used in the constraint of a Rule that only can be exercised in case of such a breach" .
 
 
 ### https://w3id.org/tosl/consumerPlaceLaw
-tosl:consumerPlaceLaw a rdf:type, owl:NamedIndividual, skos:Concept, tosl:Law ;
+tosl:consumerPlaceLaw a owl:NamedIndividual, skos:Concept, tosl:Law ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Consumer Place Law" ;
         skos:definition "This provision states that the law governing the agreement is that of the consumer's country or the law that affects the consumer" .
 
 
 ### https://w3id.org/tosl/californiaLaw
-tosl:californiaLaw a rdf:type, owl:NamedIndividual, skos:Concept, tosl:Law ;
+tosl:californiaLaw a owl:NamedIndividual, skos:Concept, tosl:Law ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "California Law" ;
         skos:definition "This instance denotes that the governing law applicable to the agreement is that of California" .
 
 
 ### https://w3id.org/tosl/europeanLaw
-tosl:europeanLaw a rdf:type, owl:NamedIndividual, skos:Concept, tosl:Law ;
+tosl:europeanLaw a owl:NamedIndividual, skos:Concept, tosl:Law ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "European Law" ;
         skos:definition "this stipulates that the law regulating the agreement is European law" .
