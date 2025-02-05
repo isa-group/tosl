@@ -1,8 +1,22 @@
-# Terms of Service Language ODRL Profile (TOSL)
+<img src="img/tosl_logo.svg" alt="TOSL Logo" width="100px"/>
 
-An ontology designed to represent contractual terms in Software-as-a-Service (SaaS) Terms of Service (ToS). It facilitates the representation of deontic modalities, providing the necessary semantics to formally define terms such as arbitration, governing law, content removal, liability, and modification/termination terms. This ensures precise and structured interpretations of contractual obligations, permissions and prohibitions.
+Terms of Service Language ODRL Profile ([TOSL](w3id.org/tosl/)) is an ontology designed to represent contractual terms in Software-as-a-Service (SaaS) Terms of Service (ToS). It facilitates the representation of deontic modalities, providing the necessary semantics to formally define terms such as arbitration, governing law, content removal, liability, and modification/termination terms. This ensures precise and structured interpretations of contractual obligations, permissions and prohibitions.
 
-## Functional Requirements
+## Repository Structure
+
+`bin/`
+Scripts for running SPARQL queries.
+
+`examples/`
+TOSL representations of real agreements.
+
+`sparql_queries/`
+SPARQL queries for analysing deontic modalities and identifying potentially abusive terms.
+
+`tosl.ttl`
+Ontology file (TBox), defining structured concepts and relationships.
+
+## Functional Requirements 
 1. **Representation of Deontic Modalities**
 
     The ontology should enable the formal representation of contractual terms through the explicit modeling of deontic modalities:
@@ -123,21 +137,6 @@ The figure below illustrates the concepts defined by the ODRL Profile for Terms 
         ] ;
     ] .
 ```
-
-
-## Repository Structure
-
-### `bin/`
-Scripts for running SPARQL queries.
-
-### `examples/`
-TOSL representations of real agreements.
-
-### `sparql_queries/`
-SPARQL queries for analysing deontic modalities and identifying potentially abusive terms.
-
-### `tosl.ttl`
-Ontology file (TBox), defining structured concepts and relationships.
 
 ## Running a Query
 
