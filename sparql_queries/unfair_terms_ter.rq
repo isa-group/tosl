@@ -5,10 +5,11 @@ SELECT ?permission ?action ?assignee ?target
 WHERE {
     ?permission a odrl:Permission ;
                odrl:action ?action ;
-               odrl:assignee :elsevier ;
+               odrl:assignee ?assignee ;
                odrl:target ?target .
 
     FILTER (?action = tosl:terminate || ?action = tosl:suspend || ?action = tosl:disable)
+    FILTER (?assignee = :provider)
 
     OPTIONAL {
         ?permission odrl:constraint ?constraint .

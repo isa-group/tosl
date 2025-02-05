@@ -9,7 +9,7 @@ WHERE {
         odrl:assignee ?assignee ;
         odrl:target ?target .
 
-    FILTER (?action = tosl:remove && ?assignee = :elsevier)
+    FILTER (?action = tosl:remove && ?assignee = :provider)
 
     OPTIONAL {
         ?permission odrl:constraint ?constraint .
