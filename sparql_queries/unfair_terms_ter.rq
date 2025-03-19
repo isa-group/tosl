@@ -8,11 +8,13 @@ WHERE {
                odrl:assignee ?assignee ;
                odrl:target ?target .
 
+    ?assignee a tosl:Provider .
+
     FILTER (?action = tosl:terminate || ?action = tosl:suspend || ?action = tosl:disable)
-    FILTER (?assignee = :provider)
 
     OPTIONAL {
         ?permission odrl:constraint ?constraint .
+        ?constraint odrl:leftOperand tosl:justification
     }
     OPTIONAL {
         ?permission odrl:duty ?duty .

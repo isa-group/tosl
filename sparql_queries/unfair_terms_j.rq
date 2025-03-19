@@ -7,4 +7,11 @@ WHERE {
   ?dispute tosl:onDispute ?litigation .
   ?litigation a tosl:Litigation ;
               tosl:takesPlaceIn ?place .
+
+  ?place a tosl:Jurisdiction .
+
+  FILTER NOT EXISTS {
+    ?dispute tosl:onDispute ?litigation2 .
+    ?litigation2 tosl:takesPlaceIn tosl:consumerPlaceCourts .
+  }
 }

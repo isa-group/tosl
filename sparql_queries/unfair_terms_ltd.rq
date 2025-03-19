@@ -8,10 +8,14 @@ WHERE {
     tosl:liableParty ?liableParty ;
     rdf:value ?type .
   
-  ?limitationOn tosl:limitationOfLiability ?liability .
-  ?limitationOn tosl:liability ?liability .
+  ?liableParty a tosl:Provider .
   
-  FILTER (?liableParty = :provider)
+  {
+    ?limitationOn tosl:limitationOfLiability ?liability .
+  } UNION {
+    ?limitationOn tosl:liability ?liability .
+    ?liability odrl:limitation ?constraint .  
+  }
 
   FILTER (?type = tosl:anyLiability || ?type = tosl:physicalInjuries || ?type = tosl:harmCausedByMalware )
 }

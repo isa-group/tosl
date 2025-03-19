@@ -8,4 +8,9 @@ WHERE {
   ?litigation a tosl:Litigation ;
               tosl:governedBy ?law .
   ?law a tosl:Law .
+  
+  FILTER NOT EXISTS {
+    ?dispute tosl:onDispute ?litigation2 .
+    ?litigation2 tosl:governedBy tosl:consumerPlaceLaw .
+  }
 }

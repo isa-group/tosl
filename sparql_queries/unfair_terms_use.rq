@@ -9,7 +9,8 @@ WHERE {
           odrl:target ?target ;
           odrl:constraint ?constraint .
 
+    ?assignee a tosl:Customer .
     ?constraint odrl:rightOperand tosl:implicitConsent .
 
-    FILTER (?action = tosl:consent && ?assignee = :customer01)
+    FILTER (?action = tosl:consent)
 }
