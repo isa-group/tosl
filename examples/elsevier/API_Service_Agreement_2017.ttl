@@ -18,7 +18,7 @@
 :agreement01 a odrl:Agreement, odrl:Asset ;
     odrl:profile tosl: ;
     dcterms:source <https://dev.elsevier.com/api_service_agreement.html> ;
-    dcterms:description "The Elsevier API Service Agreement 2017"^^xsd:string ;
+    dcterms:title "The Elsevier API Service Agreement 2017"^^xsd:string ;
     dcterms:description "This Agreement governs the use of Elsevier's API services and replaces previous versions." ;
     dcterms:creator "Elsevier B.V."^^xsd:string ;
     dcterms:rightsHolder :elsevier;
