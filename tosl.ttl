@@ -134,6 +134,30 @@ tosl:triggers a owl:ObjectProperty, skos:Concept ;
 #    Classes
 #################################################################
 
+### https://w3id.org/tosl/Customer
+tosl:Customer a rdfs:Class, owl:Class, skos:Concept ;
+        rdfs:subClassOf odrl:Party ;
+        rdfs:isDefinedBy tosl: ;
+        rdfs:label "Customer" ;
+        skos:definition "A party that uses the service, typically for non-commercial or general purposes." .
+
+
+### https://w3id.org/tosl/BusinessCustomer
+tosl:BusinessCustomer a rdfs:Class, owl:Class, skos:Concept ;
+        rdfs:subClassOf tosl:Customer ;
+        rdfs:isDefinedBy tosl: ;
+        rdfs:label "Business Customer" ;
+        skos:definition "A customer who uses the service as part of their business operations or commercial activities." .
+
+
+### https://w3id.org/tosl/Provider
+tosl:Provider a rdfs:Class, owl:Class, skos:Concept ;
+        rdfs:subClassOf odrl:Party ;
+        rdfs:isDefinedBy tosl: ;
+        rdfs:label "Provider" ;
+        skos:definition "A party that offers, manages, or delivers the service." .
+
+
 ### https://w3id.org/tosl/Arbitration
 tosl:Arbitration a rdfs:Class, owl:Class, skos:Concept ;
         rdfs:subClassOf tosl:DisputeResolution ;

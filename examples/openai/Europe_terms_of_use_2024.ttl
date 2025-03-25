@@ -762,7 +762,7 @@
     dcterms:description "If you reside in the EEA, you can also raise the dispute with an alternative dispute resolution body via the European Commission’s Online Dispute Resolution (ODR) Platform" ;
     tosl:takesPlaceIn tosl:consumerPlaceCourts ;
     tosl:governedBy tosl:consumerPlaceLaw ;
-    odrl:constraint [
+    tosl:condition [
         a odrl:LogicalConstraint ;
         odrl:and (
             [
