@@ -81,6 +81,15 @@ tosl:liableParty a owl:ObjectProperty, skos:Concept ;
         skos:definition "This term establishes the connection between liability and a party to whom they apply" .
 
 
+### https://w3id.org/tosl/targetParty
+tosl:targetParty a owl:ObjectProperty, skos:Concept ;
+    rdfs:domain tosl:Liability, tosl:DisputeResolution ;
+    rdfs:range odrl:Party ;
+    rdfs:isDefinedBy tosl: ;
+    rdfs:label "Target Party" ;
+    skos:definition "Specifies the type of party to which the liability or dispute resolution provision is intended to apply."  .
+
+
 ### https://w3id.org/tosl/limitation
 tosl:limitation a owl:ObjectProperty, skos:Concept ;
         rdfs:domain tosl:Liability ;

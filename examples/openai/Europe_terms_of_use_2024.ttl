@@ -68,6 +68,9 @@
 :customer a tosl:Customer, foaf:Agent, dcterms:Agent ;
     dcterms:description "This party represents the consumer in the context of the OpenAI services Terms of Use" .
 
+:businessCustomer a tosl:BusinessCustomer, foaf:Agent, dcterms:Agent ;
+    dcterms:description "This party represents a business entity consuming the service in a commercial context, under the OpenAI Terms of Use." .
+
 ### odrl:Asset
 
 :serviceCredits a odrl:Asset ;
@@ -990,6 +993,7 @@
 :liability06 a tosl:Liability ;
     dcterms:description """Neither OpenAI nor any of its affiliates or licensors will be liable for any indirect, incidental, special, consequential, or exemplary damages. The total liability is limited to the greater of: (1) the amount paid by the user in the prior 12 months for the specific service, or (2) $100. These limitations apply only to the maximum extent permitted by applicable law.""" ;
     tosl:liableParty :OpenAI ;
+    tosl:appliesToParty tosl:BusinessCustomer ;
     rdf:value tosl:anyIndirectDamage, tosl:anyLoss, tosl:legalCompliance ;
     tosl:limitation [
         a odrl:LogicalConstraint ;
@@ -1013,7 +1017,7 @@
 :obligation01 a odrl:Duty ;
     dcterms:description "If you are a business or organisation, to the extent permitted by law, you will indemnify and hold harmless us, our affiliates, and our personnel, from and against any costs, losses, liabilities, and expenses (including attorneys’ fees) from third party claims arising out of or relating to your use of the Services and Content or any violation of these Terms." ;
     odrl:action odrl:compensate ;
-    odrl:assignee :customer ;
+    odrl:assignee :businessCustomer ;
     odrl:compensatedParty :OpenAI ;
     odrl:constraint [
         a odrl:Constraint ;
@@ -1028,7 +1032,8 @@
 :litigation03 a tosl:Litigation;
     dcterms:description "California law will govern these Terms except for its conflicts of laws principles. All claims arising out of or relating to these Terms will be brought exclusively in the federal or state courts of San Francisco, California." ;
     tosl:takesPlaceIn tosl:californiaCourts ;
-    tosl:governedBy tosl:californiaLaw .
+    tosl:governedBy tosl:californiaLaw ;
+    tosl:appliesToParty tosl:BusinessCustomer .
 
 tosl:californiaCourts a tosl:Jurisdiction .
 tosl:californiaLaw a tosl:Law .
