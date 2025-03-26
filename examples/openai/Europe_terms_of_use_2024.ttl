@@ -993,7 +993,7 @@
 :liability06 a tosl:Liability ;
     dcterms:description """Neither OpenAI nor any of its affiliates or licensors will be liable for any indirect, incidental, special, consequential, or exemplary damages. The total liability is limited to the greater of: (1) the amount paid by the user in the prior 12 months for the specific service, or (2) $100. These limitations apply only to the maximum extent permitted by applicable law.""" ;
     tosl:liableParty :OpenAI ;
-    tosl:appliesToParty tosl:BusinessCustomer ;
+    tosl:targetParty :businessCustomer ;
     rdf:value tosl:anyIndirectDamage, tosl:anyLoss, tosl:legalCompliance ;
     tosl:limitation [
         a odrl:LogicalConstraint ;
@@ -1033,7 +1033,7 @@
     dcterms:description "California law will govern these Terms except for its conflicts of laws principles. All claims arising out of or relating to these Terms will be brought exclusively in the federal or state courts of San Francisco, California." ;
     tosl:takesPlaceIn tosl:californiaCourts ;
     tosl:governedBy tosl:californiaLaw ;
-    tosl:appliesToParty tosl:BusinessCustomer .
+    tosl:targetParty :businessCustomer .
 
 tosl:californiaCourts a tosl:Jurisdiction .
 tosl:californiaLaw a tosl:Law .
