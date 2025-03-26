@@ -140,7 +140,7 @@ The figure below illustrates the concepts defined by the ODRL Profile for Terms 
 
 ## Running a Query
 
-To run a SPARQL query on a Knowledge Graph (KG), use the following command. Modify the necessary arguments and review the queries carefully. There are two ways to execute the queries: using a Python script or a Jupyter Notebook.
+To run a SPARQL query on a Knowledge Graph (KG), use the following command. Modify the necessary arguments and review the queries carefully. There are two ways to execute the queries: using a Python script or a Jupyter Notebook. See `sparql_queries/unfair_terms/README.md` for more details on the SPARQL queries.
 
 #### Using Python Script
 1. Clone the repository.
@@ -152,7 +152,7 @@ pip install -r bin/requirements.txt
 ```
 
 ```bash
-python bin/run_query.py "examples/elsevier/API_Service_Agreement.ttl" "$(cat sparql_queries/unfair_terms_ter.rq)" --format ttl
+python bin/run_query.py "examples/elsevier/API_Service_Agreement.ttl" "$(cat sparql_queries/unfair_terms/termination.rq)" --format ttl
 ```
 
 This command executes the SPARQL query unfair_terms_ter.rq on the ontology file API Service Agreement.ttl and returns the result.
