@@ -28,7 +28,16 @@
     dcterms:requires <https://openai.com/policies/sharing-publication-policy/> ; 
     dcterms:requires <https://openai.com/policies/service-credit-terms/> ; 
     dcterms:requires <https://openai.com/brand/> ; 
+    odrl:permission 
+        :permission01, :permission02, :permission03, :permission04, :permission05,
+        :permission06, :permission07, :permission08, :permission09, :permission10,
+        :permission11, :permission12, :permission13, :permission14, :permission15,
+        :permission16, :permission17, :permission18, :permission19, :permission20,
+        :permission21, :permission22, :permission23, :permission24, :permission25 ;
+    odrl:obligation :obligation01 ;
+    odrl:prohibition :prohibition01, :prohibition02, :prohibition03 ;
     tosl:limitationOfLiability :liability04  ;
+    tosl:onDispute :litigation01, :litigation02, :litigation03 ;
     tosl:liability :liability05 ;
     odrl:assigner :OpenAI .
 
@@ -499,7 +508,7 @@
     dcterms:description "We may change our prices from time to time. If we increase our subscription prices, we will give you at least 30 days’ notice and any price increase will take effect on your next renewal so that you can cancel if you do not agree to the price increase." ;
     odrl:action odrl:modify;
     odrl:target :paidFeatures ;
-    odrl:assigner :OpenAI ;
+    odrl:assignee :OpenAI ;
     odrl:constraint [
             a odrl:Constraint ;
             dcterms:description "At least 30 days’ notice must be provided before a price increase takes effect." ;

@@ -25,7 +25,7 @@
     dcterms:issued "2016-07-05"^^xsd:date ;
     dcterms:requires <https://dev.elsevier.com/policy.html> ; 
     odrl:permission :permission01, :permission02, :permission03, :permission04, :permission05,  :permission06,  :permission07,  :permission08,  :permission09,  :permission10, :permission11,  :permission12,  :permission13;
-    odrl:prohibition :prohibition01 ;
+    odrl:prohibition :prohibition01, :prohibition02 ;
     tosl:onDispute :litigation01, :litigation02 ;
     odrl:assigner :elsevier .
 
@@ -40,7 +40,7 @@
 :service01 a tosl:Service ;
     dcterms:description "The Elsevier API Service" ;
     dcterms:rightsHolder :elsevier;
-    tosl:limitationOfLiability :liability01, :liability02 .
+    tosl:limitationOfLiability :liability01, :liability02, :liability03 .
 
 ################################ TERM 1.1 ######################################
 # 1.1 The application programmable interfaces service (the API Service)        #
@@ -331,7 +331,8 @@
 :liability01 a tosl:Liability ;
 		dcterms:description "3.2 The Developer will be solely responsible and hold Elsevier harmless for all costs, expenses, losses and liabilities incurred, and activities undertaken by the Developer in connection with the API Service." ;
 		rdf:value tosl:anyLiability ;
-		tosl:liableParty :elsevier .
+		tosl:liableParty :elsevier ;
+        tosl:targetParty :customer01 .
 
 ################################ TERM 3.3 ######################################
 # 3.3 Developer shall obtain written permission in advance from Elsevier to    #
@@ -433,7 +434,13 @@
 :liability02 a tosl:Liability ;
         dcterms:description "Except as expressly stated in this Agreement, each party disclaims all liability to the other party in connection with the parties' performance of this Agreement and in no event will the infringing party be liable to the other party for special, indirect or consequential damages including but not limited to loss of profits, loss of business or unfitness for user purposes" ;
 		rdf:value tosl:anyLiability ;
-		tosl:liableParty :elsevier, :customer01 .
+		tosl:liableParty :elsevier ;
+        tosl:targetParty :customer01 .
+    
+:liability03 a tosl:Liability ;
+        dcterms:description "Except as expressly stated in this Agreement, each party disclaims all liability to the other party in connection with the parties' performance of this Agreement and in no event will the infringing party be liable to the other party for special, indirect or consequential damages including but not limited to loss of profits, loss of business or unfitness for user purposes" ;
+		rdf:value tosl:anyLiability ;
+		tosl:liableParty :customer01 .
 
 ################################ TERM 5 ########################################
 # The term of this Agreement shall commence on the date on which the           #

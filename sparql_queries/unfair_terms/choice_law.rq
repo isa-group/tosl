@@ -2,15 +2,18 @@ PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX tosl: <https://w3id.org/tosl/>
 
-SELECT DISTINCT ?dispute ?law
+SELECT DISTINCT ?dispute ?litigation ?law
 WHERE {
   ?dispute tosl:onDispute ?litigation .
   ?litigation a tosl:Litigation ;
               tosl:governedBy ?law .
-  ?law a tosl:Law .
   
   FILTER NOT EXISTS {
-    ?dispute tosl:onDispute ?litigation2 .
-    ?litigation2 tosl:governedBy tosl:consumerPlaceLaw .
+    ?litigation tosl:governedBy tosl:consumerPlaceLaw .
+  }
+
+  FILTER NOT EXISTS {
+    ?litigation tosl:targetParty ?party .
+    ?party a tosl:BusinessCustomer .
   }
 }
