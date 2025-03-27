@@ -90,16 +90,19 @@ PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX tosl: <https://w3id.org/tosl/>
 
-SELECT DISTINCT ?dispute ?law
+SELECT DISTINCT ?dispute ?litigation ?law
 WHERE {
   ?dispute tosl:onDispute ?litigation .
   ?litigation a tosl:Litigation ;
               tosl:governedBy ?law .
-  ?law a tosl:Law .
   
   FILTER NOT EXISTS {
-    ?dispute tosl:onDispute ?litigation2 .
-    ?litigation2 tosl:governedBy tosl:consumerPlaceLaw .
+    ?litigation tosl:governedBy tosl:consumerPlaceLaw .
+  }
+
+  FILTER NOT EXISTS {
+    ?litigation tosl:targetParty ?party .
+    ?party a tosl:BusinessCustomer .
   }
 }
 ```
@@ -251,17 +254,19 @@ PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX tosl: <https://w3id.org/tosl/>
 
-SELECT DISTINCT ?dispute ?place
+SELECT DISTINCT ?dispute ?litigation ?place
 WHERE {
   ?dispute tosl:onDispute ?litigation .
   ?litigation a tosl:Litigation ;
               tosl:takesPlaceIn ?place .
 
-  ?place a tosl:Jurisdiction .
+  FILTER NOT EXISTS {
+    ?litigation tosl:takesPlaceIn tosl:consumerPlaceCourts .
+  }
 
   FILTER NOT EXISTS {
-    ?dispute tosl:onDispute ?litigation2 .
-    ?litigation2 tosl:takesPlaceIn tosl:consumerPlaceCourts .
+    ?litigation tosl:targetParty ?party .
+    ?party a tosl:BusinessCustomer .
   }
 }
 ```
@@ -307,11 +312,15 @@ PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX tosl: <https://w3id.org/tosl/>
 
-SELECT DISTINCT ?limitationOn ?liability ?type ?liableParty
+SELECT DISTINCT ?liability ?description ?limitationOn ?type ?liableParty
 WHERE {
   ?liability a tosl:Liability ;
+    dcterms:description ?description ;
     tosl:liableParty ?liableParty ;
+    tosl:targetParty ?targetParty ;
     rdf:value ?type .
+
+  ?targetParty a tosl:Customer .
   
   ?liableParty a tosl:Provider .
   
@@ -322,7 +331,19 @@ WHERE {
     ?liability odrl:limitation ?constraint .  
   }
 
-  FILTER (?type = tosl:anyLiability || ?type = tosl:physicalInjuries || ?type = tosl:harmCausedByMalware )
+  FILTER (?type IN (
+    tosl:anyLiability,
+    tosl:physicalInjuries,
+    tosl:harmCausedByMalware,
+    tosl:discontinuity,
+    tosl:anyIndirectDamage,
+    tosl:DirectDamage,
+    tosl:anyLoss,
+    tosl:thirdparty,
+    tosl:serviceContent,
+    tosl:breachOfContract,
+    tosl:legalCompliance
+  ))
 }
 ```
 
