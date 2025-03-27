@@ -431,6 +431,7 @@
         odrl:assignee :customer01 .
 
 :liability02 a tosl:Liability ;
+        dcterms:description "Except as expressly stated in this Agreement, each party disclaims all liability to the other party in connection with the parties' performance of this Agreement and in no event will the infringing party be liable to the other party for special, indirect or consequential damages including but not limited to loss of profits, loss of business or unfitness for user purposes" ;
 		rdf:value tosl:anyLiability ;
 		tosl:liableParty :elsevier, :customer01 .
 

@@ -1,9 +1,12 @@
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX tosl: <https://w3id.org/tosl/>
+PREFIX dcterms: <http://purl.org/dc/terms/> 
 
-SELECT ?permission ?action ?assignee ?target
+
+SELECT ?permission ?description ?action ?assignee ?target
 WHERE {
     ?permission a odrl:Permission ;
+        dcterms:description ?description ;
                odrl:action ?action ;
                odrl:assignee ?assignee ;
                odrl:target ?target .
