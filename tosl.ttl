@@ -514,11 +514,18 @@ tosl:breachOfContract a owl:NamedIndividual, skos:Concept, odrl:RightOperand ;
         skos:definition "This term refers to a violation or non-fulfillment of the terms as stipulated within the Policy. With the left operand odrl:event, it can be used in the constraint of a Rule that only can be exercised in case of such a breach" .
 
 
+### https://w3id.org/tosl/consumerPlaceCourts
+tosl:consumerPlaceCourts a owl:NamedIndividual, skos:Concept, tosl:Jurisdiction ;
+    rdfs:isDefinedBy tosl: ;
+    rdfs:label "Consumer Place Courts" ;
+    skos:definition "Represents the jurisdiction corresponding to the place of residence of the consumer, typically used in B2C contexts for dispute resolution." .
+
+
 ### https://w3id.org/tosl/consumerPlaceLaw
 tosl:consumerPlaceLaw a owl:NamedIndividual, skos:Concept, tosl:Law ;
         rdfs:isDefinedBy tosl: ;
         rdfs:label "Consumer Place Law" ;
-        skos:definition "This provision states that the law governing the agreement is that of the consumer's country or the law that affects the consumer" .
+        skos:definition "Refers to the legal framework applicable in the consumer's country of residence, often used for governing agreements in consumer protection contexts." .
 
 
 ### https://w3id.org/tosl/californiaLaw
