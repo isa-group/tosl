@@ -1,6 +1,6 @@
 <img src="img/tosl_logo.svg" alt="TOSL Logo" width="100px"/>
 
-Terms of Service Language ODRL Profile ([TOSL](w3id.org/tosl/)) is an ontology designed to represent contractual terms in Software-as-a-Service (SaaS) Terms of Service (ToS). It facilitates the representation of deontic modalities, providing the necessary semantics to formally define terms such as arbitration, governing law, content removal, liability, and modification/termination terms. This ensures precise and structured interpretations of contractual obligations, permissions and prohibitions.
+Terms of Service Language ODRL Profile (TOSL) is an ontology designed to represent contractual terms in Software-as-a-Service (SaaS) Terms of Service (ToS). It facilitates the representation of deontic modalities, providing the necessary semantics to formally define terms such as arbitration, governing law, content removal, liability, and modification/termination terms. This ensures precise and structured interpretations of contractual obligations, permissions and prohibitions.
 
 ## Repository Structure
 
