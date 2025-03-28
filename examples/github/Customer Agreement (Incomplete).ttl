@@ -12,10 +12,10 @@
     tosl:liability :liability01 ;
     tosl:onDispute :litigation01 .
 
-:github a odrl:Party ;
+:github a tosl:Provider ;
     dcterms:description "GitHub" .
     
-:customer01 a odrl:Party ;
+:customer01 a tosl:Customer ;
     dcterms:description "Represents the customer in GitHub Services" .
 
 # Liability definition

@@ -140,10 +140,19 @@ The figure below illustrates the concepts defined by the ODRL Profile for Terms 
 
 ## Running a Query
 
-To run a SPARQL query on a dataset, use the following command. Change the necessary argument and be sure to review the queries, changing the **assignee** properly to the specific agreement:
+To run a SPARQL query on a Knowledge Graph (KG), use the following command. Modify the necessary arguments and review the queries carefully. There are two ways to execute the queries: using a Python script or a Jupyter Notebook. See `sparql_queries/unfair_terms/README.md` for more details on the SPARQL queries.
+
+#### Using Python Script
+1. Clone the repository.
+2. In the root directory, execute the following commands. Be sure to specify the correct KG and query to execute a different one.
+
 
 ```bash
-python bin/run_query.py "examples/elsevier/API Service Agreement.ttl" "$(cat sparql_queries/unfair_terms_ter.rq)" --format ttl
+pip install -r bin/requirements.txt 
+```
+
+```bash
+python bin/run_query.py "examples/elsevier/API_Service_Agreement.ttl" "$(cat sparql_queries/unfair_terms/termination.rq)" --format ttl
 ```
 
 This command executes the SPARQL query unfair_terms_ter.rq on the ontology file API Service Agreement.ttl and returns the result.
@@ -155,6 +164,11 @@ This command executes the SPARQL query unfair_terms_ter.rq on the ontology file 
  1  http://example.com/permission06  https://w3id.org/tosl/disable    http://example.com/service01
  2  http://example.com/permission13  https://w3id.org/tosl/terminate  http://example.com/agreement01
 ````
+
+#### Using Jupiter Notebook
+1. Clone the repository.
+2. Open the file `bin/run_query.ipynb`.
+3. Execute the code cell and modify the KG and query as needed.
 
 ## References
 
