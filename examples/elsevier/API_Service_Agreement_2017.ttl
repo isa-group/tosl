@@ -1,5 +1,4 @@
 # This is a sample ODRL policy for the Elsevier API Service
-# Copyright (c) 2024 Isa-Group
 
 @prefix : <http://example.com/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
