@@ -27,6 +27,15 @@ Directive 93/13/EEC establishes that:
 
 ### 3. Automated Detection with SPARQL and TOSL
 
+#### Competency Questions
+
+- **CQ1**: Is participation in arbitration fully optional for the consumer?  
+- **CQ2**: Does the arbitration term make arbitration mandatory before any court action can be taken?  
+- **CQ3**: Does the arbitration term require arbitration to take place in another country?  
+- **CQ4**: Is the arbitration process based on established law, or is it solely at the arbitrator's discretion?
+
+#### Evaluation
+
 To detect such clauses automatically, a SPARQL query has been implemented over contracts modeled using the **TOSL ontology**.
 
 | Criterion                                                              | Evaluation                          |
@@ -75,6 +84,12 @@ HAVING (SUM(IF(BOUND(?litigation), 1, 0)) = COUNT(?litigation))
 ---
 
 ### 2. Automated Detection with SPARQL and TOSL
+
+#### Competency Question
+
+- **CQ1**: Is the governing law fixed (e.g., US federal law) and not the same as the consumer's country of residence?
+
+#### Evaluation
 
 To detect such clauses automatically, a SPARQL query has been implemented over contracts modeled using the **TOSL ontology**.
 
@@ -125,6 +140,16 @@ WHERE {
 ---
 
 ### 2. Automated Detection with SPARQL and TOSL
+
+#### Competency Questions
+
+- **CQ1**: Can the service provider remove the consumer's content?
+- **CQ2**: Are specific reasons for content removal explicitly stated in the contract?
+- **CQ3**: Does the service provider have full discretion to remove content without providing reasons?
+- **CQ4**: Is prior notice required to be given to the user before content removal?
+- **CQ5**: Can the consumer retrieve the content before removal?
+
+#### Evaluation
 
 To detect such clauses automatically, a SPARQL query has been implemented over contracts modeled using the **TOSL ontology**.
 
@@ -192,6 +217,13 @@ Directive 93/13/EEC establishes that:
 
 ### 3. Automated Detection with SPARQL and TOSL
 
+#### Competency Questions
+
+- **CQ1**: In what ways does the consumer provide consent to the terms of a contract?
+- **CQ2**: Is the user legally bound by terms just by using the service?
+
+#### Evaluation
+
 To detect such clauses automatically, a SPARQL query has been implemented over contracts modeled using the **TOSL ontology**.
 
 | Criterion                                                              | Evaluation                          |
@@ -240,7 +272,12 @@ WHERE {
 
 ### 3. Automated Detection with SPARQL and TOSL
 
-To detect such clauses automatically, a SPARQL query has been implemented over contracts modeled using the **TOSL ontology**.
+#### Competency Questions
+
+- **CQ1**: Does the contract specify jurisdiction for dispute resolution?
+- **CQ2**: Does the jurisdiction term require dispute resolution in a different city, state, or country from the consumer's residence?
+
+#### Evaluation
 
 | Criterion                                                              | Evaluation                          |
 |------------------------------------------------------------------------|--------------------------------------|
@@ -298,7 +335,15 @@ Directive 93/13/EEC establishes that:
 
 ### 3. Automated Detection with SPARQL and TOSL
 
-To detect such clauses automatically, a SPARQL query has been implemented over contracts modeled using the **TOSL ontology**.
+#### Competency Questions
+
+- **CQ1**: Does the contract state that the provider is liable for any damages or losses?
+- **CQ2**: Is the provider not liable for damages incurred by malware or harmful software, as stated in the contract?
+- **CQ3**: Does the contract contain blanket phrases like "to the fullest extent permissible by law" to limit liability?
+- **CQ4**: Are there provisions in the contract where the provider disclaims liability for physical injuries, health issues, or loss of life?
+- **CQ5**: Does the contract attempt to exempt the provider from liability for gross negligence or intentional damage?
+
+#### Evaluation
 
 | Criterion                                                              | Evaluation                          |
 |------------------------------------------------------------------------|--------------------------------------|
@@ -376,7 +421,13 @@ Directive 93/13/EEC establishes that:
 
 ### 3. Automated Detection with SPARQL and TOSL
 
-To detect such clauses automatically, a SPARQL query has been implemented over contracts modeled using the **TOSL ontology**.
+#### Competency Questions
+
+- **CQ1**: Is the provider allowed to modify the contract unilaterally?
+- **CQ2**: Does the contract require the provider to give notice before making changes?
+- **CQ3**: Can the consumer terminate the contract if they disagree with the changes made by the provider?
+
+#### Evaluation
 
 | Criterion                                                              | Evaluation                          |
 |------------------------------------------------------------------------|--------------------------------------|
@@ -443,7 +494,13 @@ Directive 93/13/EEC establishes that:
 
 ### 3. Automated Detection with SPARQL and TOSL
 
-To detect such clauses automatically, a SPARQL query has been implemented over contracts modeled using the **TOSL ontology**.
+#### Competency Questions
+
+- **CQ1**: Can the provider terminate the contract unilaterally?
+- **CQ2**: Does it specify specific causes, or termination is allowed without justified cause?
+- **CQ3**: Is the provider required to give notice before terminating the contract?
+
+#### Evaluation
 
 | Criterion                                            | Evaluation                          |
 |------------------------------------------------------|--------------------------------------|

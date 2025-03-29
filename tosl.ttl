@@ -17,9 +17,12 @@
         rdfs:comment "This is the RDF ontology for the ODLR profile Terms of Service language" ;
         rdfs:label "ODLR Terms of Service Language Profile Version 1" ;
         dcterms:abstract "An ontology designed to represent contractual terms in Software-as-a-Service (SaaS) Terms of Service (ToS)" ;
-        dcterms:contributor "ISA-Group" ;
+        dcterms:contributor "ISAGroup" ;
         dcterms:created "2024-11-27"^^xsd:date ;
-        dcterms:creator "Elena Molino Peña, José María Cruz Lorite, José María García y Antonio Ruiz Cortés" ;
+        dcterms:creator "Elena Molino" ;
+        dcterms:creator "Jose Maria Cruz" ;
+        dcterms:creator "Jose Maria Garcia" ;
+        dcterms:creator "Antonio Ruiz" ;
         dcterms:description "The ODLR Profile for Terms of Service Language (TOSL) enhances the understanding and enforcement of legal terms within service agreements. Utilizing the Open Digital Rights Language (ODLR), this profile specifies the obligations, rights, and prohibitions contained in agreements to effectively identify and flag potentially unfair terms. By integrating ODLR's flexible framework, the TSL profile aims to ensure clearer, more enforceable, and fairer terms of service agreements across diverse digital platforms." ;
         dcterms:license <https://dalicc.net/licenselibrary/CC-BY-4.0> ;
         dcterms:title "Terms of Service Language Ontology" ;
