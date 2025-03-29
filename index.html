@@ -1,0 +1,3290 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="ReSpec 35.2.1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    span.example-title {
+      text-transform: none
+    }
+
+    :root {
+      --heading-text: #0f2f76 !important;
+    }
+
+    :is(aside, div).example,
+    div.illegal-example {
+      padding: .5em;
+      margin: 1em 0;
+      position: relative;
+      clear: both
+    }
+
+    div.illegal-example {
+      color: red
+    }
+
+    div.illegal-example p {
+      color: #000
+    }
+
+    aside.example div.example {
+      border-left-width: .1em;
+      border-color: #999;
+      background: #fff
+    }
+  </style>
+  <style>
+    dfn {
+      cursor: pointer
+    }
+
+    .dfn-panel {
+      position: absolute;
+      z-index: 35;
+      min-width: 300px;
+      max-width: 500px;
+      padding: .5em .75em;
+      margin-top: .6em;
+      font-family: "Helvetica Neue", sans-serif;
+      font-size: small;
+      background: #fff;
+      background: var(--indextable-hover-bg, #fff);
+      color: #000;
+      color: var(--text, #000);
+      box-shadow: 0 1em 3em -.4em rgba(0, 0, 0, .3), 0 0 1px 1px rgba(0, 0, 0, .05);
+      box-shadow: 0 1em 3em -.4em var(--tocsidebar-shadow, rgba(0, 0, 0, .3)), 0 0 1px 1px var(--tocsidebar-shadow, rgba(0, 0, 0, .05));
+      border-radius: 2px
+    }
+
+    .dfn-panel:not(.docked)>.caret {
+      position: absolute;
+      top: -9px
+    }
+
+    .dfn-panel:not(.docked)>.caret::after,
+    .dfn-panel:not(.docked)>.caret::before {
+      content: "";
+      position: absolute;
+      border: 10px solid transparent;
+      border-top: 0;
+      border-bottom: 10px solid #fff;
+      border-bottom-color: var(--indextable-hover-bg, #fff);
+      top: 0
+    }
+
+    .dfn-panel:not(.docked)>.caret::before {
+      border-bottom: 9px solid #a2a9b1;
+      border-bottom-color: var(--indextable-hover-bg, #a2a9b1)
+    }
+
+    .dfn-panel * {
+      margin: 0
+    }
+
+    .dfn-panel b {
+      display: block;
+      color: #000;
+      color: var(--text, #000);
+      margin-top: .25em
+    }
+
+    .dfn-panel ul a[href] {
+      color: #333;
+      color: var(--text, #333)
+    }
+
+    .dfn-panel>div {
+      display: flex
+    }
+
+    .dfn-panel a.self-link {
+      font-weight: 700;
+      margin-right: auto
+    }
+
+    .dfn-panel .marker {
+      padding: .1em;
+      margin-left: .5em;
+      border-radius: .2em;
+      text-align: center;
+      white-space: nowrap;
+      font-size: 90%;
+      color: #040b1c
+    }
+
+    .dfn-panel .marker.dfn-exported {
+      background: #d1edfd;
+      box-shadow: 0 0 0 .125em #1ca5f940
+    }
+
+    .dfn-panel .marker.idl-block {
+      background: #8ccbf2;
+      box-shadow: 0 0 0 .125em #0670b161
+    }
+
+    .dfn-panel a:not(:hover) {
+      text-decoration: none !important;
+      border-bottom: none !important
+    }
+
+    .dfn-panel a[href]:hover {
+      border-bottom-width: 1px
+    }
+
+    .dfn-panel ul {
+      padding: 0
+    }
+
+    .dfn-panel li {
+      margin-left: 1em
+    }
+
+    .dfn-panel.docked {
+      position: fixed;
+      left: .5em;
+      top: unset;
+      bottom: 2em;
+      margin: 0 auto;
+      max-width: calc(100vw - .75em * 2 - .5em - .2em * 2);
+      max-height: 30vh;
+      overflow: auto
+    }
+  </style>
+
+
+  <title>Terms of Service Language Ontology</title>
+
+  <link rel="icon" href="https://raw.githubusercontent.com/isa-group/tosl/refs/heads/main/img/tosl.svg">
+
+
+
+  <style id="respec-mainstyle">
+    @keyframes pop {
+      0% {
+        transform: scale(1, 1)
+      }
+
+      25% {
+        transform: scale(1.25, 1.25);
+        opacity: .75
+      }
+
+      100% {
+        transform: scale(1, 1)
+      }
+    }
+
+    a.internalDFN {
+      color: inherit;
+      border-bottom: 1px solid #99c;
+      text-decoration: none
+    }
+
+    a.externalDFN {
+      color: inherit;
+      border-bottom: 1px dotted #ccc;
+      text-decoration: none
+    }
+
+    a.bibref {
+      text-decoration: none
+    }
+
+    .respec-offending-element:target {
+      animation: pop .25s ease-in-out 0s 1
+    }
+
+    .respec-offending-element,
+    a[href].respec-offending-element {
+      text-decoration: red wavy underline
+    }
+
+    @supports not (text-decoration:red wavy underline) {
+      .respec-offending-element:not(pre) {
+        display: inline-block
+      }
+
+      .respec-offending-element {
+        background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x
+      }
+    }
+
+    #references :target {
+      background: #eaf3ff;
+      animation: pop .4s ease-in-out 0s 1
+    }
+
+    cite .bibref {
+      font-style: normal
+    }
+
+    a[href].orcid {
+      padding-left: 4px;
+      padding-right: 4px
+    }
+
+    a[href].orcid>svg {
+      margin-bottom: -2px
+    }
+
+    ol.tof,
+    ul.tof {
+      list-style: none outside none
+    }
+
+    .caption {
+      margin-top: .5em;
+      font-style: italic
+    }
+
+    #issue-summary>ul {
+      column-count: 2
+    }
+
+    #issue-summary li {
+      list-style: none;
+      display: inline-block
+    }
+
+    details.respec-tests-details {
+      margin-left: 1em;
+      display: inline-block;
+      vertical-align: top
+    }
+
+    details.respec-tests-details>* {
+      padding-right: 2em
+    }
+
+    details.respec-tests-details[open] {
+      z-index: 999999;
+      position: absolute;
+      border: thin solid #cad3e2;
+      border-radius: .3em;
+      background-color: #fff;
+      padding-bottom: .5em
+    }
+
+    details.respec-tests-details[open]>summary {
+      border-bottom: thin solid #cad3e2;
+      padding-left: 1em;
+      margin-bottom: 1em;
+      line-height: 2em
+    }
+
+    details.respec-tests-details>ul {
+      width: 100%;
+      margin-top: -.3em
+    }
+
+    details.respec-tests-details>li {
+      padding-left: 1em
+    }
+
+    .self-link:hover {
+      opacity: 1;
+      text-decoration: none;
+      background-color: transparent
+    }
+
+    aside.example .marker>a.self-link {
+      color: inherit
+    }
+
+    .header-wrapper {
+      display: flex;
+      align-items: baseline
+    }
+
+    :is(h2, h3, h4, h5, h6):not(#toc>h2, #abstract>h2, #sotd>h2, .head>h2) {
+      position: relative;
+      left: -.5em
+    }
+
+    :is(h2, h3, h4, h5, h6):not(#toch2)+a.self-link {
+      color: inherit;
+      order: -1;
+      position: relative;
+      left: -1.1em;
+      font-size: 1rem;
+      opacity: .5
+    }
+
+    :is(h2, h3, h4, h5, h6)+a.self-link::before {
+      content: "§";
+      text-decoration: none;
+      color: var(--heading-text)
+    }
+
+    :is(h2, h3)+a.self-link {
+      top: -.2em
+    }
+
+    :is(h4, h5, h6)+a.self-link::before {
+      color: #000
+    }
+
+    @media (max-width:767px) {
+      dd {
+        margin-left: 0
+      }
+    }
+
+    @media print {
+      .removeOnSave {
+        display: none
+      }
+    }
+  </style>
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="This document presents an ontology designed to represent the contractual terms of Software as a Service (SaaS)
+      Terms of Service (ToS) using the Open Digital Rights Language (ODRL). The ontology supports the formal
+      representation of deontic modalities, enabling the precise definition of terms related to arbitration, applicable
+      law, content removal, liability and modification/termination clauses. By leveraging ODRL, it ensures structured
+      semantics for clear and precise interpretations of contractual obligations, permissions and prohibitions within
+      SaaS agreements.">
+  <style>
+    .hljs {
+      --base: #fafafa;
+      --mono-1: #383a42;
+      --mono-2: #686b77;
+      --mono-3: #717277;
+      --hue-1: #0b76c5;
+      --hue-2: #336ae3;
+      --hue-3: #a626a4;
+      --hue-4: #42803c;
+      --hue-5: #ca4706;
+      --hue-5-2: #c91243;
+      --hue-6: #986801;
+      --hue-6-2: #9a6a01
+    }
+
+    @media (prefers-color-scheme:dark) {
+      .hljs {
+        --base: #282c34;
+        --mono-1: #abb2bf;
+        --mono-2: #818896;
+        --mono-3: #5c6370;
+        --hue-1: #56b6c2;
+        --hue-2: #61aeee;
+        --hue-3: #c678dd;
+        --hue-4: #98c379;
+        --hue-5: #e06c75;
+        --hue-5-2: #be5046;
+        --hue-6: #d19a66;
+        --hue-6-2: #e6c07b
+      }
+    }
+
+    .hljs {
+      display: block;
+      overflow-x: auto;
+      padding: .5em;
+      color: #383a42;
+      color: var(--mono-1, #383a42);
+      background: #fafafa;
+      background: var(--base, #fafafa)
+    }
+
+    .hljs-comment,
+    .hljs-quote {
+      color: #717277;
+      color: var(--mono-3, #717277);
+      font-style: italic
+    }
+
+    .hljs-doctag,
+    .hljs-formula,
+    .hljs-keyword {
+      color: #a626a4;
+      color: var(--hue-3, #a626a4)
+    }
+
+    .hljs-deletion,
+    .hljs-name,
+    .hljs-section,
+    .hljs-selector-tag,
+    .hljs-subst {
+      color: #ca4706;
+      color: var(--hue-5, #ca4706);
+      font-weight: 700
+    }
+
+    .hljs-literal {
+      color: #0b76c5;
+      color: var(--hue-1, #0b76c5)
+    }
+
+    .hljs-addition,
+    .hljs-attribute,
+    .hljs-meta-string,
+    .hljs-regexp,
+    .hljs-string {
+      color: #42803c;
+      color: var(--hue-4, #42803c)
+    }
+
+    .hljs-built_in,
+    .hljs-class .hljs-title {
+      color: #9a6a01;
+      color: var(--hue-6-2, #9a6a01)
+    }
+
+    .hljs-attr,
+    .hljs-number,
+    .hljs-selector-attr,
+    .hljs-selector-class,
+    .hljs-selector-pseudo,
+    .hljs-template-variable,
+    .hljs-type,
+    .hljs-variable {
+      color: #986801;
+      color: var(--hue-6, #986801)
+    }
+
+    .hljs-bullet,
+    .hljs-link,
+    .hljs-meta,
+    .hljs-selector-id,
+    .hljs-symbol,
+    .hljs-title {
+      color: #336ae3;
+      color: var(--hue-2, #336ae3)
+    }
+
+    .hljs-emphasis {
+      font-style: italic
+    }
+
+    .hljs-strong {
+      font-weight: 700
+    }
+
+    .hljs-link {
+      text-decoration: underline
+    }
+  </style>
+  <style>
+    var {
+      position: relative;
+      cursor: pointer
+    }
+
+    var[data-type]::after,
+    var[data-type]::before {
+      position: absolute;
+      left: 50%;
+      top: -6px;
+      opacity: 0;
+      transition: opacity .4s;
+      pointer-events: none
+    }
+
+    var[data-type]::before {
+      content: "";
+      transform: translateX(-50%);
+      border-width: 4px 6px 0 6px;
+      border-style: solid;
+      border-color: transparent;
+      border-top-color: #222
+    }
+
+    var[data-type]::after {
+      content: attr(data-type);
+      transform: translateX(-50%) translateY(-100%);
+      background: #222;
+      text-align: center;
+      font-family: "Dank Mono", "Fira Code", monospace;
+      font-style: normal;
+      padding: 6px;
+      border-radius: 3px;
+      color: #daca88;
+      text-indent: 0;
+      font-weight: 400
+    }
+
+    var[data-type]:hover::after,
+    var[data-type]:hover::before {
+      opacity: 1
+    }
+  </style>
+  <script id="initialUserConfig" type="application/json">{
+  "publishDate": "2024-12-19",
+  "modificationDate": "2024-12-26",
+  "group": "-",
+  "github": "-"",
+  "shortName": "tosl",
+  "authors": [
+    {
+      "name": "-",
+      "url": ""
+    },
+    {
+      "name": "",
+      "url": ""
+    },
+    {
+      "name": "",
+      "url": ""
+    },
+    {
+      "name": "",
+      "url": ""
+    }
+  ],
+  "logos": [
+    {
+      "src": "",
+      "url": "",
+      "alt": "TOSL Logo",
+      "id": "tosl-logo",
+      "height": 96,
+      "width": 96
+    }
+  ],
+  "otherLinks": [
+    {
+      "key": "Download Serialization",
+      "data": [
+        {
+          "value": "TOSL ttl",
+          "href": """
+        }
+      ]
+    },
+    {
+      "key": "License",
+      "data": [
+        {
+          "value": "license",
+          "href": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ]
+    }
+  ],
+  "publishISODate": "2024-12-19T00:00:00.000Z",
+  "generatedSubtitle": "19 December 2024"
+}</script>
+  <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css">
+</head>
+
+<body class="h-entry informative">
+  <div class="head">
+    <p class="logos"><a class="logo" href=""><img crossorigin="" alt="TOSL Logo"
+          height="96" id="tosl-logo" width="96">
+      </a></p>
+    <h1 id="title" class="title">Terms of Service Language Ontology</h1>
+    <p id="w3c-state"> <time class="dt-published" datetime="2024-12-19">19 December 2024</time></p>
+    <dl>
+      <dt>Authors:</dt>
+      <dd class="editor p-author h-card vcard">
+        <a class="u-url url p-name fn" href=""></a>
+      </dd>
+      <dd class="editor p-author h-card vcard">
+        <a class="u-url url p-name fn" href=""></a>
+      </dd>
+      <dd class="editor p-author h-card vcard">
+        <a class="u-url url p-name fn" href=""></a>
+      </dd>
+      <dd class="editor p-author h-card vcard">
+        <a class="u-url url p-name fn" href=""></a>
+      </dd>
+      <dt>Feedback:</dt>
+      <dd>
+      </dd>
+
+      <dt>Download Serialization</dt>
+      <dd>
+      </dd>
+      <dt>License</dt>
+      <dd>
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+          <img src="https://img.shields.io/badge/License-CC--BY%204.0-green" alt="CC-BY 4.0">
+        </a>
+      </dd>
+    </dl>
+    </details>
+
+
+    <p class="copyright">
+      <a href="https://www.w3.org/policies/#copyright">Copyright</a>
+      ©
+      2024
+    </p>
+    <hr title="Separator for header">
+  </div>
+  <section id="abstract" class="introductory">
+    <h2>Abstract</h2>
+    <p>This document presents an ontology designed to represent the contractual terms of Software as a Service (SaaS)
+      Terms of Service (ToS) using the Open Digital Rights Language (ODRL). The ontology supports the formal
+      representation of deontic modalities, enabling the precise definition of terms related to arbitration, applicable
+      law, content removal, liability and modification/termination clauses. By leveraging ODRL, it ensures structured
+      semantics for clear and precise interpretations of contractual obligations, permissions and prohibitions within
+      SaaS agreements.</p>
+  </section>
+  <nav id="toc">
+    <h2 class="introductory" id="table-of-contents">Table of Contents</h2>
+    <ol class="toc">
+      <li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li>
+      <li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a>
+        <ol class="toc">
+          <li class="tocline"><a class="tocxref" href="#profile-diagram"><bdi class="secno">1.1 </bdi>Profile
+              diagram</a></li>
+          <li class="tocline"><a class="tocxref" href="#namespaces"><bdi class="secno">1.2 </bdi>Namespaces</a></li>
+        </ol>
+      </li>
+      <li class="tocline"><a class="tocxref" href="#profile-specification"><bdi class="secno">2. </bdi>Profile
+          specification</a>
+        <ol class="toc">
+          <li class="tocline"><a class="tocxref" href="#dispute-resolution"><bdi class="secno">2.1 </bdi>Dispute
+              Resolution</a>
+            <ol class="toc">
+              <li class="tocline"><a class="tocxref" href="#governed-by"><bdi class="secno">2.1.1 </bdi>Governed By</a>
+              </li>
+              <li class="tocline"><a class="tocxref" href="#takes-place-in"><bdi class="secno">2.1.2 </bdi>Takes Place
+                  In</a></li>
+              <li class="tocline"><a class="tocxref" href="#on-dispute"><bdi class="secno">2.1.3 </bdi>On Dispute</a>
+              </li>
+              <li class="tocline"><a class="tocxref" href="#has-condition"><bdi class="secno">2.1.4 </bdi>Has
+                  Condition</a></li>
+            </ol>
+          </li>
+          <li class="tocline"><a class="tocxref" href="#arbitration"><bdi class="secno">2.2 </bdi>Arbitration</a></li>
+          <li class="tocline"><a class="tocxref" href="#litigation"><bdi class="secno">2.3 </bdi>Litigation</a>
+            <ol class="toc">
+              <li class="tocline"><a class="tocxref" href="#requires"><bdi class="secno">2.3.1 </bdi>Requires</a></li>
+            </ol>
+          </li>
+          <li class="tocline"><a class="tocxref" href="#jurisdiction"><bdi class="secno">2.4 </bdi>Jurisdiction</a></li>
+          <li class="tocline"><a class="tocxref" href="#law"><bdi class="secno">2.5 </bdi>Law</a>
+            <ol class="toc">
+              <li class="tocline"><a class="tocxref" href="#consumer-place-law"><bdi class="secno">2.5.1 </bdi>Consumer
+                  Place Law</a></li>
+              <li class="tocline"><a class="tocxref" href="#california-law"><bdi class="secno">2.5.2 </bdi>California
+                  Law</a></li>
+              <li class="tocline"><a class="tocxref" href="#european-law"><bdi class="secno">2.5.3 </bdi>European
+                  Law</a></li>
+            </ol>
+          </li>
+          <li class="tocline"><a class="tocxref" href="#liability"><bdi class="secno">2.6 </bdi>Liability</a>
+            <ol class="toc">
+              <li class="tocline"><a class="tocxref" href="#with-liability"><bdi class="secno">2.6.1 </bdi>With
+                  Liability</a></li>
+              <li class="tocline"><a class="tocxref" href="#liable-party"><bdi class="secno">2.6.2 </bdi>Liable
+                  Party</a></li>
+              <li class="tocline"><a class="tocxref" href="#has-limitation"><bdi class="secno">2.6.3 </bdi>Has
+                  Limitation</a></li>
+              <li class="tocline"><a class="tocxref" href="#with-limitation-of-liability"><bdi class="secno">2.6.4
+                  </bdi>With Limitation Of Liability</a></li>
+              <li class="tocline"><a class="tocxref" href="#any-liability"><bdi class="secno">2.6.5 </bdi>Any
+                  Liability</a></li>
+              <li class="tocline"><a class="tocxref" href="#physical-injuries"><bdi class="secno">2.6.6 </bdi>Physical
+                  Injuries</a></li>
+              <li class="tocline"><a class="tocxref" href="#harm-caused-by-malware"><bdi class="secno">2.6.7 </bdi>Harm
+                  Caused By Malware</a></li>
+            </ol>
+          </li>
+          <li class="tocline"><a class="tocxref" href="#duty"><bdi class="secno">2.7 </bdi>Duty</a>
+            <ol class="toc">
+              <li class="tocline"><a class="tocxref" href="#triggers"><bdi class="secno">2.7.1 </bdi>Triggers</a></li>
+            </ol>
+          </li>
+          <li class="tocline"><a class="tocxref" href="#action"><bdi class="secno">2.8 </bdi>Action</a>
+            <ol class="toc">
+              <li class="tocline"><a class="tocxref" href="#remove"><bdi class="secno">2.8.1 </bdi>Remove</a></li>
+              <li class="tocline"><a class="tocxref" href="#consent"><bdi class="secno">2.8.2 </bdi>Consent</a></li>
+              <li class="tocline"><a class="tocxref" href="#allow-download"><bdi class="secno">2.8.3 </bdi>Allow
+                  Download</a></li>
+              <li class="tocline"><a class="tocxref" href="#terminate"><bdi class="secno">2.8.4 </bdi>Terminate</a></li>
+              <li class="tocline"><a class="tocxref" href="#publish"><bdi class="secno">2.8.5 </bdi>Publish</a></li>
+              <li class="tocline"><a class="tocxref" href="#integrate"><bdi class="secno">2.8.6 </bdi>Integrate</a></li>
+              <li class="tocline"><a class="tocxref" href="#test"><bdi class="secno">2.8.7 </bdi>Test</a></li>
+              <li class="tocline"><a class="tocxref" href="#develop"><bdi class="secno">2.8.8 </bdi>Develop</a></li>
+            </ol>
+          </li>
+          <li class="tocline"><a class="tocxref" href="#asset"><bdi class="secno">2.9 </bdi>Asset</a>
+            <ol class="toc">
+              <li class="tocline"><a class="tocxref" href="#service"><bdi class="secno">2.9.1 </bdi>Service</a></li>
+              <li class="tocline"><a class="tocxref" href="#user-content"><bdi class="secno">2.9.2 </bdi>User
+                  Content</a></li>
+            </ol>
+          </li>
+          <li class="tocline"><a class="tocxref" href="#left-operand"><bdi class="secno">2.10 </bdi>Left Operand</a>
+            <ol class="toc">
+              <li class="tocline"><a class="tocxref" href="#justification"><bdi class="secno">2.10.1
+                  </bdi>Justification</a></li>
+              <li class="tocline"><a class="tocxref" href="#calculate-amount"><bdi class="secno">2.10.2 </bdi>Calculate
+                  Amount</a></li>
+              <li class="tocline"><a class="tocxref" href="#inactivity-period"><bdi class="secno">2.10.3
+                  </bdi>Inactivity Period</a></li>
+              <li class="tocline"><a class="tocxref" href="#consumer-resident-country"><bdi class="secno">2.10.4
+                  </bdi>Consumer Resident Country</a></li>
+              <li class="tocline"><a class="tocxref" href="#consent-type"><bdi class="secno">2.10.5 </bdi>Consent
+                  Type</a></li>
+              <li class="tocline"><a class="tocxref" href="#compliance"><bdi class="secno">2.10.6 </bdi>Compliance</a>
+              </li>
+              <li class="tocline"><a class="tocxref" href="#licensing-type"><bdi class="secno">2.10.7 </bdi>Licensing
+                  Type</a></li>
+              <li class="tocline"><a class="tocxref" href="#effect"><bdi class="secno">2.10.8 </bdi>Effect</a></li>
+            </ol>
+          </li>
+          <li class="tocline"><a class="tocxref" href="#right-operand"><bdi class="secno">2.11 </bdi>Right Operand</a>
+            <ol class="toc">
+              <li class="tocline"><a class="tocxref" href="#implicit-consent"><bdi class="secno">2.11.1 </bdi>Implicit
+                  Consent</a></li>
+              <li class="tocline"><a class="tocxref" href="#explicit-consent"><bdi class="secno">2.11.2 </bdi>Explicit
+                  Consent</a></li>
+              <li class="tocline"><a class="tocxref" href="#degradation"><bdi class="secno">2.11.3 </bdi>Degradation</a>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li class="tocline"><a class="tocxref" href="#examples"><bdi class="secno">3. </bdi>Examples</a>
+        <ol class="toc">
+          <li class="tocline"><a class="tocxref" href="#method-of-dispute-resolution"><bdi class="secno">3.1
+              </bdi>Method of Dispute Resolution</a></li>
+        </ol>
+      </li>
+      <li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a>
+      </li>
+    </ol>
+  </nav>
+
+  <section class="informative" id="introduction">
+    <div class="header-wrapper">
+      <h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction"
+        aria-label="Permalink for Section 1."></a>
+    </div>
+
+
+    <p><strong>Abusive services</strong> are characterised by the inclusion of <strong>terms in their Customer
+        Agreements (CAs)</strong>, resulting in a substantial imbalance between the rights and obligations of the
+      contracting parties, to the detriment of consumers. Legal frameworks such as the EU Directive on Unfair Contract
+      Terms (UCTD) seek to protect consumers from the adverse effects of unilaterally drafted contracts imposed by
+      service providers. However, identifying unfair terms remains a challenging task, requiring meticulous legalese
+      analysis. This process is often tedious, time-consuming, and error-prone, resulting in a lack of awareness among
+      consumers about the potential risks associated with accepting a service provider’s terms of service.</p>
+
+    <p>The <strong>ODLR Profile for Terms of Service Language (TOSL)</strong> aims to address the complexities of CAs by
+      providing a formal mechanism for structuring and organising
+      the set of responsibilities described in the ToS, in order to ultimately perform analysis operations on the
+      structured knowledge. Specifically, TOSL extends the ODRL by incorporating the representation of
+      <strong>liabilities</strong>, their
+      <strong>limitations</strong>, and <strong>dispute resolution</strong> mechanisms, concepts that are difficult to
+      represent using the existing ODRL
+      framework. Additionally, it introduces new terms in the base vocabulary, as well as relationships and entities
+      specific to this domain to represent the terms more accurately. The expanded terminology supports responses to the
+      defined CQs, which partially ensures transparency and fairness, contributing to the creation of more equitable and
+      understandable ToS, and mitigating operational risks.
+    </p>
+
+    <table>
+      <caption>Key Competency Questions and Domain Concepts</caption>
+      <thead>
+        <tr>
+          <th>Competency Questions</th>
+          <th>Domain Concepts</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><em>A</em>. Is arbitration mandatory before taking any court action?</td>
+          <td>Arbitration, Litigation, Dispute</td>
+        </tr>
+        <tr>
+          <td><em>LAW</em>. Is the governing law fixed and different from the consumer's country of residence?</td>
+          <td>Law, Consumer Country</td>
+        </tr>
+        <tr>
+          <td><em>CR</em>. Can the service provider remove the consumer's content?</td>
+          <td>Remove, Consumer Content</td>
+        </tr>
+        <tr>
+          <td><em>USE</em>. In what ways does the consumer provide consent to the terms of a contract?</td>
+          <td>Consent, Implicit, Explicit</td>
+        </tr>
+        <tr>
+          <td><em>J</em>. Does the jurisdiction require dispute resolution outside the consumer's residence?</td>
+          <td>Jurisdiction, Consumer Courts, Dispute Resolution</td>
+        </tr>
+        <tr>
+          <td><em>LTD</em>. Does the contract state that the provider is liable for any damages or losses?</td>
+          <td>Liability, Any Damages, Limit</td>
+        </tr>
+        <tr>
+          <td><em>CH</em>. Does the contract require the provider to give notice before making changes?</td>
+          <td>Change, Prior Notice</td>
+        </tr>
+        <tr>
+          <td><em>TER</em>. Can the provider terminate the contract unilaterally?</td>
+          <td>Terminate, Justification</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section id="profile-diagram">
+      <div class="header-wrapper">
+        <h3 id="x1-1-profile-diagram"><bdi class="secno">1.1 </bdi>Profile diagram</h3><a class="self-link"
+          href="#profile-diagram" aria-label="Permalink for Section 1.1"></a>
+      </div>
+      <p>The figure below illustrates the concepts defined by the ODRL Profile for Terms of Service. These concepts
+        facilitate the modeling of statements outlined in cloud provider agreements and enable the evaluation of the
+        previously formulated questions to identify potentially abusive contractual terms.</p>
+      <img src="https://raw.githubusercontent.com/isa-group/tosl/refs/heads/main/img/tosl_model.svg" width="100%"
+        alt="tosl concepts">
+
+    </section>
+    <section id="namespaces">
+      <div class="header-wrapper">
+        <h3 id="x1-2-namespaces"><bdi class="secno">1.2 </bdi>Namespaces</h3><a class="self-link" href="#namespaces"
+          aria-label="Permalink for Section 1.2"></a>
+      </div>
+      <table class="def">
+        <tbody>
+          <tr>
+            <th>Prefix</th>
+            <th>Namespace</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>owl</td>
+            <td>http://www.w3.org/2002/07/owl#</td>
+            <td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-owl2-overview"
+                  title="OWL 2 Web Ontology Language Document Overview (Second Edition)">owl2-overview</a></cite>]</td>
+          </tr>
+          <tr>
+            <td>rdf</td>
+            <td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td>
+            <td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-concepts"
+                  title="Resource Description Framework (RDF): Concepts and Abstract Syntax">rdf-concepts</a></cite>]
+            </td>
+          </tr>
+          <tr>
+            <td>xsd</td>
+            <td>http://www.w3.org/2001/XMLSchema#</td>
+            <td>xmlschema</td>
+          </tr>
+          <tr>
+            <td>rdfs</td>
+            <td>http://www.w3.org/2000/01/rdf-schema#</td>
+            <td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rdf-schema"
+                  title="RDF Schema 1.1">rdf-schema</a></cite>]</td>
+          </tr>
+          <tr>
+            <td>odrl</td>
+            <td>http://www.w3.org/ns/odrl/2/</td>
+            <td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-odrl vocabulary"
+                  title="Reference &quot;[ODRL Vocabulary]&quot">ODRL Vocabulary</a></cite>]</td>
+          </tr>
+          <tr>
+            <td>skos</td>
+            <td>http://www.w3.org/2004/02/skos/core#</td>
+            <td>[<cite><a class="bibref" data-link-type="biblio" href="#bib-skos-reference"
+                  title="SKOS Simple Knowledge Organization System Reference">skos-reference</a></cite>]</td>
+          </tr>
+          <tr>
+            <td>dcterms</td>
+            <td>http://purl.org/dc/terms/</td>
+            <td><a href="http://purl.org/dc/terms/&quot;">[<cite><a class="bibref" data-link-type="biblio"
+                    href="#bib-dcterms" title="DCMI Metadata Terms">dcterms</a></cite>]</a></td>
+          </tr>
+          <tr>
+            <td>vann</td>
+            <td>http://purl.org/vocab/vann/</td>
+            <td><a href="http://purl.org/vocab/vann/">[<cite><a class="bibref" data-link-type="biblio" href="#bib-vann"
+                    title="VANN: A vocabulary for annotating vocabulary descriptions">vann</a></cite>]</a></td>
+          </tr>
+          <tr>
+            <td>profile</td>
+            <td>http://www.w3.org/ns/dx/prof/</td>
+            <td><a href="http://www.w3.org/ns/dx/prof/">profile</a></td>
+          </tr>
+          <tr>
+            <td>tosl</td>
+            <td>https://w3id.org/tosl/</td>
+            <td><a href="https://w3id.org/tosl/">ToS Language Profile</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+  </section>
+
+  <section id="profile-specification">
+    <div class="header-wrapper">
+      <h2 id="x2-profile-specification"><bdi class="secno">2. </bdi>Profile specification</h2><a class="self-link"
+        href="#profile-specification" aria-label="Permalink for Section 2."></a>
+    </div>
+
+    <p>The TOSL profile focuses on specifying Terms of Service (ToS) terms by representing obligations, rights,
+      prohibitions, limits of responsibilities for the parties, and conflict resolution aspects, enabling operations
+      such as identifying potentially unfair terms. New objects that have been added, as well as extensions to the core
+      ODRL vocabulary, are defined below.</p>
+
+    <section id="dispute-resolution">
+      <div class="header-wrapper">
+        <h3 id="x2-1-dispute-resolution"><bdi class="secno">2.1 </bdi>Dispute Resolution</h3><a class="self-link"
+          href="#dispute-resolution" aria-label="Permalink for Section 2.1"></a>
+      </div>
+      <table class="def">
+        <tbody>
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Dispute Resolution</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Employed to specify the mechanisms for resolving disputes among the parties involved in the agreement
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="https://w3id.org/tosl/DisputeResolution">tosl:DisputeResolution</a></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Sub-classes</p>
+            </td>
+            <td>
+              <p><a href="https://w3id.org/tosl/Arbitration">tosl:Arbitration</a>,
+                <a href="https://w3id.org/tosl/Litigation">tosl:Litigation</a>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="https://w3id.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a>,
+                <a href="https://w3id.org/tosl/governedBy">tosl:governedBy</a>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <section id="governed-by">
+        <div class="header-wrapper">
+          <h4 id="x2-1-1-governed-by"><bdi class="secno">2.1.1 </bdi>Governed By</h4><a class="self-link"
+            href="#governed-by" aria-label="Permalink for Section 2.1.1"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Governed By</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>Establishes the connection to the specific legal framework that governs the agreement</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/governedBy">tosl:governedBy</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Domain</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/DisputeResolution">tosl:DisputeResolution</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Range</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/Law">tosl:Law</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="takes-place-in">
+        <div class="header-wrapper">
+          <h4 id="x2-1-2-takes-place-in"><bdi class="secno">2.1.2 </bdi>Takes Place In</h4><a class="self-link"
+            href="#takes-place-in" aria-label="Permalink for Section 2.1.2"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Takes Place In</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This term describes the relationship between Dispute Resolution and Jurisdiction, specifying the
+                  location
+                  where disputes are to be resolved</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Domain</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/DisputeResolution">tosl:DisputeResolution</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Range</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/Jurisdiction">tosl:Jurisdiction</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="on-dispute">
+        <div class="header-wrapper">
+          <h4 id="x2-1-3-on-dispute"><bdi class="secno">2.1.3 </bdi>On Dispute</h4><a class="self-link"
+            href="#on-dispute" aria-label="Permalink for Section 2.1.3"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>On Dispute</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>Represents the relationship between a Policy and its associated Dispute Resolution mechanism,
+                  specifying
+                  how, where, and under which law disputes arising under the Policy will be resolved</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Property</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/onDispute">tosl:onDispute</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Domain</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Policy">odrl:Policy</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Range</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/DisputeResolution">tosl:DisputeResolution</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="has-condition">
+        <div class="header-wrapper">
+          <h4 id="x2-1-4-has-condition"><bdi class="secno">2.1.4 </bdi>Has Condition</h4><a class="self-link"
+            href="#has-condition" aria-label="Permalink for Section 2.1.4"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Has Condition</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This relationship enables the specification of particular restrictions that apply to the dispute</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/condition">tosl:condition</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Domain</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/DisputeResolution">tosl:DisputeResolution</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Range</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Constraint">odrl:Constraint</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+    </section>
+    <section id="arbitration">
+      <div class="header-wrapper">
+        <h3 id="x2-2-arbitration"><bdi class="secno">2.2 </bdi>Arbitration</h3><a class="self-link" href="#arbitration"
+          aria-label="Permalink for Section 2.2"></a>
+      </div>
+      <table class="def">
+        <tbody>
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Arbitration</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Arbitration is a process for resolving disputes without recourse to conventional judicial systems,
+                typically managed by an arbitrator</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="https://w3id.org/tosl/Arbitration">tosl:Arbitration</a></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="https://w3id.org/tosl/requires">tosl:requires</a></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+    <section id="litigation">
+      <div class="header-wrapper">
+        <h3 id="x2-3-litigation"><bdi class="secno">2.3 </bdi>Litigation</h3><a class="self-link" href="#litigation"
+          aria-label="Permalink for Section 2.3"></a>
+      </div>
+      <table class="def">
+        <tbody>
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Litigation</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Litigation is a legal process in which the provider or customer, acting as the plaintiff, initiates
+                proceedings against the other party, called the defendant, before a civil court in a settlement dispute
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="https://w3id.org/tosl/Litigation">tosl:Litigation</a></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="https://w3id.org/tosl/requires">tosl:requires</a></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <section id="requires">
+        <div class="header-wrapper">
+          <h4 id="x2-3-1-requires"><bdi class="secno">2.3.1 </bdi>Requires</h4><a class="self-link" href="#requires"
+            aria-label="Permalink for Section 2.3.1"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Requires</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This relationship specifies that all disputes must be resolved through arbitration</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/requires">tosl:requires</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Domain</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/Litigation">tosl:Litigation</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Range</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/Arbitration">tosl:Arbitration</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+    </section>
+    <section id="jurisdiction">
+      <div class="header-wrapper">
+        <h3 id="x2-4-jurisdiction"><bdi class="secno">2.4 </bdi>Jurisdiction</h3><a class="self-link"
+          href="#jurisdiction" aria-label="Permalink for Section 2.4"></a>
+      </div>
+      <table class="def">
+        <tbody>
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Jurisdiction</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Jurisdiction refers to the specific location or legal authority where a dispute must be resolved</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="https://w3id.org/tosl/Jurisdiction">tosl:Jurisdiction</a></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="https://w3id.org/tosl/takesPlaceIn">tosl:takesPlaceIn</a></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+    <section id="law">
+      <div class="header-wrapper">
+        <h3 id="x2-5-law"><bdi class="secno">2.5 </bdi>Law</h3><a class="self-link" href="#law"
+          aria-label="Permalink for Section 2.5"></a>
+      </div>
+      <table class="def">
+        <tbody>
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Law</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Law refers to the specific statutes and regulations that govern an agreement and are applicable in
+                resolving any disputes arising from it</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="https://w3id.org/tosl/Law">tosl:Law</a></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p><a href="https://w3id.org/tosl/governedBy">tosl:governedBy</a></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <section id="consumer-place-law">
+        <div class="header-wrapper">
+          <h4 id="x2-5-1-consumer-place-law"><bdi class="secno">2.5.1 </bdi>Consumer Place Law</h4><a class="self-link"
+            href="#consumer-place-law" aria-label="Permalink for Section 2.5.1"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Consumer Place Law</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This provision states that the law governing the agreement is that of the consumer's country or the
+                  law
+                  that affects the consumer</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/consumerPlaceLaw">tosl:consumerPlaceLaw</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="california-law">
+        <div class="header-wrapper">
+          <h4 id="x2-5-2-california-law"><bdi class="secno">2.5.2 </bdi>California Law</h4><a class="self-link"
+            href="#california-law" aria-label="Permalink for Section 2.5.2"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>California Law</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This instance denotes that the governing law applicable to the agreement is that of California</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/californiaLaw">tosl:californiaLaw</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="european-law">
+        <div class="header-wrapper">
+          <h4 id="x2-5-3-european-law"><bdi class="secno">2.5.3 </bdi>European Law</h4><a class="self-link"
+            href="#european-law" aria-label="Permalink for Section 2.5.3"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>European Law</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>this stipulates that the law regulating the agreement is European law</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/europeanLaw">tosl:europeanLaw</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+    </section>
+    <section id="liability">
+      <div class="header-wrapper">
+        <h3 id="x2-6-liability"><bdi class="secno">2.6 </bdi>Liability</h3><a class="self-link" href="#liability"
+          aria-label="Permalink for Section 2.6"></a>
+      </div>
+      <table class="def">
+        <tbody>
+          <tr>
+            <td>
+              <p>Label</p>
+            </td>
+            <td>
+              <p>Liability</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Definition</p>
+            </td>
+            <td>
+              <p>Liability refers to the specific provisions that define and restrict the extent to which each party in
+                the
+                agreement can be held accountable for damages or losses</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Term</p>
+            </td>
+            <td>
+              <p><a href="https://w3id.org/tosl/Liability">tosl:Liability</a></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Property</p>
+            </td>
+            <td>
+              <p> <a href="https://w3id.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a>,
+                <a href="https://w3id.org/tosl/liability">tosl:liability</a>,
+                <a href="https://w3id.org/tosl/liableParty">tosl:liableParty</a>,
+                <a href="https://w3id.org/tosl/limitation">tosl:limitation</a>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <section id="with-liability">
+        <div class="header-wrapper">
+          <h4 id="x2-6-1-with-liability"><bdi class="secno">2.6.1 </bdi>With Liability</h4><a class="self-link"
+            href="#with-liability" aria-label="Permalink for Section 2.6.1"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>With Liability</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>Establishes the relationship between a rule, policy or asset and the applicable liabilities,
+                  describing the
+                  duties or obligations to be assumed in a specific context</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/liability">tosl:liability</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Domain</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Policy">odrl:Policy</a>,
+                  <a href="http://www.w3.org/ns/odrl/2/Rule">odrl:Rule</a>,
+                  <a href="http://www.w3.org/ns/odrl/2/Asset">odrl:Asset</a>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Range</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/Liability">tosl:Liability</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="liable-party">
+        <div class="header-wrapper">
+          <h4 id="x2-6-2-liable-party"><bdi class="secno">2.6.2 </bdi>Liable Party</h4><a class="self-link"
+            href="#liable-party" aria-label="Permalink for Section 2.6.2"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Liable Party</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This term establishes the connection between liability and a party to whom they apply</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/liableParty">tosl:liableParty</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Domain</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/Liability">tosl:Liability</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Range</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Party">odrl:Party</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="has-limitation">
+        <div class="header-wrapper">
+          <h4 id="x2-6-3-has-limitation"><bdi class="secno">2.6.3 </bdi>Has Limitation</h4><a class="self-link"
+            href="#has-limitation" aria-label="Permalink for Section 2.6.3"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Has Limitation</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>Defines a relationship that allows specifying particular restrictions or conditions related to the
+                  limitation of liabilities of a party</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/limitation">tosl:limitation</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Domain</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/Liability">tosl:Liability</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Range</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Constraint">odrl:Constraint</a></p>
+              </td>
+            </tr>
+
+
+          </tbody>
+        </table>
+
+      </section>
+      <section id="with-limitation-of-liability">
+        <div class="header-wrapper">
+          <h4 id="x2-6-4-with-limitation-of-liability"><bdi class="secno">2.6.4 </bdi>With Limitation Of Liability</h4>
+          <a class="self-link" href="#with-limitation-of-liability" aria-label="Permalink for Section 2.6.4"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>With Limitation Of Liability</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>Defines the relationship that links a rule, policy or asset to the limitations of liability
+                  applicable to
+                  one or more parties, specifying the scope and restrictions in cases of damages or breaches</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/limitationOfLiability">tosl:limitationOfLiability</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Domain</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Policy">odrl:Policy</a>,
+                  <a href="http://www.w3.org/ns/odrl/2/Rule">odrl:Rule</a>,
+                  <a href="http://www.w3.org/ns/odrl/2/Asset">odrl:Asset</a>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Range</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/Liability">tosl:Liability</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+      </section>
+      <section id="any-liability">
+        <div class="header-wrapper">
+          <h4 id="x2-6-5-any-liability"><bdi class="secno">2.6.5 </bdi>Any Liability</h4><a class="self-link"
+            href="#any-liability" aria-label="Permalink for Section 2.6.5"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Any Liability</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This liability provision specifies that the designated party may or may not be held liable for
+                  damages
+                  caused by the other party.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/anyLiability">tosl:anyLiability</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="physical-injuries">
+        <div class="header-wrapper">
+          <h4 id="x2-6-6-physical-injuries"><bdi class="secno">2.6.6 </bdi>Physical Injuries</h4><a class="self-link"
+            href="#physical-injuries" aria-label="Permalink for Section 2.6.6"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Physical Injuries</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This provision outlines the liability of the party in cases of physical damages caused to the other
+                  party
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/physicalInjuries">tosl:physicalInjuries</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p></p>
+              </td>
+            </tr>
+
+
+          </tbody>
+        </table>
+
+      </section>
+      <section id="harm-caused-by-malware">
+        <div class="header-wrapper">
+          <h4 id="x2-6-7-harm-caused-by-malware"><bdi class="secno">2.6.7 </bdi>Harm Caused By Malware</h4><a
+            class="self-link" href="#harm-caused-by-malware" aria-label="Permalink for Section 2.6.7"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Harm Caused By Malware</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>The party is or not is responsible for any damages resulting from malware</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/harmCausedByMalware">tosl:harmCausedByMalware</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+    </section>
+    <section id="duty">
+      <div class="header-wrapper">
+        <h3 id="x2-7-duty"><bdi class="secno">2.7 </bdi>Duty</h3><a class="self-link" href="#duty"
+          aria-label="Permalink for Section 2.7"></a>
+      </div>
+      <section id="triggers">
+        <div class="header-wrapper">
+          <h4 id="x2-7-1-triggers"><bdi class="secno">2.7.1 </bdi>Triggers</h4><a class="self-link" href="#triggers"
+            aria-label="Permalink for Section 2.7.1"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Triggers</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>Represents the relationship where a permission can trigger a specific duty for a party</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/triggers">tosl:triggers</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Domain</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Permission">odrl:Permission</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Range</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Duty">odrl:Duty</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+    </section>
+    <section id="action">
+      <div class="header-wrapper">
+        <h3 id="x2-8-action"><bdi class="secno">2.8 </bdi>Action</h3><a class="self-link" href="#action"
+          aria-label="Permalink for Section 2.8"></a>
+      </div>
+
+      <section id="remove">
+        <div class="header-wrapper">
+          <h4 id="x2-8-1-remove"><bdi class="secno">2.8.1 </bdi>Remove</h4><a class="self-link" href="#remove"
+            aria-label="Permalink for Section 2.8.1"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Remove</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This action may authorize, obligate, or prohibit the deletion of content from the provided services
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/remove">tosl:remove</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="consent">
+        <div class="header-wrapper">
+          <h4 id="x2-8-2-consent"><bdi class="secno">2.8.2 </bdi>Consent</h4><a class="self-link" href="#consent"
+            aria-label="Permalink for Section 2.8.2"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Consent</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This action signifies your acceptance of the associated asset</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/consent">tosl:consent</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="allow-download">
+        <div class="header-wrapper">
+          <h4 id="x2-8-3-allow-download"><bdi class="secno">2.8.3 </bdi>Allow Download</h4><a class="self-link"
+            href="#allow-download" aria-label="Permalink for Section 2.8.3"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Allow Download</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>Allow download refers to the action that permits one of the parties, typically the client, to
+                  download
+                  personal information or information about contracted services</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/allowDownload">tosl:allowDownload</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="terminate">
+        <div class="header-wrapper">
+          <h4 id="x2-8-4-terminate"><bdi class="secno">2.8.4 </bdi>Terminate</h4><a class="self-link" href="#terminate"
+            aria-label="Permalink for Section 2.8.4"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Terminate</p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This action permits the termination of an asset, whether it be the agreement, services, or any other
+                  associated entity</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/terminate">tosl:terminate</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="publish">
+        <div class="header-wrapper">
+          <h4 id="x2-8-5-publish"><bdi class="secno">2.8.5 </bdi>Publish</h4><a class="self-link" href="#publish"
+            aria-label="Permalink for Section 2.8.5"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Publish</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This action mandates the public release of an asset</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/publish">tosl:publish</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="integrate">
+        <div class="header-wrapper">
+          <h4 id="x2-8-6-integrate"><bdi class="secno">2.8.6 </bdi>Integrate</h4><a class="self-link" href="#integrate"
+            aria-label="Permalink for Section 2.8.6"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Integrate</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This action allows, obligates, or prohibits the integration of the provided service with your
+                  application.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/integrate">tosl:integrate</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="test">
+        <div class="header-wrapper">
+          <h4 id="x2-8-7-test"><bdi class="secno">2.8.7 </bdi>Test</h4><a class="self-link" href="#test"
+            aria-label="Permalink for Section 2.8.7"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Test</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This action permits, mandates or prohibits the use of the services to test a software application.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/test">tosl:test</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="develop">
+        <div class="header-wrapper">
+          <h4 id="x2-8-8-develop"><bdi class="secno">2.8.8 </bdi>Develop</h4><a class="self-link" href="#develop"
+            aria-label="Permalink for Section 2.8.8"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Develop</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This action permits, mandates or prohibits the use of the services to develop a software application.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/develop">tosl:develop</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Action">odrl:Action</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+    </section>
+    <section id="asset">
+      <div class="header-wrapper">
+        <h3 id="x2-9-asset"><bdi class="secno">2.9 </bdi>Asset</h3><a class="self-link" href="#asset"
+          aria-label="Permalink for Section 2.9"></a>
+      </div>
+      <section id="service">
+        <div class="header-wrapper">
+          <h4 id="x2-9-1-service"><bdi class="secno">2.9.1 </bdi>Service</h4><a class="self-link" href="#service"
+            aria-label="Permalink for Section 2.9.1"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Service</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>An asset that includes the service affected by the action as a resource</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/Service">tosl:Service</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Parent class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Asset">odrl:Asset</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="user-content">
+        <div class="header-wrapper">
+          <h4 id="x2-9-2-user-content"><bdi class="secno">2.9.2 </bdi>User Content</h4><a class="self-link"
+            href="#user-content" aria-label="Permalink for Section 2.9.2"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>User Content</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>An asset that encompasses either all or part of a user's content</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/UserContent">tosl:UserContent</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Parent class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/Asset">odrl:Asset</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+      </section>
+    </section>
+    <section id="left-operand">
+      <div class="header-wrapper">
+        <h3 id="x2-10-left-operand"><bdi class="secno">2.10 </bdi>Left Operand</h3><a class="self-link"
+          href="#left-operand" aria-label="Permalink for Section 2.10"></a>
+      </div>
+
+      <section id="justification">
+        <div class="header-wrapper">
+          <h4 id="x2-10-1-justification"><bdi class="secno">2.10.1 </bdi>Justification</h4><a class="self-link"
+            href="#justification" aria-label="Permalink for Section 2.10.1"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Justification</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This condition mandates that specific actions can only be undertaken with appropriate justification
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/justification">tosl:justification</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="calculate-amount">
+        <div class="header-wrapper">
+          <h4 id="x2-10-2-calculate-amount"><bdi class="secno">2.10.2 </bdi>Calculate Amount</h4><a class="self-link"
+            href="#calculate-amount" aria-label="Permalink for Section 2.10.2"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Calculate Amount</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This stipulates the amount derived from a previous metric or calculation, which is used to compare
+                  against
+                  a specified threshold, such as a maximum or minimum allowable amount, in the context of a constraint.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/totalAmount">tosl:totalAmount</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="inactivity-period">
+        <div class="header-wrapper">
+          <h4 id="x2-10-3-inactivity-period"><bdi class="secno">2.10.3 </bdi>Inactivity Period</h4><a class="self-link"
+            href="#inactivity-period" aria-label="Permalink for Section 2.10.3"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Inactivity Period</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This stipulates the duration of time a service may remain inactive or unused, serving as a parameter
+                  for
+                  triggering specific actions or evaluating compliance with constraints.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/inactivityPeriod">tosl:inactivityPeriod</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="consumer-resident-country">
+        <div class="header-wrapper">
+          <h4 id="x2-10-4-consumer-resident-country"><bdi class="secno">2.10.4 </bdi>Consumer Resident Country</h4><a
+            class="self-link" href="#consumer-resident-country" aria-label="Permalink for Section 2.10.4"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Consumer Resident Country</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This stipulates the country of residence of the consumer, used to compare against a list of countries
+                  in
+                  the context of constraints or conditions.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/consumerResidentCountry">tosl:consumerResidentCountry</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="consent-type">
+        <div class="header-wrapper">
+          <h4 id="x2-10-5-consent-type"><bdi class="secno">2.10.5 </bdi>Consent Type</h4><a class="self-link"
+            href="#consent-type" aria-label="Permalink for Section 2.10.5"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Consent Type</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This term refers to the specific manner in which consent is given by a party within an agreement,
+                  outlining
+                  whether it is implicit, explicit, or expressed through other defined actions</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/consentType">tosl:consentType</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="compliance">
+        <div class="header-wrapper">
+          <h4 id="x2-10-6-compliance"><bdi class="secno">2.10.6 </bdi>Compliance</h4><a class="self-link"
+            href="#compliance" aria-label="Permalink for Section 2.10.6"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Compliance</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This left operand refers to the adherence to an specific rule or policy. I can be used to refine the
+                  semantics of an action that has to be performed in accordance to another policy. Permited values are
+                  and
+                  IRI, a odrl:Policy or an xsd:string</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/compliance">tosl:compliance</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="licensing-type">
+        <div class="header-wrapper">
+          <h4 id="x2-10-7-licensing-type"><bdi class="secno">2.10.7 </bdi>Licensing Type</h4><a class="self-link"
+            href="#licensing-type" aria-label="Permalink for Section 2.10.7"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Licensing Type</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This stipulates the type of license or permission required by a party to perform a specific action or
+                  activity, such as a written permission.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/licensingType">tosl:licensingType</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="effect">
+        <div class="header-wrapper">
+          <h4 id="x2-10-8-effect"><bdi class="secno">2.10.8 </bdi>Effect</h4><a class="self-link" href="#effect"
+            aria-label="Permalink for Section 2.10.8"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Effect</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This stipulates the effect or impact that an action may or must not cause, serving as a parameter to
+                  evaluate the outcomes of an action.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/effect">tosl:effect</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/LeftOperand">odrl:LeftOperand</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+    </section>
+    <section id="right-operand">
+      <div class="header-wrapper">
+        <h3 id="x2-11-right-operand"><bdi class="secno">2.11 </bdi>Right Operand</h3><a class="self-link"
+          href="#right-operand" aria-label="Permalink for Section 2.11"></a>
+      </div>
+
+      <section id="implicit-consent">
+        <div class="header-wrapper">
+          <h4 id="x2-11-1-implicit-consent"><bdi class="secno">2.11.1 </bdi>Implicit Consent</h4><a class="self-link"
+            href="#implicit-consent" aria-label="Permalink for Section 2.11.1"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Implicit Consent</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This type of consent implies that by merely utilizing the service, the customer agrees to the terms
+                  of the
+                  agreement by default</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/implicitConsent">tosl:implicitConsent</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/RightOperand">odrl:RightOperand</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="explicit-consent">
+        <div class="header-wrapper">
+          <h4 id="x2-11-2-explicit-consent"><bdi class="secno">2.11.2 </bdi>Explicit Consent</h4><a class="self-link"
+            href="#explicit-consent" aria-label="Permalink for Section 2.11.2"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Explicit Consent</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>This form of consent requires that the customer explicitly affirm or accept the agreement through a
+                  formal
+                  action, such as signing a document</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/explicitConsent">tosl:explicitConsent</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/RightOperand">odrl:RightOperand</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section id="degradation">
+        <div class="header-wrapper">
+          <h4 id="x2-11-3-degradation"><bdi class="secno">2.11.3 </bdi>Degradation</h4><a class="self-link"
+            href="#degradation" aria-label="Permalink for Section 2.11.3"></a>
+        </div>
+        <table class="def">
+          <tbody>
+            <tr>
+              <td>
+                <p>Label</p>
+              </td>
+              <td>
+                <p>Degradation</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Definition</p>
+              </td>
+              <td>
+                <p>Indicates a significant and unreasonable degradation of some metric, such as response time or
+                  availability,
+                  caused by the action of the Rule to the target of the Rule</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Term</p>
+              </td>
+              <td>
+                <p><a href="https://w3id.org/tosl/degradation">tosl:degradation</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Class</p>
+              </td>
+              <td>
+                <p><a href="http://www.w3.org/ns/odrl/2/RightOperand">odrl:RightOperand</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </section>
+
+  <section id="examples">
+    <div class="header-wrapper">
+      <h2 id="x3-examples"><bdi class="secno">3. </bdi>Examples</h2><a class="self-link" href="#examples"
+        aria-label="Permalink for Section 3."></a>
+    </div>
+
+    <section id="method-of-dispute-resolution">
+      <div class="header-wrapper">
+        <h3 id="x3-1-method-of-dispute-resolution"><bdi class="secno">3.1 </bdi>Method of Dispute Resolution</h3><a
+          class="self-link" href="#method-of-dispute-resolution" aria-label="Permalink for Section 3.1"></a>
+      </div>
+
+      <aside class="example" id="example-1">
+        <div class="marker">
+          <a class="self-link" href="#example-1">Example<bdi> 1</bdi></a>
+        </div>
+        <p>This term establishes the applicable governing law and the specific jurisdiction for resolving legal disputes
+          under the Agreement.</p>
+        <pre><code class="turtle hljs" aria-busy="false">
+        # Agreement definition
+        :agreement01 a odrl:Agreement ;
+            odrl:assignee :customer01 ;
+            odrl:assigner :github ;
+            tosl:onDispute :litigation01 .
+        
+        :github a odrl:Party ;
+            dcterms:description "GitHub" .
+            
+        :customer01 a odrl:Party ;
+            dcterms:description "Represents the customer in GitHub Services" .
+        
+        # Dispute resolution definition
+        :litigation01 a tosl:Litigation;
+            dcterms:description "If Customer’s principal office is within the European Union, European Economic Area, or Switzerland, however, this Agreement will be governed by the laws of Ireland. Any legal action or proceeding will be brought exclusively in the courts located in Dublin" ;
+            tosl:takesPlaceIn :DublinCourts ;
+            tosl:governedBy :IrelandLaw ;
+            tosl:condition [
+                    a odrl:Constraint ;
+                    odrl:leftOperand tosl:consumerResidentCountry ;
+                    odrl:operator odrl:isAnyOf ;
+                    odrl:rightOperand ("AT" "BE" "BG" "HR" "CY" "CZ" "DK" "EE" "FI" "FR" "DE" "GR" "HU" "IS" "IE" "IT" "LV" "LI" "LT" "LU" "MT" "NL" "NO" "PL" "PT" "RO" "SK" "SI" "ES" "SE" "CH") ;
+                ] .
+        
+        :DublinCourts a tosl:Jurisdiction;
+            dcterms:description "Disputes jurisdiction of the Dublin courts" .
+        
+        :IrelandLaw a tosl:Law ;
+            dcterms:description "Governed by the laws of Ireland" .
+      </code></pre><code class="turtle">
+    </code>
+      </aside><code class="turtle">
+  </code>
+    </section>
+  </section><code class="turtle">
+
+
+
+</code>
+  <section id="references" class="appendix">
+    <div class="header-wrapper">
+      <h2 id="a-references"><bdi class="secno">A. </bdi>References</h2><a class="self-link" href="#references"
+        aria-label="Permalink for Appendix A."></a>
+    </div>
+    <dl class="bibliography">
+      <dt id="bib-dcterms">[dcterms]</dt>
+      <dd>
+        <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"><cite>DCMI Metadata
+            Terms</cite></a>. DCMI Usage Board. DCMI. 20 January 2020. DCMI Recommendation. URL: <a
+          href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</a>
+      </dd>
+      <dt id="bib-odrl vocabulary">[ODRL Vocabulary]</dt>
+      <dd>
+        <a href="https://www.w3.org/TR/odrl-vocab/">
+          <cite>ODRL Vocabulary &amp; Expression 2.2</cite>
+        </a>. Renato Iannella; Michael Steidl; Stuart Myles; Víctor Rodríguez-Doncel. W3C. 15 February 2018. W3C
+        Recommendation. URL:
+        <a href="https://www.w3.org/TR/odrl-vocab/">
+          https://www.w3.org/TR/odrl-vocab/
+        </a>
+      </dd>
+      <dt id="bib-owl2-overview">[owl2-overview]</dt>
+      <dd>
+        <a href="https://www.w3.org/TR/owl2-overview/"><cite>OWL 2 Web Ontology Language Document Overview (Second
+            Edition)</cite></a>. W3C OWL Working Group. W3C. 11 December 2012. W3C Recommendation. URL: <a
+          href="https://www.w3.org/TR/owl2-overview/">https://www.w3.org/TR/owl2-overview/</a>
+      </dd>
+      <dt id="bib-rdf-concepts">[rdf-concepts]</dt>
+      <dd>
+        <a href="https://www.w3.org/TR/rdf-concepts/"><cite>Resource Description Framework (RDF): Concepts and
+            Abstract Syntax</cite></a>. Graham Klyne; Jeremy Carroll. W3C. 10 February 2004. W3C Recommendation. URL:
+        <a href="https://www.w3.org/TR/rdf-concepts/">https://www.w3.org/TR/rdf-concepts/</a>
+      </dd>
+      <dt id="bib-rdf-schema">[rdf-schema]</dt>
+      <dd>
+        <a href="https://www.w3.org/TR/rdf-schema/"><cite>RDF Schema 1.1</cite></a>. Dan Brickley; Ramanathan Guha.
+        W3C. 25 February 2014. W3C Recommendation. URL: <a
+          href="https://www.w3.org/TR/rdf-schema/">https://www.w3.org/TR/rdf-schema/</a>
+      </dd>
+      <dt id="bib-skos-reference">[skos-reference]</dt>
+      <dd>
+        <a href="https://www.w3.org/TR/skos-reference/"><cite>SKOS Simple Knowledge Organization System
+            Reference</cite></a>. Alistair Miles; Sean Bechhofer. W3C. 18 August 2009. W3C Recommendation. URL: <a
+          href="https://www.w3.org/TR/skos-reference/">https://www.w3.org/TR/skos-reference/</a>
+      </dd>
+      <dt id="bib-vann">[vann]</dt>
+      <dd>
+        <a href="http://purl.org/vocab/vann"><cite>VANN: A vocabulary for annotating vocabulary
+            descriptions</cite></a>. Ian Davis. Vocab.org. 7 June 2010. URL: <a
+          href="http://purl.org/vocab/vann">http://purl.org/vocab/vann</a>
+      </dd>
+    </dl>
+  </section>
+  <p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p>
+  <script id="respec-dfn-panel">(() => {
+      // @ts-check
+      if (document.respec) {
+        document.respec.ready.then(setupPanel);
+      } else {
+        setupPanel();
+      }
+
+      function setupPanel() {
+        const listener = panelListener();
+        document.body.addEventListener("keydown", listener);
+        document.body.addEventListener("click", listener);
+      }
+
+      function panelListener() {
+        /** @type {HTMLElement} */
+        let panel = null;
+        return event => {
+          const { target, type } = event;
+
+          if (!(target instanceof HTMLElement)) return;
+
+          // For keys, we only care about Enter key to activate the panel
+          // otherwise it's activated via a click.
+          if (type === "keydown" && event.key !== "Enter") return;
+
+          const action = deriveAction(event);
+
+          switch (action) {
+            case "show": {
+              hidePanel(panel);
+              /** @type {HTMLElement} */
+              const dfn = target.closest("dfn, .index-term");
+              panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+              const coords = deriveCoordinates(event);
+              displayPanel(dfn, panel, coords);
+              break;
+            }
+            case "dock": {
+              panel.style.left = null;
+              panel.style.top = null;
+              panel.classList.add("docked");
+              break;
+            }
+            case "hide": {
+              hidePanel(panel);
+              panel = null;
+              break;
+            }
+          }
+        };
+      }
+
+      /**
+       * @param {MouseEvent|KeyboardEvent} event
+       */
+      function deriveCoordinates(event) {
+        const target = /** @type HTMLElement */ (event.target);
+
+        // We prevent synthetic AT clicks from putting
+        // the dialog in a weird place. The AT events sometimes
+        // lack coordinates, so they have clientX/Y = 0
+        const rect = target.getBoundingClientRect();
+        if (
+          event instanceof MouseEvent &&
+          event.clientX >= rect.left &&
+          event.clientY >= rect.top
+        ) {
+          // The event probably happened inside the bounding rect...
+          return { x: event.clientX, y: event.clientY };
+        }
+
+        // Offset to the middle of the element
+        const x = rect.x + rect.width / 2;
+        // Placed at the bottom of the element
+        const y = rect.y + rect.height;
+        return { x, y };
+      }
+
+      /**
+       * @param {Event} event
+       */
+      function deriveAction(event) {
+        const target = /** @type {HTMLElement} */ (event.target);
+        const hitALink = !!target.closest("a");
+        if (target.closest("dfn:not([data-cite]), .index-term")) {
+          return hitALink ? "none" : "show";
+        }
+        if (target.closest(".dfn-panel")) {
+          if (hitALink) {
+            return target.classList.contains("self-link") ? "hide" : "dock";
+          }
+          const panel = target.closest(".dfn-panel");
+          return panel.classList.contains("docked") ? "hide" : "none";
+        }
+        if (document.querySelector(".dfn-panel:not([hidden])")) {
+          return "hide";
+        }
+        return "none";
+      }
+
+      /**
+       * @param {HTMLElement} dfn
+       * @param {HTMLElement} panel
+       * @param {{ x: number, y: number }} clickPosition
+       */
+      function displayPanel(dfn, panel, { x, y }) {
+        panel.hidden = false;
+        // distance (px) between edge of panel and the pointing triangle (caret)
+        const MARGIN = 20;
+
+        const dfnRects = dfn.getClientRects();
+        // Find the `top` offset when the `dfn` can be spread across multiple lines
+        let closestTop = 0;
+        let minDiff = Infinity;
+        for (const rect of dfnRects) {
+          const { top, bottom } = rect;
+          const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+          if (diffFromClickY < minDiff) {
+            minDiff = diffFromClickY;
+            closestTop = top;
+          }
+        }
+
+        const top = window.scrollY + closestTop + dfnRects[0].height;
+        const left = x - MARGIN;
+        panel.style.left = `${left}px`;
+        panel.style.top = `${top}px`;
+
+        // Find if the panel is flowing out of the window
+        const panelRect = panel.getBoundingClientRect();
+        const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+        if (panelRect.right > SCREEN_WIDTH) {
+          const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+          const newCaretOffset = left - newLeft;
+          panel.style.left = `${newLeft}px`;
+          /** @type {HTMLElement} */
+          const caret = panel.querySelector(".caret");
+          caret.style.left = `${newCaretOffset}px`;
+        }
+
+        // As it's a dialog, we trap focus.
+        // TODO: when <dialog> becomes a implemented, we should really
+        // use that.
+        trapFocus(panel, dfn);
+      }
+
+      /**
+       * @param {HTMLElement} panel
+       * @param {HTMLElement} dfn
+       * @returns
+       */
+      function trapFocus(panel, dfn) {
+        /** @type NodeListOf<HTMLAnchorElement> elements */
+        const anchors = panel.querySelectorAll("a[href]");
+        // No need to trap focus
+        if (!anchors.length) return;
+
+        // Move focus to first anchor element
+        const first = anchors.item(0);
+        first.focus();
+
+        const trapListener = createTrapListener(anchors, panel, dfn);
+        panel.addEventListener("keydown", trapListener);
+
+        // Hiding the panel releases the trap
+        const mo = new MutationObserver(records => {
+          const [record] = records;
+          const target = /** @type HTMLElement */ (record.target);
+          if (target.hidden) {
+            panel.removeEventListener("keydown", trapListener);
+            mo.disconnect();
+          }
+        });
+        mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+      }
+
+      /**
+       *
+       * @param {NodeListOf<HTMLAnchorElement>} anchors
+       * @param {HTMLElement} panel
+       * @param {HTMLElement} dfn
+       * @returns
+       */
+      function createTrapListener(anchors, panel, dfn) {
+        const lastIndex = anchors.length - 1;
+        let currentIndex = 0;
+        return event => {
+          switch (event.key) {
+            // Hitting "Tab" traps us in a nice loop around elements.
+            case "Tab": {
+              event.preventDefault();
+              currentIndex += event.shiftKey ? -1 : +1;
+              if (currentIndex < 0) {
+                currentIndex = lastIndex;
+              } else if (currentIndex > lastIndex) {
+                currentIndex = 0;
+              }
+              anchors.item(currentIndex).focus();
+              break;
+            }
+
+            // Hitting "Enter" on an anchor releases the trap.
+            case "Enter":
+              hidePanel(panel);
+              break;
+
+            // Hitting "Escape" returns focus to dfn.
+            case "Escape":
+              hidePanel(panel);
+              dfn.focus();
+              return;
+          }
+        };
+      }
+
+      /** @param {HTMLElement} panel */
+      function hidePanel(panel) {
+        if (!panel) return;
+        panel.hidden = true;
+        panel.classList.remove("docked");
+      }
+    })()</script>
+  <script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script>
+</body>
+
+</html>
