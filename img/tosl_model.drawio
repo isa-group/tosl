@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.1.3">
   <diagram name="Page-1" id="3qT_QIZaKxsjeAIVdN1j">
-    <mxGraphModel dx="1990" dy="2234" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1193" dy="1968" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -103,12 +103,12 @@
         <mxCell id="B8D3fQR5BTclV4-2yra1-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="B8D3fQR5BTclV4-2yra1-22" target="B8D3fQR5BTclV4-2yra1-28">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="B8D3fQR5BTclV4-2yra1-21" value="&lt;b&gt;odrl:trigger&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="B8D3fQR5BTclV4-2yra1-20">
+        <mxCell id="B8D3fQR5BTclV4-2yra1-21" value="&lt;b&gt;tosl:trigger&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="B8D3fQR5BTclV4-2yra1-20">
           <mxGeometry x="-0.1333" relative="1" as="geometry">
             <mxPoint y="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="B8D3fQR5BTclV4-2yra1-22" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;odrl:Duty&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="B8D3fQR5BTclV4-2yra1-22" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;odrl:Permission&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="100" y="271" width="125" height="50" as="geometry" />
         </mxCell>
         <mxCell id="B8D3fQR5BTclV4-2yra1-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="B8D3fQR5BTclV4-2yra1-25" target="B8D3fQR5BTclV4-2yra1-28">
@@ -133,7 +133,7 @@
             <mxPoint x="-1" y="2" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="B8D3fQR5BTclV4-2yra1-28" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;odrl:Permision&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="B8D3fQR5BTclV4-2yra1-28" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;odrl:Duty&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="100" y="183" width="125" height="50" as="geometry" />
         </mxCell>
         <mxCell id="B8D3fQR5BTclV4-2yra1-29" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="B8D3fQR5BTclV4-2yra1-37">
@@ -417,7 +417,7 @@
             <mxPoint x="530" y="560" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="B8D3fQR5BTclV4-2yra1-136" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="B8D3fQR5BTclV4-2yra1-110" target="B8D3fQR5BTclV4-2yra1-35">
+        <mxCell id="B8D3fQR5BTclV4-2yra1-136" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="B8D3fQR5BTclV4-2yra1-110" target="B8D3fQR5BTclV4-2yra1-35">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="B8D3fQR5BTclV4-2yra1-156" value="&lt;b&gt;tosl:limitation&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="B8D3fQR5BTclV4-2yra1-136">

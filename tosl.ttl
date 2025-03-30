@@ -381,8 +381,8 @@ tosl:anyIndirectDamage a owl:NamedIndividual, skos:Concept, tosl:Liability ;
     skos:definition "The party is not liable for any special, indirect, punitive, incidental, or consequential damages." .
 
 
-### https://w3id.org/tosl/DirectDamage
-tosl:DirectDamage a owl:NamedIndividual, skos:Concept, tosl:Liability ;
+### https://w3id.org/tosl/directDamage
+tosl:directDamage a owl:NamedIndividual, skos:Concept, tosl:Liability ;
     rdfs:isDefinedBy tosl: ;
     rdfs:label "Direct Damage" ;
     skos:definition "The party is liable for any direct damages." .

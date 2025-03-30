@@ -737,7 +737,7 @@
     dcterms:description """OpenAI is liable for loss or damage if the damage was caused by a breach of the Terms or was reasonably foreseeable at the time of the agreement.""" ;
     tosl:targetParty :customer ;
     tosl:liableParty :OpenAI ;
-    rdf:value tosl:breachOfContract, tosl:DirectDamage, tosl:legalCompliance .
+    rdf:value tosl:breachOfContract, tosl:directDamage, tosl:legalCompliance .
 
 
 ##############################  Dispute resolution  ############################
