@@ -44,7 +44,7 @@
 
 ### odrl:Party 
 
-:OpenAI a tosl:Provider, foaf:Organization, dcterms:Agent ;
+:OpenAI a tosl:Provider ;
     dcterms:description "OpenAI is an AI research and deployment company committed to ensuring that artificial general intelligence (AGI) benefits all of humanity."^^xsd:string ;
     foaf:name "Open AI" ;
     foaf:homepage <https://openai.com/>;
@@ -75,10 +75,10 @@
 
 :OpenAI foaf:subOrganizationOf :OpenAI_Ireland, :OpenAI_LLC .
 
-:customer a tosl:Customer, foaf:Agent, dcterms:Agent ;
+:customer a tosl:Customer ;
     dcterms:description "This party represents the consumer in the context of the OpenAI services Terms of Use" .
 
-:businessCustomer a tosl:BusinessCustomer, foaf:Agent, dcterms:Agent ;
+:businessCustomer a tosl:BusinessCustomer ;
     dcterms:description "This party represents a business entity consuming the service in a commercial context, under the OpenAI Terms of Use." .
 
 ### odrl:Asset
@@ -481,7 +481,7 @@
             odrl:rightOperand odrl:policyUsage
         ] ;
     ] ;
-    odrl:duty [
+    odrl:trigger [
         a odrl:Duty ;
         dcterms:description "Customer must provide valid billing information, including a payment method." ;
         odrl:action odrl:inform ;

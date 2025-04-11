@@ -133,12 +133,12 @@ tosl:takesPlaceIn a owl:ObjectProperty, skos:Concept ;
         skos:definition "This term describes the relationship between Dispute Resolution and Jurisdiction, specifying the location where disputes are to be resolved" .
 
 
-### https://w3id.org/tosl/triggers
-tosl:triggers a owl:ObjectProperty, skos:Concept ;
+### https://w3id.org/tosl/trigger
+tosl:trigger a owl:ObjectProperty, skos:Concept ;
         rdfs:domain odrl:Permission ;
         rdfs:range odrl:Duty ;
         rdfs:isDefinedBy tosl: ;
-        rdfs:label "Triggers" ;
+        rdfs:label "Trigger" ;
         skos:definition "Represents the relationship where a permission can trigger a specific duty for a party" .
 
 
