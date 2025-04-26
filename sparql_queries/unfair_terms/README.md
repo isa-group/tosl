@@ -382,7 +382,7 @@ WHERE {
     tosl:harmCausedByMalware,
     tosl:discontinuity,
     tosl:anyIndirectDamage,
-    tosl:DirectDamage,
+    tosl:directDamage,
     tosl:anyLoss,
     tosl:thirdparty,
     tosl:serviceContent,

@@ -33,8 +33,9 @@
         :permission06, :permission07, :permission08, :permission09, :permission10,
         :permission11, :permission12, :permission13, :permission14, :permission15,
         :permission16, :permission17, :permission18, :permission19, :permission20,
-        :permission21, :permission22, :permission23, :permission24, :permission25 ;
-    odrl:obligation :obligation01 ;
+        :permission21, :permission22, :permission23, :permission24, :permission25, 
+        :permission26 ;
+    odrl:obligation :obligation01, :obligation02 ;
     odrl:prohibition :prohibition01, :prohibition02, :prohibition03 ;
     tosl:limitationOfLiability :liability04  ;
     tosl:onDispute :litigation01, :litigation02, :litigation03 ;
@@ -43,7 +44,7 @@
 
 ### odrl:Party 
 
-:OpenAI a tosl:Provider, foaf:Organization, dcterms:Agent ;
+:OpenAI a tosl:Provider ;
     dcterms:description "OpenAI is an AI research and deployment company committed to ensuring that artificial general intelligence (AGI) benefits all of humanity."^^xsd:string ;
     foaf:name "Open AI" ;
     foaf:homepage <https://openai.com/>;
@@ -74,10 +75,10 @@
 
 :OpenAI foaf:subOrganizationOf :OpenAI_Ireland, :OpenAI_LLC .
 
-:customer a tosl:Customer, foaf:Agent, dcterms:Agent ;
+:customer a tosl:Customer ;
     dcterms:description "This party represents the consumer in the context of the OpenAI services Terms of Use" .
 
-:businessCustomer a tosl:BusinessCustomer, foaf:Agent, dcterms:Agent ;
+:businessCustomer a tosl:BusinessCustomer ;
     dcterms:description "This party represents a business entity consuming the service in a commercial context, under the OpenAI Terms of Use." .
 
 ### odrl:Asset
@@ -113,6 +114,27 @@
 :billingData a tosl:UserContent ;
     dcterms:description "Billing information provided by the customer, including valid payment method." ;
     dcterms:rightsHolder :customer .
+
+###############################  General  ######################################
+# These Terms of Use (“Terms”) apply to your use of ChatGPT, DALL·E, and       #
+# OpenAI’s other services for individuals, along with any associated software  #
+# applications, technology and websites (“Services”), including personal,      #
+# non-commercial use of our Services by consumers. You form a contract with us #
+# when you confirm that you accept these Terms or when you otherwise use       #
+# the Services.                                                                #
+################################################################################
+
+:obligation01 a odrl:Duty ;
+    dcterms:description "You form a contract with us when you confirm that you accept these Terms or when you otherwise use the Services." ;
+    odrl:action tosl:consent ;
+    odrl:constraint [
+            a odrl:Constraint;
+            odrl:leftOperand tosl:consentType ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand tosl:implicitConsent
+        ] ;
+    odrl:target :agreement01 ;
+    odrl:assignee :customer .
 
 #######################  Registration and access  ##############################
 #                                                                              #
@@ -459,7 +481,7 @@
             odrl:rightOperand odrl:policyUsage
         ] ;
     ] ;
-    odrl:duty [
+    odrl:trigger [
         a odrl:Duty ;
         dcterms:description "Customer must provide valid billing information, including a payment method." ;
         odrl:action odrl:inform ;
@@ -565,9 +587,6 @@
 
 :hasPaidAccount a odrl:LeftOperand ;
     dcterms:description "Indicates whether the user has an active paid subscription." .
-
-:appeal a odrl:Action ;
-    dcterms:description "The user may submit a formal appeal to contest the suspension or termination of their account." .
 
 :permission15 a odrl:Permission ;
     dcterms:description "You can stop using our Services and end your relationship with OpenAI at any time by simply closing your account and stopping your use of the Services" ;
@@ -688,8 +707,20 @@
     ] .
 
 :permission21 a odrl:Permission ;
+    dcterms:description "unless it is not appropriate for us to do so, we reasonably believe that continued access to your account will cause damage to OpenAI or anyone else, or we are legally prohibited from doing so" ;
+    odrl:action tosl:remove ;
+    odrl:assignee :OpenAI ;
+    odrl:target :userAccount ;
+    odrl:constraint [
+        a odrl:Constraint ;
+        odrl:leftOperand tosl:justification ;
+        odrl:operator odrl:eq ;
+        odrl:rightOperand :riskOrHarm
+    ] .
+
+:permission22 a odrl:Permission ;
     dcterms:description "If you believe we have suspended or terminated your account in error, you can file an appeal with us by contacting Support" ;
-    odrl:action :appeal ;
+    odrl:action tosl:appeal ;
     odrl:assignee :customer ;
     odrl:target :userAccount .
 
@@ -737,7 +768,7 @@
     dcterms:description """OpenAI is liable for loss or damage if the damage was caused by a breach of the Terms or was reasonably foreseeable at the time of the agreement.""" ;
     tosl:targetParty :customer ;
     tosl:liableParty :OpenAI ;
-    rdf:value tosl:breachOfContract, tosl:DirectDamage, tosl:legalCompliance .
+    rdf:value tosl:breachOfContract, tosl:directDamage, tosl:legalCompliance .
 
 
 ##############################  Dispute resolution  ############################
@@ -757,7 +788,7 @@
 :disputeResolution a odrl:Asset ;
     dcterms:description "An asset representing the informal process through which OpenAI and users attempt to address concerns or disagreements prior to initiating formal legal proceedings." .
 
-:permission22 a odrl:Permission ;
+:permission23 a odrl:Permission ;
     dcterms:description "If we have a dispute, we would first like to understand and try to address your concerns before any formal legal action. To share your concerns you can contact us through this form⁠(opens in a new window)." ;
     odrl:action tosl:inform ;
     odrl:assignee :customer ;
@@ -828,7 +859,7 @@
 :infringIPRight a odrl:Asset ;
     dcterms:description "Alleged intellectual property rights that have been infringed." .
 
-:permission23 a odrl:Permission ;
+:permission24 a odrl:Permission ;
     dcterms:description "The user may submit a copyright complaint if they believe their intellectual property rights have been infringed." ;
     odrl:assignee :customer ;
     odrl:action tosl:claim ;
@@ -900,13 +931,13 @@
     odrl:action tosl:assign ;
     odrl:target :agreement01 .
 
-:permission24 a odrl:Permission ;
+:permission25 a odrl:Permission ;
     dcterms:description "OpenAI may assign or transfer rights or obligations under these Terms to an affiliate, subsidiary, or successor in interest." ;
     odrl:assignee :OpenAI ;
     odrl:action tosl:assign ;
     odrl:target :agreement01 .
 
-:permission25 a odrl:Permission ;
+:permission26 a odrl:Permission ;
     dcterms:description "We are continuously working to develop and improve our Services. We may update these Terms or our Services accordingly from time to time." ;
     odrl:assignee :OpenAI ;
     odrl:action odrl:modify ;
@@ -1023,7 +1054,7 @@
         )
     ] .
 
-:obligation01 a odrl:Duty ;
+:obligation02 a odrl:Duty ;
     dcterms:description "If you are a business or organisation, to the extent permitted by law, you will indemnify and hold harmless us, our affiliates, and our personnel, from and against any costs, losses, liabilities, and expenses (including attorneys’ fees) from third party claims arising out of or relating to your use of the Services and Content or any violation of these Terms." ;
     odrl:action odrl:compensate ;
     odrl:assignee :businessCustomer ;
