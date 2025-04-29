@@ -182,6 +182,6 @@ This command executes the SPARQL query unfair_terms_ter.rq on the ontology file 
 -----------------------
 Work developed by:
 [Elena Molino](https://github.com/elenamolino),
-[Jose Maria Cruz](https://github.com/cruzlorite),
+[Jose Maria Cruz Lorite](https://github.com/cruzlorite),
 [Jose Maria Garcia](https://github.com/josemgarcia), and
-[Antonio Ruiz](https://github.com/antonioruizcortes)
+[Antonio Ruiz Cortes](https://github.com/antonioruizcortes)

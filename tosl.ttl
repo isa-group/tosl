@@ -395,8 +395,8 @@ tosl:anyLoss a owl:NamedIndividual, skos:Concept, tosl:Liability ;
     skos:definition "The party is not liable for any disclosure, damage, destruction, corruption, failure to store, or loss of data and material." .
 
 
-### https://w3id.org/tosl/thirdparty
-tosl:thirdparty a owl:NamedIndividual, skos:Concept, tosl:Liability ;
+### https://w3id.org/tosl/thirdParty
+tosl:thirdParty a owl:NamedIndividual, skos:Concept, tosl:Liability ;
     rdfs:isDefinedBy tosl: ;
     rdfs:label "Third Party Responsibility" ;
     skos:definition "The party is not liable for any action, errors, omissions, representations, warranties, breaches, or negligence owed to third parties." .
