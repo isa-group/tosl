@@ -513,7 +513,7 @@
   </style>
   <script id="initialUserConfig" type="application/json">{
   "publishDate": "2024-12-19",
-  "modificationDate": "2024-12-26",
+  "modificationDate": "2025-04-29",
   "group": "ISA-Group",
   "github": "https://github.com/isa-group/tosl",
   "shortName": "tosl",
@@ -778,9 +778,11 @@
                   Consent</a></li>
               <li class="tocline"><a class="tocxref" href="#degradation"><bdi class="secno">2.11.3 </bdi>Degradation</a>
               </li>
-              <li class="tocline"><a class="tocxref" href="#written-permission"><bdi class="secno">2.11.4 </bdi>Written Permission</a>
+              <li class="tocline"><a class="tocxref" href="#written-permission"><bdi class="secno">2.11.4 </bdi>Written
+                  Permission</a>
               </li>
-              <li class="tocline"><a class="tocxref" href="#breach-of-contract-2"><bdi class="secno">2.11.5 </bdi>Breach Of Contract</a>
+              <li class="tocline"><a class="tocxref" href="#breach-of-contract-2"><bdi class="secno">2.11.5 </bdi>Breach
+                  Of Contract</a>
               </li>
             </ol>
           </li>
@@ -3772,7 +3774,8 @@
 
       <section id="written-permission">
         <div class="header-wrapper">
-          <h4 id="x2-11-4-written-permission"><bdi class="secno">2.11.4 </bdi>Written Permission</h4><a class="self-link" href="#written-permission" aria-label="Permalink for Section 2.11.4"></a>
+          <h4 id="x2-11-4-written-permission"><bdi class="secno">2.11.4 </bdi>Written Permission</h4><a
+            class="self-link" href="#written-permission" aria-label="Permalink for Section 2.11.4"></a>
         </div>
         <table class="def">
           <tbody>
@@ -3811,10 +3814,11 @@
           </tbody>
         </table>
       </section>
-    
+
       <section id="breach-of-contract-2">
         <div class="header-wrapper">
-          <h4 id="x2-11-5-breach-of-contract"><bdi class="secno">2.11.5 </bdi>Breach of Contract</h4><a class="self-link" href="#breach-of-contract-2" aria-label="Permalink for Section 2.11.5"></a>
+          <h4 id="x2-11-5-breach-of-contract"><bdi class="secno">2.11.5 </bdi>Breach of Contract</h4><a
+            class="self-link" href="#breach-of-contract-2" aria-label="Permalink for Section 2.11.5"></a>
         </div>
         <table class="def">
           <tbody>
@@ -3831,7 +3835,10 @@
                 <p>Definition</p>
               </td>
               <td>
-                <p>This term refers to a violation or non-fulfillment of the terms as stipulated within the Policy. With the left operand <a href="http://www.w3.org/ns/odrl/2/event">odrl:event</a> or <a href="https://w3id.org/tosl/justification">tosl:justification</a>, it can be used in the constraint of a Rule that can only be exercised in case of such a breach.</p>
+                <p>This term refers to a violation or non-fulfillment of the terms as stipulated within the Policy. With
+                  the left operand <a href="http://www.w3.org/ns/odrl/2/event">odrl:event</a> or <a
+                    href="https://w3id.org/tosl/justification">tosl:justification</a>, it can be used in the constraint
+                  of a Rule that can only be exercised in case of such a breach.</p>
               </td>
             </tr>
             <tr>
@@ -3852,7 +3859,7 @@
             </tr>
           </tbody>
         </table>
-      </section>    
+      </section>
 
     </section>
 
@@ -4003,6 +4010,12 @@
       <h2 id="x3-examples"><bdi class="secno">3. </bdi>Examples</h2><a class="self-link" href="#examples"
         aria-label="Permalink for Section 3."></a>
     </div>
+    <p>
+      All the agreements modelled with TOSL are available in our <a class="self-link"
+        href="#https://github.com/isa-group/tosl/tree/main/examples" aria-label="Permalink for Section 3.">GitHub
+        repository</a>. You can consult several sample agreements (e.g. Elsevier, OpenAI and partly GitHub), which
+      exemplify the use of the full TOSL schema. Below are some examples using the new terminology added by TOSL.
+    </p>
 
     <section id="method-of-dispute-resolution">
       <div class="header-wrapper">
@@ -4017,326 +4030,364 @@
         <p>This term establishes the applicable governing law and the specific jurisdiction for resolving legal disputes
           under the Agreement.</p>
         <pre><code class="turtle hljs" aria-busy="false">
-        # Agreement definition
-        :agreement01 a odrl:Agreement ;
-            odrl:assignee :customer01 ;
-            odrl:assigner :github ;
-            tosl:onDispute :litigation01 .
+    # Agreement definition
+    :agreement01 a odrl:Agreement ;
+        odrl:assignee :customer01 ;
+        odrl:assigner :github ;
+        tosl:onDispute :litigation01 .
+    
+    :github a tosl:Provider ;
+        dcterms:description "GitHub" .
         
-        :github a odrl:Party ;
-            dcterms:description "GitHub" .
-            
-        :customer01 a odrl:Party ;
-            dcterms:description "Represents the customer in GitHub Services" .
-        
-        # Dispute resolution definition
-        :litigation01 a tosl:Litigation;
-            dcterms:description "If Customer’s principal office is within the European Union, European Economic Area, or Switzerland, however, this Agreement will be governed by the laws of Ireland. Any legal action or proceeding will be brought exclusively in the courts located in Dublin" ;
-            tosl:takesPlaceIn :DublinCourts ;
-            tosl:governedBy :IrelandLaw ;
-            tosl:condition [
-                    a odrl:Constraint ;
-                    odrl:leftOperand tosl:consumerResidentCountry ;
-                    odrl:operator odrl:isAnyOf ;
-                    odrl:rightOperand ("AT" "BE" "BG" "HR" "CY" "CZ" "DK" "EE" "FI" "FR" "DE" "GR" "HU" "IS" "IE" "IT" "LV" "LI" "LT" "LU" "MT" "NL" "NO" "PL" "PT" "RO" "SK" "SI" "ES" "SE" "CH") ;
-                ] .
-        
-        :DublinCourts a tosl:Jurisdiction;
-            dcterms:description "Disputes jurisdiction of the Dublin courts" .
-        
-        :IrelandLaw a tosl:Law ;
-            dcterms:description "Governed by the laws of Ireland" .
-      </code></pre><code class="turtle">
-    </code>
-      </aside><code class="turtle">
-  </code>
+    :customer01 a tosl:Customer ;
+        dcterms:description "Represents the customer in GitHub Services" .
+    
+    # Dispute resolution definition
+    :litigation01 a tosl:Litigation;
+        dcterms:description "If Customer’s principal office is within the European Union, European Economic Area, or Switzerland, however, this Agreement will be governed by the laws of Ireland. Any legal action or proceeding will be brought exclusively in the courts located in Dublin" ;
+        tosl:takesPlaceIn :DublinCourts ;
+        tosl:governedBy :IrelandLaw ;
+        tosl:condition [
+                a odrl:Constraint ;
+                odrl:leftOperand tosl:consumerResidentCountry ;
+                odrl:operator odrl:isAnyOf ;
+                odrl:rightOperand ("AT" "BE" "BG" "HR" "CY" "CZ" "DK" "EE" "FI" "FR" "DE" "GR" "HU" "IS" "IE" "IT" "LV" "LI" "LT" "LU" "MT" "NL" "NO" "PL" "PT" "RO" "SK" "SI" "ES" "SE" "CH") ;
+            ] .
+    
+    :DublinCourts a tosl:Jurisdiction;
+        dcterms:description "Disputes jurisdiction of the Dublin courts" .
+    
+    :IrelandLaw a tosl:Law ;
+        dcterms:description "Governed by the laws of Ireland" .
+      </code></pre>
+      </aside>
     </section>
-  </section><code class="turtle">
 
+    <section id="liability-ltd">
+      <div class="header-wrapper">
+        <h3 id="x3-2-liability-ltd"><bdi class="secno">3.2 </bdi>Liability or Disclaimer of Liability of the Parties</h3><a
+          class="self-link" href="#liability-ltd" aria-label="Permalink for Section 3.2"></a>
+      </div>
 
+      <aside class="example" id="example-2">
+        <div class="marker">
+          <a class="self-link" href="#example-2">Example<bdi> 2</bdi></a>
+        </div>
+        <p>This term establishes GitHub's liability for any incident involving direct damage, limiting the maximum compensation to the total amount the customer paid for the product during the 12 months preceding the incident.</p>
+        <pre><code class="turtle hljs" aria-busy="false">
+    # Agreement definition
+    :agreement01 a odrl:Agreement ;
+        odrl:assignee :customer01 ;
+        odrl:assigner :github ;
+        tosl:liability :liability01 .
+    
+    :github a tosl:Provider ;
+        dcterms:description "GitHub" .
+        
+    :customer01 a tosl:Customer ;
+        dcterms:description "Represents the customer in GitHub Services" .
+    
+    # Liability definition
+    :liability01 a tosl:Liability ;
+        dcterms:description "GitHub's maximum liability to Customer for any incident (...) will not exceed the amount Customer paid for the Product during the 12 months before the incident" ;
+        rdf:value tosl:anyLiability, tosl:directDamage ;
+        tosl:liableParty :github ;
+        tosl:targetParty :customer01 ;
+        tosl:limitation [
+                a odrl:Constraint ;
+                odrl:leftOperand tosl:totalAmount ;
+                odrl:operator odrl:lte ;
+                odrl:rightOperand :consumerQuote12Months ;
+            ] .
 
-</code>
-  <section id="references" class="appendix">
-    <div class="header-wrapper">
-      <h2 id="a-references"><bdi class="secno">A. </bdi>References</h2><a class="self-link" href="#references"
-        aria-label="Permalink for Appendix A."></a>
-    </div>
-    <dl class="bibliography">
-      <dt id="bib-dcterms">[dcterms]</dt>
-      <dd>
-        <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"><cite>DCMI Metadata
-            Terms</cite></a>. DCMI Usage Board. DCMI. 20 January 2020. DCMI Recommendation. URL: <a
-          href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</a>
-      </dd>
-      <dt id="bib-odrl vocabulary">[ODRL Vocabulary]</dt>
-      <dd>
-        <a href="https://www.w3.org/TR/odrl-vocab/">
-          <cite>ODRL Vocabulary &amp; Expression 2.2</cite>
-        </a>. Renato Iannella; Michael Steidl; Stuart Myles; Víctor Rodríguez-Doncel. W3C. 15 February 2018. W3C
-        Recommendation. URL:
-        <a href="https://www.w3.org/TR/odrl-vocab/">
-          https://www.w3.org/TR/odrl-vocab/
-        </a>
-      </dd>
-      <dt id="bib-owl2-overview">[owl2-overview]</dt>
-      <dd>
-        <a href="https://www.w3.org/TR/owl2-overview/"><cite>OWL 2 Web Ontology Language Document Overview (Second
-            Edition)</cite></a>. W3C OWL Working Group. W3C. 11 December 2012. W3C Recommendation. URL: <a
-          href="https://www.w3.org/TR/owl2-overview/">https://www.w3.org/TR/owl2-overview/</a>
-      </dd>
-      <dt id="bib-rdf-concepts">[rdf-concepts]</dt>
-      <dd>
-        <a href="https://www.w3.org/TR/rdf-concepts/"><cite>Resource Description Framework (RDF): Concepts and
-            Abstract Syntax</cite></a>. Graham Klyne; Jeremy Carroll. W3C. 10 February 2004. W3C Recommendation. URL:
-        <a href="https://www.w3.org/TR/rdf-concepts/">https://www.w3.org/TR/rdf-concepts/</a>
-      </dd>
-      <dt id="bib-rdf-schema">[rdf-schema]</dt>
-      <dd>
-        <a href="https://www.w3.org/TR/rdf-schema/"><cite>RDF Schema 1.1</cite></a>. Dan Brickley; Ramanathan Guha.
-        W3C. 25 February 2014. W3C Recommendation. URL: <a
-          href="https://www.w3.org/TR/rdf-schema/">https://www.w3.org/TR/rdf-schema/</a>
-      </dd>
-      <dt id="bib-skos-reference">[skos-reference]</dt>
-      <dd>
-        <a href="https://www.w3.org/TR/skos-reference/"><cite>SKOS Simple Knowledge Organization System
-            Reference</cite></a>. Alistair Miles; Sean Bechhofer. W3C. 18 August 2009. W3C Recommendation. URL: <a
-          href="https://www.w3.org/TR/skos-reference/">https://www.w3.org/TR/skos-reference/</a>
-      </dd>
-      <dt id="bib-vann">[vann]</dt>
-      <dd>
-        <a href="http://purl.org/vocab/vann"><cite>VANN: A vocabulary for annotating vocabulary
-            descriptions</cite></a>. Ian Davis. Vocab.org. 7 June 2010. URL: <a
-          href="http://purl.org/vocab/vann">http://purl.org/vocab/vann</a>
-      </dd>
-    </dl>
-  </section>
-  <p role="navigation" id="back-to-top">
-    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
-  </p>
-  <script id="respec-dfn-panel">(() => {
-      // @ts-check
-      if (document.respec) {
-        document.respec.ready.then(setupPanel);
-      } else {
-        setupPanel();
-      }
+    :consumerQuote12Months a odrl:RightOperand ;
+        dcterms:description "The total amount the customer paid for the product during the 12 months preceding the incident." .
+            
+  </code></pre>
+      </aside>
+    </section>
 
-      function setupPanel() {
-        const listener = panelListener();
-        document.body.addEventListener("keydown", listener);
-        document.body.addEventListener("click", listener);
-      }
-
-      function panelListener() {
-        /** @type {HTMLElement} */
-        let panel = null;
-        return event => {
-          const { target, type } = event;
-
-          if (!(target instanceof HTMLElement)) return;
-
-          // For keys, we only care about Enter key to activate the panel
-          // otherwise it's activated via a click.
-          if (type === "keydown" && event.key !== "Enter") return;
-
-          const action = deriveAction(event);
-
-          switch (action) {
-            case "show": {
-              hidePanel(panel);
-              /** @type {HTMLElement} */
-              const dfn = target.closest("dfn, .index-term");
-              panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
-              const coords = deriveCoordinates(event);
-              displayPanel(dfn, panel, coords);
-              break;
-            }
-            case "dock": {
-              panel.style.left = null;
-              panel.style.top = null;
-              panel.classList.add("docked");
-              break;
-            }
-            case "hide": {
-              hidePanel(panel);
-              panel = null;
-              break;
-            }
-          }
-        };
-      }
-
-      /**
-       * @param {MouseEvent|KeyboardEvent} event
-       */
-      function deriveCoordinates(event) {
-        const target = /** @type HTMLElement */ (event.target);
-
-        // We prevent synthetic AT clicks from putting
-        // the dialog in a weird place. The AT events sometimes
-        // lack coordinates, so they have clientX/Y = 0
-        const rect = target.getBoundingClientRect();
-        if (
-          event instanceof MouseEvent &&
-          event.clientX >= rect.left &&
-          event.clientY >= rect.top
-        ) {
-          // The event probably happened inside the bounding rect...
-          return { x: event.clientX, y: event.clientY };
+    <section id="references" class="appendix">
+      <div class="header-wrapper">
+        <h2 id="a-references"><bdi class="secno">A. </bdi>References</h2><a class="self-link" href="#references"
+          aria-label="Permalink for Appendix A."></a>
+      </div>
+      <dl class="bibliography">
+        <dt id="bib-dcterms">[dcterms]</dt>
+        <dd>
+          <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"><cite>DCMI Metadata
+              Terms</cite></a>. DCMI Usage Board. DCMI. 20 January 2020. DCMI Recommendation. URL: <a
+            href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</a>
+        </dd>
+        <dt id="bib-odrl vocabulary">[ODRL Vocabulary]</dt>
+        <dd>
+          <a href="https://www.w3.org/TR/odrl-vocab/">
+            <cite>ODRL Vocabulary &amp; Expression 2.2</cite>
+          </a>. Renato Iannella; Michael Steidl; Stuart Myles; Víctor Rodríguez-Doncel. W3C. 15 February 2018. W3C
+          Recommendation. URL:
+          <a href="https://www.w3.org/TR/odrl-vocab/">
+            https://www.w3.org/TR/odrl-vocab/
+          </a>
+        </dd>
+        <dt id="bib-owl2-overview">[owl2-overview]</dt>
+        <dd>
+          <a href="https://www.w3.org/TR/owl2-overview/"><cite>OWL 2 Web Ontology Language Document Overview (Second
+              Edition)</cite></a>. W3C OWL Working Group. W3C. 11 December 2012. W3C Recommendation. URL: <a
+            href="https://www.w3.org/TR/owl2-overview/">https://www.w3.org/TR/owl2-overview/</a>
+        </dd>
+        <dt id="bib-rdf-concepts">[rdf-concepts]</dt>
+        <dd>
+          <a href="https://www.w3.org/TR/rdf-concepts/"><cite>Resource Description Framework (RDF): Concepts and
+              Abstract Syntax</cite></a>. Graham Klyne; Jeremy Carroll. W3C. 10 February 2004. W3C Recommendation. URL:
+          <a href="https://www.w3.org/TR/rdf-concepts/">https://www.w3.org/TR/rdf-concepts/</a>
+        </dd>
+        <dt id="bib-rdf-schema">[rdf-schema]</dt>
+        <dd>
+          <a href="https://www.w3.org/TR/rdf-schema/"><cite>RDF Schema 1.1</cite></a>. Dan Brickley; Ramanathan Guha.
+          W3C. 25 February 2014. W3C Recommendation. URL: <a
+            href="https://www.w3.org/TR/rdf-schema/">https://www.w3.org/TR/rdf-schema/</a>
+        </dd>
+        <dt id="bib-skos-reference">[skos-reference]</dt>
+        <dd>
+          <a href="https://www.w3.org/TR/skos-reference/"><cite>SKOS Simple Knowledge Organization System
+              Reference</cite></a>. Alistair Miles; Sean Bechhofer. W3C. 18 August 2009. W3C Recommendation. URL: <a
+            href="https://www.w3.org/TR/skos-reference/">https://www.w3.org/TR/skos-reference/</a>
+        </dd>
+        <dt id="bib-vann">[vann]</dt>
+        <dd>
+          <a href="http://purl.org/vocab/vann"><cite>VANN: A vocabulary for annotating vocabulary
+              descriptions</cite></a>. Ian Davis. Vocab.org. 7 June 2010. URL: <a
+            href="http://purl.org/vocab/vann">http://purl.org/vocab/vann</a>
+        </dd>
+      </dl>
+    </section>
+    <p role="navigation" id="back-to-top">
+      <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+    </p>
+    <script id="respec-dfn-panel">(() => {
+        // @ts-check
+        if (document.respec) {
+          document.respec.ready.then(setupPanel);
+        } else {
+          setupPanel();
         }
 
-        // Offset to the middle of the element
-        const x = rect.x + rect.width / 2;
-        // Placed at the bottom of the element
-        const y = rect.y + rect.height;
-        return { x, y };
-      }
-
-      /**
-       * @param {Event} event
-       */
-      function deriveAction(event) {
-        const target = /** @type {HTMLElement} */ (event.target);
-        const hitALink = !!target.closest("a");
-        if (target.closest("dfn:not([data-cite]), .index-term")) {
-          return hitALink ? "none" : "show";
-        }
-        if (target.closest(".dfn-panel")) {
-          if (hitALink) {
-            return target.classList.contains("self-link") ? "hide" : "dock";
-          }
-          const panel = target.closest(".dfn-panel");
-          return panel.classList.contains("docked") ? "hide" : "none";
-        }
-        if (document.querySelector(".dfn-panel:not([hidden])")) {
-          return "hide";
-        }
-        return "none";
-      }
-
-      /**
-       * @param {HTMLElement} dfn
-       * @param {HTMLElement} panel
-       * @param {{ x: number, y: number }} clickPosition
-       */
-      function displayPanel(dfn, panel, { x, y }) {
-        panel.hidden = false;
-        // distance (px) between edge of panel and the pointing triangle (caret)
-        const MARGIN = 20;
-
-        const dfnRects = dfn.getClientRects();
-        // Find the `top` offset when the `dfn` can be spread across multiple lines
-        let closestTop = 0;
-        let minDiff = Infinity;
-        for (const rect of dfnRects) {
-          const { top, bottom } = rect;
-          const diffFromClickY = Math.abs((top + bottom) / 2 - y);
-          if (diffFromClickY < minDiff) {
-            minDiff = diffFromClickY;
-            closestTop = top;
-          }
+        function setupPanel() {
+          const listener = panelListener();
+          document.body.addEventListener("keydown", listener);
+          document.body.addEventListener("click", listener);
         }
 
-        const top = window.scrollY + closestTop + dfnRects[0].height;
-        const left = x - MARGIN;
-        panel.style.left = `${left}px`;
-        panel.style.top = `${top}px`;
-
-        // Find if the panel is flowing out of the window
-        const panelRect = panel.getBoundingClientRect();
-        const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
-        if (panelRect.right > SCREEN_WIDTH) {
-          const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
-          const newCaretOffset = left - newLeft;
-          panel.style.left = `${newLeft}px`;
+        function panelListener() {
           /** @type {HTMLElement} */
-          const caret = panel.querySelector(".caret");
-          caret.style.left = `${newCaretOffset}px`;
+          let panel = null;
+          return event => {
+            const { target, type } = event;
+
+            if (!(target instanceof HTMLElement)) return;
+
+            // For keys, we only care about Enter key to activate the panel
+            // otherwise it's activated via a click.
+            if (type === "keydown" && event.key !== "Enter") return;
+
+            const action = deriveAction(event);
+
+            switch (action) {
+              case "show": {
+                hidePanel(panel);
+                /** @type {HTMLElement} */
+                const dfn = target.closest("dfn, .index-term");
+                panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+                const coords = deriveCoordinates(event);
+                displayPanel(dfn, panel, coords);
+                break;
+              }
+              case "dock": {
+                panel.style.left = null;
+                panel.style.top = null;
+                panel.classList.add("docked");
+                break;
+              }
+              case "hide": {
+                hidePanel(panel);
+                panel = null;
+                break;
+              }
+            }
+          };
         }
 
-        // As it's a dialog, we trap focus.
-        // TODO: when <dialog> becomes a implemented, we should really
-        // use that.
-        trapFocus(panel, dfn);
-      }
+        /**
+         * @param {MouseEvent|KeyboardEvent} event
+         */
+        function deriveCoordinates(event) {
+          const target = /** @type HTMLElement */ (event.target);
 
-      /**
-       * @param {HTMLElement} panel
-       * @param {HTMLElement} dfn
-       * @returns
-       */
-      function trapFocus(panel, dfn) {
-        /** @type NodeListOf<HTMLAnchorElement> elements */
-        const anchors = panel.querySelectorAll("a[href]");
-        // No need to trap focus
-        if (!anchors.length) return;
-
-        // Move focus to first anchor element
-        const first = anchors.item(0);
-        first.focus();
-
-        const trapListener = createTrapListener(anchors, panel, dfn);
-        panel.addEventListener("keydown", trapListener);
-
-        // Hiding the panel releases the trap
-        const mo = new MutationObserver(records => {
-          const [record] = records;
-          const target = /** @type HTMLElement */ (record.target);
-          if (target.hidden) {
-            panel.removeEventListener("keydown", trapListener);
-            mo.disconnect();
+          // We prevent synthetic AT clicks from putting
+          // the dialog in a weird place. The AT events sometimes
+          // lack coordinates, so they have clientX/Y = 0
+          const rect = target.getBoundingClientRect();
+          if (
+            event instanceof MouseEvent &&
+            event.clientX >= rect.left &&
+            event.clientY >= rect.top
+          ) {
+            // The event probably happened inside the bounding rect...
+            return { x: event.clientX, y: event.clientY };
           }
-        });
-        mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
-      }
 
-      /**
-       *
-       * @param {NodeListOf<HTMLAnchorElement>} anchors
-       * @param {HTMLElement} panel
-       * @param {HTMLElement} dfn
-       * @returns
-       */
-      function createTrapListener(anchors, panel, dfn) {
-        const lastIndex = anchors.length - 1;
-        let currentIndex = 0;
-        return event => {
-          switch (event.key) {
-            // Hitting "Tab" traps us in a nice loop around elements.
-            case "Tab": {
-              event.preventDefault();
-              currentIndex += event.shiftKey ? -1 : +1;
-              if (currentIndex < 0) {
-                currentIndex = lastIndex;
-              } else if (currentIndex > lastIndex) {
-                currentIndex = 0;
-              }
-              anchors.item(currentIndex).focus();
-              break;
+          // Offset to the middle of the element
+          const x = rect.x + rect.width / 2;
+          // Placed at the bottom of the element
+          const y = rect.y + rect.height;
+          return { x, y };
+        }
+
+        /**
+         * @param {Event} event
+         */
+        function deriveAction(event) {
+          const target = /** @type {HTMLElement} */ (event.target);
+          const hitALink = !!target.closest("a");
+          if (target.closest("dfn:not([data-cite]), .index-term")) {
+            return hitALink ? "none" : "show";
+          }
+          if (target.closest(".dfn-panel")) {
+            if (hitALink) {
+              return target.classList.contains("self-link") ? "hide" : "dock";
             }
-
-            // Hitting "Enter" on an anchor releases the trap.
-            case "Enter":
-              hidePanel(panel);
-              break;
-
-            // Hitting "Escape" returns focus to dfn.
-            case "Escape":
-              hidePanel(panel);
-              dfn.focus();
-              return;
+            const panel = target.closest(".dfn-panel");
+            return panel.classList.contains("docked") ? "hide" : "none";
           }
-        };
-      }
+          if (document.querySelector(".dfn-panel:not([hidden])")) {
+            return "hide";
+          }
+          return "none";
+        }
 
-      /** @param {HTMLElement} panel */
-      function hidePanel(panel) {
-        if (!panel) return;
-        panel.hidden = true;
-        panel.classList.remove("docked");
-      }
-    })()</script>
-  <script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script>
+        /**
+         * @param {HTMLElement} dfn
+         * @param {HTMLElement} panel
+         * @param {{ x: number, y: number }} clickPosition
+         */
+        function displayPanel(dfn, panel, { x, y }) {
+          panel.hidden = false;
+          // distance (px) between edge of panel and the pointing triangle (caret)
+          const MARGIN = 20;
+
+          const dfnRects = dfn.getClientRects();
+          // Find the `top` offset when the `dfn` can be spread across multiple lines
+          let closestTop = 0;
+          let minDiff = Infinity;
+          for (const rect of dfnRects) {
+            const { top, bottom } = rect;
+            const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+            if (diffFromClickY < minDiff) {
+              minDiff = diffFromClickY;
+              closestTop = top;
+            }
+          }
+
+          const top = window.scrollY + closestTop + dfnRects[0].height;
+          const left = x - MARGIN;
+          panel.style.left = `${left}px`;
+          panel.style.top = `${top}px`;
+
+          // Find if the panel is flowing out of the window
+          const panelRect = panel.getBoundingClientRect();
+          const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+          if (panelRect.right > SCREEN_WIDTH) {
+            const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+            const newCaretOffset = left - newLeft;
+            panel.style.left = `${newLeft}px`;
+            /** @type {HTMLElement} */
+            const caret = panel.querySelector(".caret");
+            caret.style.left = `${newCaretOffset}px`;
+          }
+
+          // As it's a dialog, we trap focus.
+          // TODO: when <dialog> becomes a implemented, we should really
+          // use that.
+          trapFocus(panel, dfn);
+        }
+
+        /**
+         * @param {HTMLElement} panel
+         * @param {HTMLElement} dfn
+         * @returns
+         */
+        function trapFocus(panel, dfn) {
+          /** @type NodeListOf<HTMLAnchorElement> elements */
+          const anchors = panel.querySelectorAll("a[href]");
+          // No need to trap focus
+          if (!anchors.length) return;
+
+          // Move focus to first anchor element
+          const first = anchors.item(0);
+          first.focus();
+
+          const trapListener = createTrapListener(anchors, panel, dfn);
+          panel.addEventListener("keydown", trapListener);
+
+          // Hiding the panel releases the trap
+          const mo = new MutationObserver(records => {
+            const [record] = records;
+            const target = /** @type HTMLElement */ (record.target);
+            if (target.hidden) {
+              panel.removeEventListener("keydown", trapListener);
+              mo.disconnect();
+            }
+          });
+          mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+        }
+
+        /**
+         *
+         * @param {NodeListOf<HTMLAnchorElement>} anchors
+         * @param {HTMLElement} panel
+         * @param {HTMLElement} dfn
+         * @returns
+         */
+        function createTrapListener(anchors, panel, dfn) {
+          const lastIndex = anchors.length - 1;
+          let currentIndex = 0;
+          return event => {
+            switch (event.key) {
+              // Hitting "Tab" traps us in a nice loop around elements.
+              case "Tab": {
+                event.preventDefault();
+                currentIndex += event.shiftKey ? -1 : +1;
+                if (currentIndex < 0) {
+                  currentIndex = lastIndex;
+                } else if (currentIndex > lastIndex) {
+                  currentIndex = 0;
+                }
+                anchors.item(currentIndex).focus();
+                break;
+              }
+
+              // Hitting "Enter" on an anchor releases the trap.
+              case "Enter":
+                hidePanel(panel);
+                break;
+
+              // Hitting "Escape" returns focus to dfn.
+              case "Escape":
+                hidePanel(panel);
+                dfn.focus();
+                return;
+            }
+          };
+        }
+
+        /** @param {HTMLElement} panel */
+        function hidePanel(panel) {
+          if (!panel) return;
+          panel.hidden = true;
+          panel.classList.remove("docked");
+        }
+      })()</script>
+    <script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script>
 </body>
 
 </html>
