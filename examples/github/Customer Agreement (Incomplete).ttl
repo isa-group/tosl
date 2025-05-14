@@ -22,17 +22,19 @@
 :liability01 a tosl:Liability ;
     dcterms:description "GitHub's maximum liability to Customer for any incident giving rise to a claim will not exceed the amount Customer paid for the Product during the 12 months before the incident" ;
     rdf:value tosl:anyLiability ;
+    tosl:targetParty :customer01 ;
     tosl:liableParty :github ;
     tosl:limitation [
             a odrl:Constraint ;
             odrl:leftOperand tosl:calculateAmount ;
-            odrl:operator odrl:lte ;
+            odrl:operator odrl:lteq ;
             odrl:rightOperand :consumerquote12months ;
         ] .
 
 # Dispute resolution definition
 :litigation01 a tosl:Litigation;
     dcterms:description "If Customer’s principal office is within the European Union, European Economic Area, or Switzerland, however, this Agreement will be governed by the laws of Ireland. Any legal action or proceeding will be brought exclusively in the courts located in Dublin." ;
+    tosl:targetParty :customer01 ;
     tosl:takesPlaceIn :DublinCourts ;
     tosl:governedBy :IrelandLaw ;
     tosl:condition [

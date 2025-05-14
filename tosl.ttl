@@ -314,6 +314,14 @@ tosl:develop a owl:NamedIndividual, skos:Concept, odrl:Action ;
         skos:definition "This action permits, mandates or prohibits the use of the services to develop a software application." .
 
 
+### https://w3id.org/tosl/evaluate
+tosl:evaluate a owl:NamedIndividual, skos:Concept, odrl:Action ;
+    odrl:includedIn odrl:use ;
+    rdfs:isDefinedBy tosl: ;
+    rdfs:label "Evaluate" ;
+    skos:definition "This action permits, mandates, or prohibits evaluating the output or performance of a service or model, including assessments for accuracy, fairness, or safety." .
+
+
 ### https://w3id.org/tosl/test
 tosl:test a owl:NamedIndividual, skos:Concept, odrl:Action ;
         odrl:includedIn odrl:use ;

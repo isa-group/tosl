@@ -39,19 +39,22 @@ flowchart TD
 
     H -. refinement .-> J
     D -. constraint .-> J[[Constraint]]
+    D -. logicalConstraint .-> R[Operand]
+    R --> J
 
     I -. liability / limitationOfLiability .-> X[[Liability]]
     D -. liability / limitationOfLiability .-> X
     D -. duty .-> E[Duty]
     D -. trigger .-> E
 
-    
     E -- description --> Q[Statement Description]
     E -- assignee --> L[Party]
     E -- action --> M[Action]
     E -- asset --> O[Asset]
     M -. refinement .-> N
     E -. constraint .-> N[[Constraint]]
+    E -. logicalConstraint .-> S[Operand]
+    S --> N
     O -. liability / limitationOfLiability .-> Y[[Liability]]
     E -. liability / limitationOfLiability .-> Y
     E -. consequence .-> E
@@ -75,9 +78,10 @@ flowchart TD
 
     H -. refinement .-> J
     D -. constraint .-> J[[Constraint]]
+    D -. logicalConstraint .-> R[Operand]
+    R --> J
     D -. liability / limitationOfLiability .-> X
     D -. consequence .-> D
-
 ```
 
 #### Prohibition Rule Validator Diagram
@@ -96,10 +100,12 @@ flowchart TD
 
     H -. refinement .-> J
     D -. constraint .-> J[[Constraint]]
+    D -. logicalConstraint .-> R[Operand]
+    R --> J
+
     I -. liability / limitationOfLiability .-> X[[Liability]]
     D -. liability / limitationOfLiability .-> X
     D -. remedy .-> E[Duty]
-
     
     E -- description --> Q[Statement Description]
     E -- assignee --> L[Party]
@@ -108,9 +114,10 @@ flowchart TD
     O -. liability / limitationOfLiability .-> Y[[Liability]]
     M -. refinement .-> N
     E -. constraint .-> N[[Constraint]]
+    E -. logicalConstraint .-> S[Operand]
+    S --> N
     E -. liability / limitationOfLiability .-> Y
     E -. consequence .-> E
-
 ```
 
 #### Dispute Resolution Validator Diagram
@@ -119,7 +126,7 @@ flowchart TD
 %%{ init: { "theme": "neutral" } }%%
 flowchart TD
 
-    A[SHACL Dispute Resolution Validator] --> B[Litigation ]
+    A[SHACL Dispute Resolution Validator] --> B[Litigation]
     A --> C[Arbitration]
     B -. requires .-> C
 
@@ -128,13 +135,19 @@ flowchart TD
     B -- takePlaceIn --> D[Jurisdiction]
     B -- governedBy --> E[Law]
     B -. condition .-> F[[Constraint]]
+    B -. logicalConstraint .-> R[Operand]
+    R --> F
+
+
+    C -. condition .-> M[[Constraint]]
+    C -. logicalConstraint .-> P[Operand]
+    P --> M
 
     C -- description --> I[Statement Description]
     C -- targetParty --> J[Party]
     C -- takePlaceIn --> K[Jurisdiction]
     C -- governedBy --> L[Law]
-    C -. condition .-> M[[Constraint]]
-
+   
 ```
 
 #### Liability  Validator Diagram
@@ -146,10 +159,13 @@ flowchart TD
     A[SHACL Liability Validator] -- liability / limitationOfLiability --> B[Liability]
 
     B -- description --> E[Statement Description]
+
     B -- liableParty --> C[Party]
     B -- targetParty --> C
     B -- rdf:value --> Value
     B -. limitation .-> D[[Constraint]]
+    B -. logicalConstraint .-> R[Operand]
+    R --> D
 ```
 
 #### Constraint Validator Diagram
@@ -163,4 +179,5 @@ flowchart TD
     B -- leftOperand --> C[Left Operand]
     B -- operator --> D[Operator]
     B -- rightOperand -->  E[Right Operand]
+    B -. unit .-> F[Unit]
 ```
