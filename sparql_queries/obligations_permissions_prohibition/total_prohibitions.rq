@@ -2,10 +2,7 @@ PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX tosl: <https://w3id.org/tosl/>
 
-SELECT DISTINCT ?prohibition ?action ?target ?assignee
+SELECT (COUNT(DISTINCT ?prohibition) AS ?totalProhibitions)
 WHERE {
   ?prohibition a odrl:Prohibition .
-  ?prohibition odrl:action ?action .
-  ?prohibition odrl:target ?target .
-  ?prohibition odrl:assignee ?assignee
 }

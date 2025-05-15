@@ -2,10 +2,7 @@ PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX tosl: <https://w3id.org/tosl/>
 
-SELECT DISTINCT ?permission ?action ?target ?assignee
+SELECT (COUNT(DISTINCT ?permission) AS ?totalPermissions)
 WHERE {
   ?permission a odrl:Permission .
-  ?permission odrl:action ?action .
-  ?permission odrl:target ?target .
-  ?permission odrl:assignee ?assignee
 }
