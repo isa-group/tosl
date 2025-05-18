@@ -193,7 +193,7 @@
             a odrl:Constraint;
             odrl:leftOperand tosl:consentType ;
             odrl:operator odrl:eq ;
-            odrl:rightOperand tosl:explicitConsent
+            odrl:rightOperand tosl:implicitConsent
         ] ;
         odrl:target :agreement01 ;
         odrl:assignee :customer ;
@@ -506,7 +506,7 @@
     odrl:assignee :customer ;
     odrl:constraint [
         a odrl:Constraint ;
-        odrl:leftOperand odrl:compliance ;
+        odrl:leftOperand tosl:compliance ;
         odrl:operator odrl:eq ;
         odrl:rightOperand <https://openai.com/policies/service-credit-terms/>
     ] .

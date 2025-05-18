@@ -288,7 +288,7 @@
     odrl:action odrl:use ;
     odrl:constraint [
         a odrl:Constraint ;
-        odrl:leftOperand odrl:Recipient ;
+        odrl:leftOperand odrl:recipient ;
         odrl:operator odrl:eq ;
         odrl:rightOperand :customer01 ;
     ] ; 

@@ -5,6 +5,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .    
 
 
 #################################################
@@ -701,6 +702,56 @@
         sh:path odrl:leftOperand ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+        sh:or (
+            [
+                sh:in (
+                    odrl:absolutePosition
+                    odrl:absoluteSpatialPosition
+                    odrl:absoluteTemporalPosition
+                    odrl:absoluteSize
+                    odrl:count
+                    odrl:dateTime
+                    odrl:delayPeriod
+                    odrl:deliveryChannel
+                    odrl:elapsedTime
+                    odrl:event
+                    odrl:fileFormat
+                    odrl:industry
+                    odrl:language
+                    odrl:media
+                    odrl:meteredTime
+                    odrl:payAmount
+                    odrl:percentage
+                    odrl:product
+                    odrl:purpose
+                    odrl:recipient
+                    odrl:relativePosition
+                    odrl:relativeSpatialPosition
+                    odrl:relativeTemporalPosition
+                    odrl:relativeSize
+                    odrl:resolution
+                    odrl:spatial
+                    odrl:spatialCoordinates
+                    odrl:systemDevice
+                    odrl:timeInterval
+                    odrl:unitOfCount
+                    odrl:version
+                    odrl:virtualLocation
+                    tosl:justification
+                    tosl:totalAmount
+                    tosl:inactivityPeriod
+                    tosl:consumerResidentCountry
+                    tosl:consentType
+                    tosl:compliance
+                    tosl:licensingType
+                    tosl:effect
+                    foaf:age
+                ) 
+            ]
+            [ 
+                sh:class odrl:LeftOperand
+            ]
+        ) ;
         sh:message "A Constraint must have exactly one odrl:leftOperand." ;
     ] ;
 
