@@ -10,20 +10,9 @@ from collections import defaultdict
 SH = Namespace("http://www.w3.org/ns/shacl#")
 ODRL = Namespace("http://www.w3.org/ns/odrl/2/")
 TOSL = Namespace("https://w3id.org/tosl/")
-# DATA_PATH = "../../examples/elsevier/API_Service_Agreement_2017.ttl"
-# DATA_PATH = "../../examples/github/Customer Agreement (Incomplete).ttl"
-DATA_PATH = "../../examples/openai/Europe_terms_of_use_2024.ttl"
-SHACL_PATH = "../../validator/agreement_shape.ttl"
 
-def validate_syntax(ttl_path):
-    g = Graph()
-    try:
-        g.parse(ttl_path, format='turtle')
-        print("✅ Syntax is valid Turtle.")
-        return g
-    except Exception as e:
-        print("❌ Syntax error:", e)
-        return None
+DATA_PATH = "../../examples/elsevier/API_Service_Agreement_2017_pv.ttl"
+SHACL_PATH = "../../validator/agreement_shape.ttl"
 
 generated_labels = {}
 generated_names = defaultdict(int)
@@ -106,34 +95,25 @@ def filter_unique_paths(all_paths):
         if not any(other != path and path == other[:len(path)] for other in all_paths)
     }
 
-def extract_and_print_paths(results_graph_data):
-    edges, nodes, graph = parse_validation_results(results_graph_data)
-    tree = build_tree(edges)
+def validate_tosl_ttl(ttl_content, shacl_path):
+    g = Graph()
+    try:
+        g.parse(data=ttl_content, format='turtle')
+    except Exception as e:
+        return {
+            "syntax_valid": False,
+            "syntax_error": str(e)
+        }
+    
+    # Si llegamos aquí, sintaxis OK
+    result = {
+        "syntax_valid": True,
+        "syntax_error": None
+    }
 
-    child_nodes = {obj for _, _, obj in edges}
-    roots = [n for n in nodes if n not in child_nodes]
-
-    all_paths = set()
-    for root in roots:
-        collect_paths(root, tree, all_paths)
-
-    for path in sorted(filter_unique_paths(all_paths)):
-        readable = []
-        for node, pred in path:
-            if pred is None:
-                readable.append(get_label(graph, node))
-            else:
-                readable.append(get_label(graph, node))
-                readable.append("→")
-                readable.append(get_label(graph, pred))
-        print(" ".join(readable))
-
-    print(f"\nTotal unique violation paths: {len(all_paths)}")
-
-def validate_conformance(graph, shacl_path):
     start = time.time()
     conforms, results_graph, _ = validate(
-        data_graph=graph,
+        data_graph=g,
         shacl_graph=shacl_path,
         inference='rdfs',
         serialize_report_graph=True,
@@ -145,15 +125,41 @@ def validate_conformance(graph, shacl_path):
     )
     duration = time.time() - start
 
-    if conforms:
-        print("✅ Conforms to TOSL/ODRL SHACL.")
-    else:
-        print("❌ Conformance error:")
-        extract_and_print_paths(results_graph)
+    result = {
+        "conforms": conforms,
+        "validation_time": duration,
+        "violations": []
+    }
 
-    print(f"Validation time: {duration:.2f} seconds")
+    if not conforms:
+        # parse violations
+        edges, nodes, graph = parse_validation_results(results_graph)
+        tree = build_tree(edges)
+        child_nodes = {obj for _, _, obj in edges}
+        roots = [n for n in nodes if n not in child_nodes]
+
+        all_paths = set()
+        for root in roots:
+            collect_paths(root, tree, all_paths)
+
+        unique_paths = filter_unique_paths(all_paths)
+
+        for path in sorted(unique_paths):
+            readable_path = []
+            for node, pred in path:
+                if pred is None:
+                    readable_path.append(get_label(graph, node))
+                else:
+                    readable_path.append(get_label(graph, node))
+                    readable_path.append(get_label(graph, pred))
+            result["violations"].append({
+                "path": readable_path
+            })
+
+    return result
 
 if __name__ == "__main__":
-    g = validate_syntax(DATA_PATH)
-    if g:
-        validate_conformance(g, SHACL_PATH)
+    with open(DATA_PATH, "r", encoding="utf-8") as f:
+        ttl_content = f.read()
+    result = validate_tosl_ttl(ttl_content, SHACL_PATH)
+    print(result)
