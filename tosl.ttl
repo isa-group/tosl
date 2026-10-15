@@ -32,6 +32,114 @@
         owl:versionInfo "1"^^xsd:string .
 
 #################################################################
+#    SKOS Collections
+#    Group related concepts, as in the ODRL vocabulary.
+#################################################################
+
+tosl:partyConcepts
+    a skos:Collection ;
+    skos:prefLabel "Party"@en ;
+    skos:scopeNote "TOSL Profile Terms"@en ;
+    skos:member tosl:Customer ;
+    skos:member tosl:BusinessCustomer ;
+    skos:member tosl:Provider ;
+    skos:member tosl:liableParty ;
+    skos:member tosl:targetParty .
+
+tosl:assetConcepts
+    a skos:Collection ;
+    skos:prefLabel "Asset"@en ;
+    skos:scopeNote "TOSL Profile Terms"@en ;
+    skos:member tosl:Service ;
+    skos:member tosl:UserContent .
+
+tosl:ruleConcepts
+    a skos:Collection ;
+    skos:prefLabel "Rule"@en ;
+    skos:scopeNote "TOSL Profile Terms"@en ;
+    skos:member tosl:trigger .
+
+tosl:disputeConcepts
+    a skos:Collection ;
+    skos:prefLabel "Dispute Resolution"@en ;
+    skos:scopeNote "TOSL Profile Terms"@en ;
+    skos:member tosl:DisputeResolution ;
+    skos:member tosl:Arbitration ;
+    skos:member tosl:Litigation ;
+    skos:member tosl:Jurisdiction ;
+    skos:member tosl:Law ;
+    skos:member tosl:onDispute ;
+    skos:member tosl:governedBy ;
+    skos:member tosl:takesPlaceIn ;
+    skos:member tosl:requires ;
+    skos:member tosl:condition ;
+    skos:member tosl:consumerPlaceLaw ;
+    skos:member tosl:californiaLaw ;
+    skos:member tosl:europeanLaw ;
+    skos:member tosl:consumerPlaceCourts .
+
+tosl:liabilityConcepts
+    a skos:Collection ;
+    skos:prefLabel "Liability"@en ;
+    skos:scopeNote "TOSL Profile Terms"@en ;
+    skos:member tosl:Liability ;
+    skos:member tosl:liability ;
+    skos:member tosl:limitation ;
+    skos:member tosl:limitationOfLiability ;
+    skos:member tosl:anyLiability ;
+    skos:member tosl:physicalInjuries ;
+    skos:member tosl:harmCausedByMalware ;
+    skos:member tosl:discontinuity ;
+    skos:member tosl:anyIndirectDamage ;
+    skos:member tosl:directDamage ;
+    skos:member tosl:anyLoss ;
+    skos:member tosl:thirdParty ;
+    skos:member tosl:serviceContent ;
+    skos:member tosl:legalCompliance ;
+    skos:member tosl:breachOfContract .
+
+tosl:actions
+    a skos:Collection ;
+    skos:prefLabel "Actions for Rules"@en ;
+    skos:scopeNote "TOSL Profile Terms"@en ;
+    skos:member tosl:procedure ;
+    skos:member tosl:remove ;
+    skos:member tosl:consent ;
+    skos:member tosl:allowDownload ;
+    skos:member tosl:terminate ;
+    skos:member tosl:publish ;
+    skos:member tosl:integrate ;
+    skos:member tosl:develop ;
+    skos:member tosl:evaluate ;
+    skos:member tosl:test ;
+    skos:member tosl:claim ;
+    skos:member tosl:appeal ;
+    skos:member tosl:assign .
+
+tosl:constraintLeftOperands
+    a skos:Collection ;
+    skos:prefLabel "Constraint Left Operands"@en ;
+    skos:scopeNote "TOSL Profile Terms"@en ;
+    skos:member tosl:justification ;
+    skos:member tosl:totalAmount ;
+    skos:member tosl:inactivityPeriod ;
+    skos:member tosl:consumerResidentCountry ;
+    skos:member tosl:consentType ;
+    skos:member tosl:compliance ;
+    skos:member tosl:licensingType ;
+    skos:member tosl:effect .
+
+tosl:constraintRightOperands
+    a skos:Collection ;
+    skos:prefLabel "Constraint Right Operands"@en ;
+    skos:scopeNote "TOSL Profile Terms"@en ;
+    skos:member tosl:implicitConsent ;
+    skos:member tosl:writtenPermission ;
+    skos:member tosl:explicitConsent ;
+    skos:member tosl:degradation ;
+    skos:member tosl:breachOfContract .
+
+#################################################################
 #    Object Properties
 #################################################################
 
