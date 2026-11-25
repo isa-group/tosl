@@ -127,7 +127,8 @@ tosl:constraintLeftOperands
     skos:member tosl:consentType ;
     skos:member tosl:compliance ;
     skos:member tosl:licensingType ;
-    skos:member tosl:effect .
+    skos:member tosl:effect ;
+    skos:member foaf:age .
 
 tosl:constraintRightOperands
     a skos:Collection ;
@@ -590,11 +591,11 @@ tosl:licensingType a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
     skos:definition "This stipulates the type of license or permission required by a party to perform a specific action or activity, such as a written permission." .
 
 
-### https://w3id.org/tosl/effect
-tosl:effect a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
-        rdfs:isDefinedBy tosl: ;
-        rdfs:label "Effect" ;
-        skos:definition "This stipulates the effect or impact that an action may or must not cause, serving as a parameter to evaluate the outcomes of an action." .
+### http://xmlns.com/foaf/0.1/age
+foaf:age a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ;
+        rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+        rdfs:label "Age" ;
+        skos:definition "The age in years of a party, used to compare against a minimum or maximum age in the context of a constraint." .
 
 
 ### https://w3id.org/tosl/implicitConsent
